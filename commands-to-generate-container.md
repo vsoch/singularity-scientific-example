@@ -1,3 +1,4 @@
+```bash
 sudo singularity create --size 8000 singularity-manuscript.img
 wget https://raw.githubusercontent.com/cjprybol/reproducibility-via-singularity/master/ubuntu.def
 sudo singularity bootstrap singularity-manuscript.img ubuntu.def
@@ -28,17 +29,6 @@ rm /environment && \
 wget --no-check-certificate https://raw.githubusercontent.com/cjprybol/reproducibility-via-singularity/master/environment && \
 wget --no-check-certificate https://raw.githubusercontent.com/cjprybol/singularity-manuscript/master/singularity && \
 chmod 775 singularity
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-# review size of container with du, and then redo this
+review size of container with du, and then redo this
