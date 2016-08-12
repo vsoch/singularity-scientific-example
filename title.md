@@ -1,1 +1,0 @@
-Singularity: An environment for reproducible research designed for academic HPC clusters
