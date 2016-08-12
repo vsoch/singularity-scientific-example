@@ -1,5 +1,0 @@
-#!/bin/bash
-conda list | tail -n+3 | awk '{print $1, $2, "Anaconda"}' > /tmp/temp.info
-find /Software/.linuxbrew/Cellar -maxdepth 2 -print | sed 's|/Software/.linuxbrew/Cellar||g' | sed 's|^/||' | grep "/" | sed 's|/|\t|' | sort | awk '{print $1, $2, "Homebrew"}'>> /tmp/temp.info
-column -t /tmp/temp.info | sort -u --ignore-case
-rm /tmp/temp.info
