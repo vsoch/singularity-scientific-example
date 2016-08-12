@@ -10,24 +10,16 @@ apt-get clean && \
 mkdir /Software && \
 cd /Software && \
 git clone https://github.com/Linuxbrew/brew.git /Software/.linuxbrew && \
-wget http://repo.continuum.io/archive/Anaconda3-4.1.0-Linux-x86_64.sh && \
-bash Anaconda3-4.1.0-Linux-x86_64.sh -b -p /Software/anaconda3 && \
-rm Anaconda3-4.1.0-Linux-x86_64.sh && \
-PATH="/Software/.linuxbrew/bin:/Software/anaconda3/bin:$PATH" && \
+PATH="/Software/.linuxbrew/bin:$PATH" && \
 brew install bash && \
 ln -sf /Software/.linuxbrew/bin/bash /bin/bash && \
 brew tap homebrew/science && \
-brew install art bwa picard-tools r && \
+brew install art bwa kallisto picard-tools python3 r && \
 rm -r $(brew --cache) && \
-conda update -y conda && \
-conda update -y anaconda && \
-conda config --add channels bioconda && \
-conda install -y --channel bioconda kallisto && \
-conda clean -y --all && \
 cd / && \
 rm /environment && \
-wget --no-check-certificate https://raw.githubusercontent.com/cjprybol/reproducibility-via-singularity/master/environment && \
-wget --no-check-certificate https://raw.githubusercontent.com/cjprybol/singularity-manuscript/master/singularity && \
+wget --no-check-certificate https://gist.githubusercontent.com/cjprybol/c0adfd9ff64c5cc409a0853e54b67cd8/raw/2af527335fefe99aebf24a267ebd954a28917d01/environment && \
+wget --no-check-certificate https://gist.githubusercontent.com/cjprybol/222111a4809c57475a3fa47aa1e01db2/raw/fe69977bcfa163d798007557a3b274e9d90e263f/singularity && \
 chmod 775 singularity
 ```
 
