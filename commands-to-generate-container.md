@@ -3,6 +3,7 @@
 sudo singularity create --size 4000 singularity-manuscript.img && \
 wget https://raw.githubusercontent.com/cjprybol/reproducibility-via-singularity/master/ubuntu.def && \
 sudo singularity bootstrap singularity-manuscript.img ubuntu.def && \
+rm ubuntu.def && \
 sudo singularity shell --writable --contain singularity-manuscript.img
 
 # configure container
