@@ -2,7 +2,7 @@
 
 1. [install singularity](http://singularity.lbl.gov/#install)
 1. clone and enter this repository
-  - `https://github.com/cjprybol/singularity-manuscript.git && cd singularity-manuscript`
+  - `git clone https://github.com/cjprybol/singularity-manuscript.git && cd singularity-manuscript`
 1. download the singularity container used to perform the analysis
   - `wget <url> -O singularity-manuscript.img`
 1. run the tests for yourself
