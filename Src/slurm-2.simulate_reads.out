@@ -1,0 +1,22 @@
+=======================================ART======================================
+                            ART_Illumina (2008-2015)                            
+                            Q Version 2.3.7 (Mar 19, 2015)                      
+                     Contact: Weichun Huang at whduke@gmail.com                 
+================================================================================
+
+Warning: your simulation will not output any ALN or SAM file with your parameter settings!
+Warning: the reference sequence ENST00000619216.1|ENSG00000278267.1|-|-|MIR6859-1-201|MIR6859-1|68|miRNA| (length 68bps ) is skipped as it < the defined read length (150 bps)
+Warning: the reference sequence ENST00000607096.1|ENSG00000243485.4|OTTHUMG00000000959.2|-|MIR1302-2-201|MIR1302-2|138|miRNA| (length 138bps ) is skipped as it < the defined read length (150 bps)
+Warning: the reference sequence ENST00000410691.1|ENSG00000222623.1|-|-|RNU6-1100P-201|RNU6-1100P|104|snRNA| (length 104bps ) is skipped as it < the defined read length (150 bps)
+Warning: the reference sequence ENST00000612080.1|ENSG00000273874.1|-|-|MIR6859-2-201|MIR6859-2|68|miRNA| (length 68bps ) is skipped as it < the defined read length (150 bps)
+Warning: the reference sequence ENST00000614007.1|ENSG00000278757.1|-|-|U6.90-201|U6|104|snRNA| (length 104bps ) is skipped as it < the defined read length (150 bps)
+Warning: the reference sequence ENST00000621981.1|ENSG00000278791.1|-|-|MIR6723-201|MIR6723|89|miRNA| (length 89bps ) is skipped as it < the defined read length (150 bps)
+Warning: the reference sequence ENST00000411249.1|ENSG00000223181.1|-|-|RNU6-1199P-201|RNU6-1199P|104|snRNA| (length 104bps ) is skipped as it < the defined read length (150 bps)
+Warning: the reference sequence ENST00000496938.1|ENSG00000188976.10|OTTHUMG00000040720.1|OTTHUMT00000097870.1|NOC2L-002|NOC2L|149|processed_transcript| (length 149bps ) is skipped as it < the defined read length (150 bps)
+Warning: the reference sequence ENST00000384997.3|ENSG00000207730.3|-|-|MIR200B-201|MIR200B|95|miRNA| (length 95bps ) is skipped as it < the defined read length (150 bps)
+Warning: the reference sequence ENST00000384875.3|ENSG00000207607.3|-|-|MIR200A-201|MIR200A|90|miRNA| (length 90bps ) is skipped as it < the defined read length (150 bps)
+Warning: the reference sequence ENST00000362106.1|ENSG00000198976.1|-|-|MIR429-201|MIR429|83|miRNA| (length 83bps ) is skipped as it < the defined read length (150 bps)
+Warning: the reference sequence ENST00000613751.1|ENSG00000278073.1|-|-|MIR6726-201|MIR6726|61|miRNA| (length 61bps ) is skipped as it < the defined read length (150 bps)
+Warning: the reference sequence ENST00000620702.1|ENSG00000127054.19|OTTHUMG00000003330.13|-|CPSF3L-204|CPSF3L|65|miRNA| (length 65bps ) is skipped as it < the defined read length (150 bps)
+Warning: the reference sequence ENST00000627245.1|ENSG00000127054.19|OTTHUMG00000003330.13|-|CPSF3L-206|CPSF3L|138|protein_coding| (length 138bps ) is skipped as it < the defined read length (150 bps)
+Warning: the reference sequence ENST00000616525.1|ENSG00000107404.18|OTTHUMG00000003069.4|-|DVL1-202|DVL1|59|miRNA| (length 59bps ) is skipped as it < the defined read length (150 bps)

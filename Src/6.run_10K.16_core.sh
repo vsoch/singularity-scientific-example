@@ -1,9 +1,10 @@
 #!/bin/bash
 #SBATCH -p euan,owners
-#SBATCH -n 1
-#SBATCH --mem-per-cpu=8G
+#SBATCH -n 16
+#SBATCH --mem=48G
 #SBATCH -t 2-00:00:00
 #SBATCH --export=ALL
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=cjprybol@stanford.edu
-singularity exec singularity-manuscript.img bash 6.bwa_align_100K.sh
+#SBATCH -o bwa_10K.16_core.out
+singularity exec singularity-manuscript.img bash 6.bwa_align_10K.sh 16

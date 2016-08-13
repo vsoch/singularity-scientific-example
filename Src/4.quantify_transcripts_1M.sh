@@ -3,4 +3,4 @@ if [ ! -d $OUT_DIR ]; do
 	mkdir $OUT_DIR
 done
 
-kallisto quant -i ../Reference/gencode.v25.transcripts.kallisto_index ../Data/Fastq/gencode_1M.1.fq.gz ../Data/Fastq/gencode_1M.2.fq.gz -O $OUT_DIR
+kallisto quant --seed=1 --plaintext -l 500 -t $1 -i ../Reference/gencode.v25.transcripts.kallisto_index ../Data/Fastq/gencode_1M.1.fq.gz ../Data/Fastq/gencode_1M.2.fq.gz -O $OUT_DIR

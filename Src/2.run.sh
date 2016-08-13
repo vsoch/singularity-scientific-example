@@ -6,4 +6,5 @@
 #SBATCH --export=ALL
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=cjprybol@stanford.edu
+#SBATCH -o slurm-2.simulate_reads.out
 singularity exec singularity-manuscript.img bash 2.simulate_reads.sh
