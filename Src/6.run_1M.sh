@@ -6,4 +6,4 @@
 #SBATCH --export=ALL
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=cjprybol@stanford.edu
-singularity exec singularity-manuscript.img bash 2.simulate_reads.sh
+singularity exec singularity-manuscript.img bash 6.bwa_align_1M.sh
