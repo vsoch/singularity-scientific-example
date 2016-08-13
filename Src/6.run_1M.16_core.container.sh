@@ -6,5 +6,5 @@
 #SBATCH --export=ALL
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=cjprybol@stanford.edu
-#SBATCH -o bwa_1M.16_core.out
+#SBATCH -o slurm-6.bwa_1M.16_core.container.out
 singularity exec singularity-manuscript.img bash 6.bwa_align_1M.sh 16

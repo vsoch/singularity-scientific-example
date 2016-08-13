@@ -6,5 +6,5 @@
 #SBATCH --export=ALL
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=cjprybol@stanford.edu
-#SBATCH -o slurm-4.quantify_transcripts_100K.1_core.out
+#SBATCH -o slurm-4.quantify_transcripts_100K.1_core.container.out
 singularity exec singularity-manuscript.img bash 4.quantify_transcripts_100K.sh 1

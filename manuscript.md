@@ -26,6 +26,10 @@ To compare the overhead of running analyses using isolated environments within S
 
 # Conclusion
 
+Singularity offers a way for researchers to make their computational projects more reproducible, and does so without requiring any changes to their normal workflow. No modifications to source code or the process of configuring computing environments needs to be changed.
+
+to mobilize the environments they use to perform analyses, and enables them to make their work more reproducable by simply without having to change any of the
+
 # Software versions
 R
 Python
