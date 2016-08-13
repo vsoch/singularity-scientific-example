@@ -21,7 +21,7 @@ PATH="/Software/.linuxbrew/bin:/Software/anaconda3/bin:$PATH" && \
 brew install bash util-linux && \
 ln -sf /Software/.linuxbrew/bin/bash /bin/bash && \
 brew tap homebrew/science && \
-brew install art bwa picard-tools r && \
+brew install art bwa picard-tools samtools r && \
 rm -r $(brew --cache) && \
 conda update -y conda && \
 conda update -y anaconda && \
