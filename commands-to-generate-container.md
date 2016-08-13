@@ -18,15 +18,14 @@ wget http://repo.continuum.io/archive/Anaconda3-4.1.0-Linux-x86_64.sh && \
 bash Anaconda3-4.1.0-Linux-x86_64.sh -b -p /Software/anaconda3 && \
 rm Anaconda3-4.1.0-Linux-x86_64.sh && \
 PATH="/Software/.linuxbrew/bin:/Software/anaconda3/bin:$PATH" && \
-brew install bash util-linux && \
+brew install bash parallel util-linux && \
+echo "will cite" | parallel --citation && \
 ln -sf /Software/.linuxbrew/bin/bash /bin/bash && \
 brew tap homebrew/science && \
-brew install art bwa picard-tools samtools r && \
+brew install art bwa kallisto picard-tools samtools r && \
 rm -r $(brew --cache) && \
 conda update -y conda && \
 conda update -y anaconda && \
-conda config --add channels bioconda && \
-conda install -y --channel bioconda kallisto && \
 conda clean -y --all && \
 cd / && \
 rm /environment && \
