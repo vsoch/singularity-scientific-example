@@ -4,3 +4,5 @@
 *.fq
 *.bam
 *.bai
+Reference/*
+Data/*

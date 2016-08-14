@@ -1,1 +1,1 @@
-bwa index -a bwtsw ../Reference/hg38.fa
+bwa index -a bwtsw ../Reference/Homo_sapiens.GRCh38.dna.primary_assembly.fa

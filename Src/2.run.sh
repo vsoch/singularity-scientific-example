@@ -7,4 +7,4 @@
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=cjprybol@stanford.edu
 #SBATCH -o slurm-2.simulate_reads.out
-singularity exec singularity-manuscript.img bash 2.simulate_reads.sh 6
+singularity exec /share/PI/euan/cameron/v0.1.5.img bash 2.simulate_reads.sh 6

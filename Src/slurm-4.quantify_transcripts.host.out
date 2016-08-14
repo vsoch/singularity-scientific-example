@@ -1,0 +1,12 @@
+
+[quant] fragment length distribution will be estimated from the data
+[index] k-mer length: 31
+[index] number of targets: 198,093
+[index] number of k-mers: 124,730,703
+[index] number of equivalence classes: 811,706
+[quant] running in paired-end mode
+[quant] will process pair 1: ../Data/Fastq/rna_1.fq
+                             ../Data/Fastq/rna_2.fq
+[quant] finding pseudoalignments for the reads ...terminate called after throwing an instance of 'std::system_error'
+  what():  Enable multithreading to use std::thread: Operation not permitted
+4.quantify_transcripts.sh: line 10: 38121 Aborted                 kallisto quant --seed=1 --plaintext -t $1 -i ../Reference/kallisto_index ../Data/Fastq/rna_1.fq ../Data/Fastq/rna_2.fq -o $OUT_DIR
