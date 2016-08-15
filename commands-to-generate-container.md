@@ -19,14 +19,13 @@ bash Anaconda3-4.1.1-Linux-x86_64.sh -b -p /Software/anaconda3 && \
 rm Anaconda3-4.1.1-Linux-x86_64.sh && \
 PATH="/Software/.linuxbrew/bin:/Software/anaconda3/bin:$PATH" && \
 brew install bash parallel util-linux && \
+brew install --build-from-source kallisto
 ln -sf /Software/.linuxbrew/bin/bash /bin/bash && \
 brew tap homebrew/science && \
 brew install art bwa samtools && \
 rm -r $(brew --cache) && \
 conda update -y conda && \
 conda update -y anaconda && \
-conda config --add channels bioconda && \
-conda install -y --channel bioconda kallisto && \
 conda clean -y --all && \
 cd / && \
 rm /environment && \
