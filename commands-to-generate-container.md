@@ -14,9 +14,9 @@ apt-get clean && \
 mkdir /Software && \
 cd /Software && \
 git clone https://github.com/Linuxbrew/brew.git /Software/.linuxbrew && \
-wget http://repo.continuum.io/archive/Anaconda3-4.1.0-Linux-x86_64.sh && \
-bash Anaconda3-4.1.0-Linux-x86_64.sh -b -p /Software/anaconda3 && \
-rm Anaconda3-4.1.0-Linux-x86_64.sh && \
+wget http://repo.continuum.io/archive/Anaconda3-4.1.1-Linux-x86_64.sh && \
+bash Anaconda3-4.1.1-Linux-x86_64.sh -b -p /Software/anaconda3 && \
+rm Anaconda3-4.1.1-Linux-x86_64.sh && \
 PATH="/Software/.linuxbrew/bin:/Software/anaconda3/bin:$PATH" && \
 brew install bash parallel util-linux && \
 ln -sf /Software/.linuxbrew/bin/bash /bin/bash && \
