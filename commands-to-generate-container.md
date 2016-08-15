@@ -26,7 +26,7 @@ rm -r $(brew --cache) && \
 conda update -y conda && \
 conda update -y anaconda && \
 conda config --add channels bioconda && \
-conda install -y --channel kallisto && \
+conda install -y --channel bioconda kallisto && \
 conda clean -y --all && \
 cd / && \
 rm /environment && \
