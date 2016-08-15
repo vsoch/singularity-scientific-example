@@ -33,7 +33,5 @@ rm /environment && \
 wget --no-check-certificate https://raw.githubusercontent.com/cjprybol/reproducibility-via-singularity/master/environment && \
 wget --no-check-certificate https://gist.githubusercontent.com/cjprybol/222111a4809c57475a3fa47aa1e01db2/raw/05d8729997d61e2f23b8c6d8fe3cc1e3578f2be0/singularity && \
 chmod 775 singularity && \
-cd /Software && \
-wget --no-check-certificate https://github.com/RealTimeGenomics/rtg-core/releases/download/3.6.2/rtg-core-non-commercial-3.6.2-linux-x64.zip && \
 exit
 ```
