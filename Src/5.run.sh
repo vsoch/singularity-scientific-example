@@ -6,4 +6,4 @@
 #SBATCH --export=ALL
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=cjprybol@stanford.edu
-singularity exec singularity-manuscript.img bash 5.bwa_index.sh
+singularity exec v0.1.5.img bash 5.bwa_index.sh
