@@ -21,7 +21,7 @@ PATH="/Software/.linuxbrew/bin:/Software/anaconda3/bin:$PATH" && \
 brew install bash parallel util-linux && \
 ln -sf /Software/.linuxbrew/bin/bash /bin/bash && \
 brew tap homebrew/science && \
-brew install art bwa picard-tools samtools r && \
+brew install art bwa samtools && \
 rm -r $(brew --cache) && \
 conda update -y conda && \
 conda update -y anaconda && \
@@ -35,9 +35,5 @@ wget --no-check-certificate https://gist.githubusercontent.com/cjprybol/222111a4
 chmod 775 singularity && \
 cd /Software && \
 wget --no-check-certificate https://github.com/RealTimeGenomics/rtg-core/releases/download/3.6.2/rtg-core-non-commercial-3.6.2-linux-x64.zip && \
-unzip rtg-core-non-commercial-3.6.2-linux-x64.zip && \
-rm rtg-core-non-commercial-3.6.2-linux-x64.zip && \
-ln -s /Software/rtg-core-non-commercial-3.6.2/rtg /usr/local/bin && \
-echo "n" | rtg && \
 exit
 ```
