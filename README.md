@@ -14,7 +14,7 @@ Kallisto
 - [X] 6
 - [X] 8
 - [X] 12
-- [ ] 16 - need host
+- [X] 16
 
 BWA
 - [X] 2
