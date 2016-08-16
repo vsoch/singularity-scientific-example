@@ -10,13 +10,13 @@
 
 Kallisto
 - [X] 2
-- [ ] 4
-- [ ] 6
-- [ ] 8
+- [X] 4
+- [ ] 6 - running
+- [ ] 8 - running
 - [ ] 12
 - [ ] 16
 
 BWA
-- [ ] 2
-- [ ] 8
-- [ ] 16
+- [X] 2
+- [ ] 8 - running
+- [ ] 16 - running
