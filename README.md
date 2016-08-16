@@ -13,8 +13,8 @@ Kallisto
 - [X] 4
 - [X] 6
 - [X] 8
-- [ ] 12 - running
-- [ ] 16 - running
+- [X] 12
+- [ ] 16 - need host
 
 BWA
 - [X] 2
