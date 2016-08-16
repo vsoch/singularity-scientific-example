@@ -7,3 +7,16 @@
 1. download the singularity container used to perform the analysis
   - `wget https://stanfordmedicine.box.com/shared/static/jegnshtg4veiyc7w81ugm1s4w9b5tedu.img -O singularity-manuscript.img`
 1. run the tests for yourself
+
+Kallisto
+- [X] 2
+- [ ] 4
+- [ ] 6
+- [ ] 8
+- [ ] 12
+- [ ] 16
+
+BWA
+- [ ] 2
+- [ ] 8
+- [ ] 16
