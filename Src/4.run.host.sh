@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --partition euan,owners
-#SBATCH --cpus-per-task 4
+#SBATCH --cpus-per-task 16
 #SBATCH --mem 16G
 #SBATCH --time 2-00:00:00
 #SBATCH --export ALL
@@ -9,4 +9,4 @@
 #SBATCH --output slurm-4.quantify_transcripts.host.out
 
 # 8 cores per cpu * # cpu = # threads
-/bin/bash 4.quantify_transcripts.sh 32 host
+/bin/bash 4.quantify_transcripts.sh 128 host

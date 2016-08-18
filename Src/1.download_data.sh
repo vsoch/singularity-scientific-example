@@ -26,3 +26,6 @@ wget -P $REF_DIR ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_25/gen
 gzip -d $REF_DIR/gencode.v25.transcripts.fa.gz
 wget -P $REF_DIR ftp://ftp.ensembl.org/pub/release-85/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
 gzip -d $REF_DIR/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+
+# url info for AJtrio was taken from this url
+# https://raw.githubusercontent.com/genome-in-a-bottle/giab_data_indexes/master/AshkenazimTrio/sequence.index.AJtrio_Illumina_2x250bps_06012016
