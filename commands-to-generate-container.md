@@ -7,9 +7,10 @@ rm ubuntu.def && \
 sudo singularity shell --writable --contain singularity-manuscript.img
 
 # configure container
+cd / && \
 mkdir /scratch /share /local-scratch && \
 apt-get update && \
-apt-get install -y build-essential cmake curl wget git python-setuptools ruby && \
+apt-get install -y build-essential cmake curl libsm6 libxrender1 libfontconfig1 wget git python-setuptools ruby && \
 apt-get clean && \
 mkdir /Software && \
 cd /Software && \
@@ -18,7 +19,7 @@ wget http://repo.continuum.io/archive/Anaconda3-4.1.1-Linux-x86_64.sh && \
 bash Anaconda3-4.1.1-Linux-x86_64.sh -b -p /Software/anaconda3 && \
 rm Anaconda3-4.1.1-Linux-x86_64.sh && \
 PATH="/Software/.linuxbrew/bin:/Software/anaconda3/bin:$PATH" && \
-brew install bash parallel util-linux && \
+brew install bash parallel unzip util-linux && \
 ln -sf /Software/.linuxbrew/bin/bash /bin/bash && \
 brew tap homebrew/science && \
 brew install art bwa samtools && \
