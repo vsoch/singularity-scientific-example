@@ -9,7 +9,7 @@ sudo singularity shell --writable --contain singularity-manuscript.img
 # configure container
 mkdir /scratch /share /local-scratch && \
 apt-get update && \
-apt-get install -y build-essential cmake curl wget git python-setuptools ruby && \
+apt-get install -y build-essential cmake curl wget git bsdmainutils python-setuptools ruby && \
 apt-get clean && \
 mkdir /Software && \
 cd /Software && \
