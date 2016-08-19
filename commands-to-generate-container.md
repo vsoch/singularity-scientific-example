@@ -28,6 +28,12 @@ conda update -y anaconda && \
 conda config --add channels bioconda && \
 conda install -y --channel bioconda kallisto && \
 conda clean -y --all && \
+cd /Software && \
+wget --no-check-certificate https://github.com/RealTimeGenomics/rtg-core/releases/download/3.6.2/rtg-core-non-commercial-3.6.2-linux-x64.zip && \
+unzip rtg-core-non-commercial-3.6.2-linux-x64.zip && \
+rm rtg-core-non-commercial-3.6.2-linux-x64.zip && \
+ln -s /Software/rtg-core-non-commercial-3.6.2/rtg /usr/local/bin && \
+echo "n" | rtg \
 cd / && \
 rm /environment && \
 wget --no-check-certificate https://raw.githubusercontent.com/cjprybol/reproducibility-via-singularity/master/environment && \
