@@ -37,7 +37,7 @@ echo "n" | rtg \
 cd / && \
 rm /environment && \
 wget --no-check-certificate https://raw.githubusercontent.com/cjprybol/reproducibility-via-singularity/master/environment && \
-wget --no-check-certificate https://gist.githubusercontent.com/cjprybol/222111a4809c57475a3fa47aa1e01db2/raw/05d8729997d61e2f23b8c6d8fe3cc1e3578f2be0/singularity && \
+wget --no-check-certificate https://gist.githubusercontent.com/cjprybol/222111a4809c57475a3fa47aa1e01db2/raw/cbb393088299a9ee742353438b67c1e2a6bc4b7d/singularity && \
 chmod 775 singularity && \
 exit
 ```
