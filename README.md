@@ -18,5 +18,5 @@ Kallisto
 
 BWA
 - [X] 2
-- [X] 8 - running
-- [ ] 16 - running * 2
+- [X] 8
+- [X] 16
