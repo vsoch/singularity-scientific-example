@@ -40,6 +40,9 @@ Unfortunately, because Docker's target audience has been commercial and enterpri
 
 Additional benefits to utilizing containers includes the ability to distribute required software across multiple containers. For example, legacy software that requires outdated operating systems and dependencies can be installed into their own container(s), and modern software that have conflicting dependencies can be installed to seperate containers to eliminate library conflicts. All of these containers can be utilized on the same clusters, improving researcher and system administrator productivity by reducing the effort required to maintain environments.
 
+http://permalink.lanl.gov/object/tr?what=info:lanl-repo/lareport/LA-UR-16-22370
+https://coreos.com/blog/oci-image-specification.html
+
 **Availability**: Singularity is available at http://singularity.lbl.gov/. Examples of how to create and utilize containers for research projects are available at https://github.com/cjprybol/reproducibility-via-singularity. The repository associated with the manuscript is available at https://github.com/cjprybol/singularity-manuscript
 
 **Contact**: euan@stanford.edu, gmkurtzer@lbl.gov
