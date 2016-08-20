@@ -6,5 +6,5 @@
 #SBATCH --export ALL
 #SBATCH --mail-type BEGIN,END,FAIL
 #SBATCH --mail-user cjprybol@stanford.edu
-#SBATCH --output slurm-1.download_data.out
+#SBATCH --output slurm-1.out
 singularity exec singularity-manuscript.img bash 1.download_data.sh

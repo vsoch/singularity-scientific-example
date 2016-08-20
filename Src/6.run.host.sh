@@ -6,6 +6,6 @@
 #SBATCH --export ALL
 #SBATCH --mail-type BEGIN,END,FAIL
 #SBATCH --mail-user cjprybol@stanford.edu
-#SBATCH --output slurm-6.bwa_align.host.out
+#SBATCH --output slurm-6.host.out
 
 /bin/bash 6.bwa_align.sh 126 host
