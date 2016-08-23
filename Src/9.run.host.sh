@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH --partition euan,owners
-#SBATCH --cpus-per-task 16
+#SBATCH --cpus-per-task 8
 #SBATCH --mem 64G
 #SBATCH --time 2-00:00:00
 #SBATCH --export ALL
 #SBATCH --mail-type BEGIN,END,FAIL
 #SBATCH --mail-user cjprybol@stanford.edu
-#SBATCH --output slurm-6.container.out
+#SBATCH --output slurm-9.host.out
 
-singularity exec singularity-manuscript.img bash 6.bwa_align.sh 126 container
+/bin/bash 9.family_call_variants.sh 64 64 host

@@ -1,11 +1,10 @@
 #!/bin/bash
 #SBATCH --partition euan,owners
-#SBATCH --cpus-per-task 16
-#SBATCH --mem 64G
+#SBATCH --cpus-per-task 1
+#SBATCH --mem 8G
 #SBATCH --time 2-00:00:00
 #SBATCH --export ALL
 #SBATCH --mail-type BEGIN,END,FAIL
 #SBATCH --mail-user cjprybol@stanford.edu
-#SBATCH --output slurm-6.container.out
-
-singularity exec singularity-manuscript.img bash 6.bwa_align.sh 126 container
+#SBATCH --output slurm-7.out
+singularity exec v0.1.5.img bash 7.prepare_rtg_run.sh
