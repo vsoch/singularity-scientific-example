@@ -7,3 +7,4 @@
 Reference/*
 Data/*
 Src/slurm*
+*.ipynb_checkpoints
