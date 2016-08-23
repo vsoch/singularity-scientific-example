@@ -8,6 +8,8 @@
 
 As computational biologists continue to push the performance boundaries of high-performance computing (HPC) clusters with ever-growing datasets and algorithmic complexity, the process of configuring and maintaining these computing environments also grows in complexity. Without a sufficiently similar computing environment (i.e. same software, version numbers, operating system, shell environment) it can be prohibitively difficult to replicate results, even when given the same input code and datasets. As system administrators make upgrades to computing infrastructure to improve reliability, patch security issues, and enhance user experience, researchers may not be able to replicate their own results only months after the completion of a project due to system changes. Containers are isolated, fully-functional computing environments that abstract entire operating systems, along with all configurations and software necessary to perform analyses, into single files. Containers can be built on local and personal computers, enabling researchers to have full admin permissions, and thus additional freedom and flexibility to configure a computing environment that best suits their needs. These contained computing environments can then be distributed to clusters, collaborators, and most importantly, journals and archiving services upon the publication of manuscripts. All in all, containers enable researchers to spend more time focusing on research and less time troubleshooting system-specific configuration issues, while at the same time promoting transparancy and integrity in research by lowering the barrier for others to replicate and review results.
 
+![](/Users/Cameron/Downloads/workflow.png)
+
 ## Introduction
 
 Reproducibility is at the core of scientific philosophy, yet one does not need to look far to find papers published today that woefully incomplete descriptions of computational methods and analyses. Even in cases where the software used, commands executed, and versions required are meticulously curated for the final publication, configuring a computing enviroment that precisely matches the one used in the publication can turn into a research project in and of itself, with hours and days lost searching the web with unintelligible error messages. Given that computers, both by definition and by design, and meant to recieve instructions and execute those instructions to yield a deterministic result, it may seem counter-intuitive that many wet-lab bench analyses are easier to replicate than computational ones. One need look no further than the constrast in how young scientists percieve learning to perform a polymerase-chain reaction (PCR) amplification, a technique developed in the mid-1980's, to how young scientists percieve the task of learning to use Unix-based operating systems, which have existed since the mid- to late-1960's. The former has many user-friendly and robust tools available for assay design, such as Primer3Plus [cite] and NCBI's Primer-BLAST [cite], as well as easy-to-use interfaces for configuring and running thermal cyclers. The latter is one of the more frightening learning-curves that new scientists face as they learn to work with datasets that are too heterogenous or too large for Excel®.
@@ -22,15 +24,19 @@ In this publication, we introduce Singularity, a container platform specifically
 
 We sought to meet two goals with this analysis. The first goal was to implement an example analysis pipeline, from data acquisition through to the production of figures, that executes entirely within the environment of a container. The second goal was to evaluate the resource overhead of running analysis within containers. Given how large the resource requirements already are for analyzing large datasets like GTEx, ExAC, UK10K, and others, it's critical that isolating computing environments with containers not incur significant resource overhead.
 
-![figure 1: workflow of analysis](path/to/file)
-
 To compare the overhead of running analyses using isolated environments within Singularity containers to running analyses using software installed directly onto the host, we performed several iterations of two benchmarks. The first benchmark quantifies transcript abundances of >68 million 2x75bp reads (Human polyA+ total RNA, GM12878 cell line) from round 1 of the RNA-seq Genome Annotation Assessment Project (http://www.gencodegenes.org/rgasp/data.html) using kallisto [cite]. The second benchmark maps 100 million 2x75bp reads to GRCh38 (ensembl release 85) using bwa [cite]. Each iteration of simulation ran the host and container tests in parallel in an attempt to capture the effects of system load as similarly as we could. Iterations were performed in serial over several days. To test a java-based application, which may have different running behavior inside of containers compared to compiled C code, we also tested the non-commercial RTG-core suite of tools by mapping the Ashkenazi trio provided by GIAB to GRCh38, and then calling variants using a pedigree-aware variant calling and haplotype-phasing.
 
 For full details including operating systems, cpu architecture, and version numbers of all software used, see the supplementary material. The instructions for how to acquire the code and Singularity container are available at https://github.com/cjprybol/singularity-manuscript. The datasets used for this analyses are all open access, and are automatically downloaded as part of the analysis.
 
 # Results
 
+![](/Users/Cameron/Downloads/Pasted image at 2016_08_23 03_38 PM-3.png)
 
+![](/Users/Cameron/Downloads/Pasted image at 2016_08_23 03_38 PM-2.png)
+
+![](/Users/Cameron/Downloads/Pasted image at 2016_08_23 03_38 PM-1.png)
+
+![](/Users/Cameron/Downloads/Pasted image at 2016_08_23 03_38 PM.png)
 
 # Disussion
 
@@ -46,4 +52,4 @@ Additional benefits to utilizing containers includes the ability to distribute r
 
 **Availability**: Singularity is available at http://singularity.lbl.gov/. Examples of how to create and utilize containers for research projects are available at https://github.com/cjprybol/reproducibility-via-singularity. The repository associated with the manuscript is available at https://github.com/cjprybol/singularity-manuscript
 
-**Contact**: euan@stanford.edu, gmkurtzer@lbl.gov
+**Contact**: euan@stanford.edu
