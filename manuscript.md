@@ -8,7 +8,7 @@
 
 As computational biologists continue to push the performance boundaries of high-performance computing (HPC) clusters with ever-growing datasets and algorithmic complexity, the process of configuring and maintaining these computing environments also grows in complexity. Without a sufficiently similar computing environment (i.e. same software, version numbers, operating system, shell environment) it can be prohibitively difficult to replicate results, even when given the same input code and datasets. As system administrators make upgrades to computing infrastructure to improve reliability, patch security issues, and enhance user experience, researchers may not be able to replicate their own results only months after the completion of a project due to system changes. Containers are isolated, fully-functional computing environments that abstract entire operating systems, along with all configurations and software necessary to perform analyses, into single files. Containers can be built on local and personal computers, enabling researchers to have full admin permissions, and thus additional freedom and flexibility to configure a computing environment that best suits their needs. These contained computing environments can then be distributed to clusters, collaborators, and most importantly, journals and archiving services upon the publication of manuscripts. All in all, containers enable researchers to spend more time focusing on research and less time troubleshooting system-specific configuration issues, while at the same time promoting transparancy and integrity in research by lowering the barrier for others to replicate and review results.
 
-![](/Users/Cameron/Downloads/workflow.png)
+![](Figures/workflow.png)
 
 ## Introduction
 
@@ -30,13 +30,13 @@ For full details including operating systems, cpu architecture, and version numb
 
 # Results
 
-![](/Users/Cameron/Downloads/Pasted image at 2016_08_23 03_38 PM-3.png)
+![](Figures/results_4_figure.png)
 
-![](/Users/Cameron/Downloads/Pasted image at 2016_08_23 03_38 PM-2.png)
+![](Figures/results_6_figure.png)
 
-![](/Users/Cameron/Downloads/Pasted image at 2016_08_23 03_38 PM-1.png)
+![](Figures/results_8_figure.png)
 
-![](/Users/Cameron/Downloads/Pasted image at 2016_08_23 03_38 PM.png)
+![](Figures/results_9_figure.png)
 
 # Disussion
 
