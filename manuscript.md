@@ -8,9 +8,14 @@
 
 As computational biologists continue to push the performance boundaries of high-performance computing (HPC) clusters with ever-growing datasets and algorithmic complexity, the process of configuring and maintaining these computing environments also grows in complexity. Without a sufficiently similar computing environment (i.e. same software, version numbers, operating system, shell environment) it can be prohibitively difficult to replicate results, even when given the same input code and datasets. As system administrators make upgrades to computing infrastructure to improve reliability, patch security issues, and enhance user experience, researchers may not be able to replicate their own results only months after the completion of a project due to system changes. Containers are isolated, fully-functional computing environments that abstract entire operating systems, along with all configurations and software necessary to perform analyses, into single files. Containers can be built on local and personal computers, enabling researchers to have full admin permissions, and thus additional freedom and flexibility to configure a computing environment that best suits their needs. These contained computing environments can then be distributed to clusters, collaborators, and most importantly, journals and archiving services upon the publication of manuscripts. All in all, containers enable researchers to spend more time focusing on research and less time troubleshooting system-specific configuration issues, while at the same time promoting transparancy and integrity in research by lowering the barrier for others to replicate and review results.
 
-![](/Users/Cameron/Downloads/workflow.png)
+![](Figures/workflow.png)
 
 ## Introduction
+
+Researchers need a means for ensuring reliable execution of their code. Reproducibility in the sciences has been explored extensively, both in terms of reviewing prior work for reproducility (the list of papers bio ionidis and all), as well as exploring the boundaries of just how automated (CI integration) and secure (paper from microsoft about accessing encrypted data) can be. Yet attempts to implement fully reproducible environments tend to limited in scope, in that they are often domain-specific, inherently limiting their universal adoption. What is needed is a solution that is as ubiquitous as the unix operating system itself, or, at a minimum, covers the most widely used linux-based operating systems like Ubuntu, Debian, Red Hat, centOS, or other similarly ubiquitous distributions. Containers are essentially "contained" runtime environments that have everything necessary to execute a process. One most often sees these containers delivering "microservices", such as streaming a movie to a user, or in the case of life science research, providing a ready-to-run copy of widely used software like `bwa` and `I need another`.
+
+we argue that the most effective solution for acheiving reproducility is not
+
 
 Reproducibility is at the core of scientific philosophy, yet one does not need to look far to find papers published today that woefully incomplete descriptions of computational methods and analyses. Even in cases where the software used, commands executed, and versions required are meticulously curated for the final publication, configuring a computing enviroment that precisely matches the one used in the publication can turn into a research project in and of itself, with hours and days lost searching the web with unintelligible error messages. Given that computers, both by definition and by design, and meant to recieve instructions and execute those instructions to yield a deterministic result, it may seem counter-intuitive that many wet-lab bench analyses are easier to replicate than computational ones. One need look no further than the constrast in how young scientists percieve learning to perform a polymerase-chain reaction (PCR) amplification, a technique developed in the mid-1980's, to how young scientists percieve the task of learning to use Unix-based operating systems, which have existed since the mid- to late-1960's. The former has many user-friendly and robust tools available for assay design, such as Primer3Plus [cite] and NCBI's Primer-BLAST [cite], as well as easy-to-use interfaces for configuring and running thermal cyclers. The latter is one of the more frightening learning-curves that new scientists face as they learn to work with datasets that are too heterogenous or too large for Excel®.
 
@@ -30,13 +35,13 @@ For full details including operating systems, cpu architecture, and version numb
 
 # Results
 
-![](/Users/Cameron/Downloads/Pasted image at 2016_08_23 03_38 PM-3.png)
+![](Figures/results_4_figure.png)
 
-![](/Users/Cameron/Downloads/Pasted image at 2016_08_23 03_38 PM-2.png)
+![](Figures/results_6_figure.png)
 
-![](/Users/Cameron/Downloads/Pasted image at 2016_08_23 03_38 PM-1.png)
+![](Figures/results_8_figure.png)
 
-![](/Users/Cameron/Downloads/Pasted image at 2016_08_23 03_38 PM.png)
+![](Figures/results_9_figure.png)
 
 # Disussion
 

@@ -7,9 +7,10 @@ rm ubuntu.def && \
 sudo singularity shell --writable --contain singularity-manuscript.img
 
 # configure container
+cd / && \
 mkdir /scratch /share /local-scratch && \
 apt-get update && \
-apt-get install -y build-essential cmake curl wget git bsdmainutils python-setuptools ruby && \
+apt-get install -y build-essential cmake curl libsm6 libxrender1 libfontconfig1 wget git python-setuptools ruby && \
 apt-get clean && \
 mkdir /Software && \
 cd /Software && \
@@ -18,7 +19,7 @@ wget http://repo.continuum.io/archive/Anaconda3-4.1.1-Linux-x86_64.sh && \
 bash Anaconda3-4.1.1-Linux-x86_64.sh -b -p /Software/anaconda3 && \
 rm Anaconda3-4.1.1-Linux-x86_64.sh && \
 PATH="/Software/.linuxbrew/bin:/Software/anaconda3/bin:$PATH" && \
-brew install bash parallel util-linux && \
+brew install bash parallel unzip util-linux && \
 ln -sf /Software/.linuxbrew/bin/bash /bin/bash && \
 brew tap homebrew/science && \
 brew install art bwa samtools && \
@@ -28,10 +29,16 @@ conda update -y anaconda && \
 conda config --add channels bioconda && \
 conda install -y --channel bioconda kallisto && \
 conda clean -y --all && \
+cd /Software && \
+wget --no-check-certificate https://github.com/RealTimeGenomics/rtg-core/releases/download/3.6.2/rtg-core-non-commercial-3.6.2-linux-x64.zip && \
+unzip rtg-core-non-commercial-3.6.2-linux-x64.zip && \
+rm rtg-core-non-commercial-3.6.2-linux-x64.zip && \
+ln -s /Software/rtg-core-non-commercial-3.6.2/rtg /usr/local/bin && \
+echo "n" | rtg \
 cd / && \
 rm /environment && \
 wget --no-check-certificate https://raw.githubusercontent.com/cjprybol/reproducibility-via-singularity/master/environment && \
-wget --no-check-certificate https://gist.githubusercontent.com/cjprybol/222111a4809c57475a3fa47aa1e01db2/raw/05d8729997d61e2f23b8c6d8fe3cc1e3578f2be0/singularity && \
+wget --no-check-certificate https://gist.githubusercontent.com/cjprybol/222111a4809c57475a3fa47aa1e01db2/raw/cbb393088299a9ee742353438b67c1e2a6bc4b7d/singularity && \
 chmod 775 singularity && \
 exit
 ```
