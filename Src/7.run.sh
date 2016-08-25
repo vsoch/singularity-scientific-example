@@ -7,4 +7,4 @@
 #SBATCH --mail-type BEGIN,END,FAIL
 #SBATCH --mail-user cjprybol@stanford.edu
 #SBATCH --output slurm-7.out
-singularity exec v0.1.5.img bash 7.prepare_rtg_run.sh
+singularity exec singularity-manuscript.img bash 7.prepare_rtg_run.sh
