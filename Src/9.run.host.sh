@@ -8,4 +8,4 @@
 #SBATCH --mail-user cjprybol@stanford.edu
 #SBATCH --output slurm-9.host.out
 
-/bin/bash 9.family_call_variants.sh 64 64 host
+/bin/bash 9.family_call_variants.sh 64 8 host
