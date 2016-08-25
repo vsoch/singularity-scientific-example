@@ -8,4 +8,4 @@
 #SBATCH --mail-user cjprybol@stanford.edu
 #SBATCH --output slurm-8.host.out
 
-/bin/bash 8.map_trio.sh 64 64 host
+/bin/bash 8.map_trio.sh 64 8 host
