@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --partition euan,owners
+#SBATCH --partition euan
 #SBATCH --cpus-per-task 8
 #SBATCH --mem 64G
 #SBATCH --time 2-00:00:00
