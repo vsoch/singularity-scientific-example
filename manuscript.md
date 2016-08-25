@@ -37,13 +37,23 @@ For full details including operating systems, cpu architecture, and version numb
 
 # Results
 
-![](Figures/results_4_figure.png)
+![](Figures/4.runtime.png)
+![](Figures/4.memory.png)
 
-![](Figures/results_6_figure.png)
+![](Figures/6.runtime.png)
+![](Figures/6.memory.png)
 
-![](Figures/results_8_figure.png)
+![](Figures/8.runtime.full.png)
+![](Figures/8.runtime.condensed.png)
 
-![](Figures/results_9_figure.png)
+![](Figures/8.memory.full.png)
+![](Figures/8.memory.condensed.png)
+
+![](Figures/9.runtime.full.png)
+![](Figures/9.runtime.condensed.png)
+
+![](Figures/9.memory.full.png)
+![](Figures/9.memory.condensed.png)
 
 # Disussion
 
