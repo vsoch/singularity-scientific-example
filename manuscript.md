@@ -60,6 +60,6 @@ These tests show that utilizing containers can enable researchers to distribute 
 
 **Conflicts of Interest**: None declared.
 
-**Contributions**: CJP designed, implemented, and analyzed tests. CJP, GMK, EAA wrote manuscript.
+**Contributions**: CJP designed, implemented, and analyzed tests. GMK is the primary author of Singularity. CJP, GMK, EAA wrote manuscript.
 
 **Contact**: euan@stanford.edu, gmkurtzer@lbl.gov
