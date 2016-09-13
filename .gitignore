@@ -8,3 +8,4 @@ Reference/*
 Data/*
 Src/slurm*
 *.ipynb_checkpoints
+*.DS_Store
