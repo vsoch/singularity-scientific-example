@@ -41,7 +41,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 	unzip rtg-core-non-commercial-3.6.2-linux-x64.zip
 	rm rtg-core-non-commercial-3.6.2-linux-x64.zip
 	ln -s /Software/rtg-core-non-commercial-3.6.2/rtg /usr/local/bin
-	echo "n" | rtg \
+	echo "n" | rtg &> /dev/null
 	cd /
 	rm /environment
 	wget --no-check-certificate https://raw.githubusercontent.com/cjprybol/reproducibility-via-singularity/master/environment
