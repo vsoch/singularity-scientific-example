@@ -7,4 +7,4 @@
 #SBATCH --mail-type BEGIN,END,FAIL
 #SBATCH --mail-user cjprybol@stanford.edu
 #SBATCH --output slurm-5.out
-singularity exec singularity-manuscript.img bash 5.bwa_index.sh
+singularity exec singularity-testing.img bash 5.bwa_index.sh
