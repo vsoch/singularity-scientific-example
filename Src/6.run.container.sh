@@ -8,4 +8,4 @@
 #SBATCH --mail-user cjprybol@stanford.edu
 #SBATCH --output slurm-6.container.out
 
-singularity exec singularity-manuscript.img bash 6.bwa_align.sh 4 container
+singularity exec singularity-testing.img bash 6.bwa_align.sh 4 container
