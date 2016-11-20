@@ -8,4 +8,4 @@
 #SBATCH --mail-user cjprybol@stanford.edu
 #SBATCH --output slurm-8.container.out
 
-singularity exec singularity-manuscript.img bash 8.map_trio.sh 64 8 container
+singularity exec singularity-testing.img bash 8.map_trio.sh 64 8 container
