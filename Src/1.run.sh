@@ -7,4 +7,4 @@
 #SBATCH --mail-type BEGIN,END,FAIL
 #SBATCH --mail-user cjprybol@stanford.edu
 #SBATCH --output slurm-1.out
-singularity exec singularity-manuscript.img bash 1.download_data.sh
+singularity exec singularity-testing.img bash 1.download_data.sh
