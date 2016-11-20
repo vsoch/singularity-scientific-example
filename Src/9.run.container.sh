@@ -8,4 +8,4 @@
 #SBATCH --mail-user cjprybol@stanford.edu
 #SBATCH --output slurm-9.container.out
 
-singularity exec singularity-manuscript.img bash 9.family_call_variants.sh 64 8 container
+singularity exec singularity-testing.img bash 9.family_call_variants.sh 64 8 container
