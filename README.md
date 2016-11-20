@@ -1,4 +1,4 @@
-# singularity-manuscript
+# singularity-testing
 
 1. [install singularity](http://singularity.lbl.gov/#install)
 1. clone and enter this repository
