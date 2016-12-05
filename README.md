@@ -1,6 +1,19 @@
 # singularity-testing
 
-This repository will provide a complete example of using Singularity to run a reproducible analysis, from the point of data download through result generation. In the process we will do the following:
+This repository will provide a pipeline to do a direct comparison of Singularity vs. Docker (vs. native?), across multiple compute environments:
+
+- Google Cloud
+- Amazon AWS
+- Stanford Sherlock Cluster
+- Stanford SCG4 Cluster
+- Microsoft Azure
+
+We will ideally look at metrics such as memory and cost, and aim to show how Singularity (which can be run without sudo priviledges) compares to Docker. The initial plan is generally the following:
+ 
+1. Start with a basic analysis, meaning a few Docker containers (for bio, could be [Biocontainers](https://github.com/BioContainers/containers) or for neuro could be [bids-apps.neuroimaging.io](bids-apps.neuroimaging.io))
+2. Develop Github repos (details below) that include workflow specifications for running the same pipeline using Singularity and Docker (where appropriate).
+3. Develop ways / methods for capturing costs / time, etc. The measuring of reproducibility should be reproducible itself :) 
+4. Run and compare
 
 
 ### Install Singularity
