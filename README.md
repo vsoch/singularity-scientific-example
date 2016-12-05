@@ -9,18 +9,28 @@ Instructions can be found on the [singularity site](https://singularityware.gith
 
 ### Get the code
 
+```bash
      git clone https://www.github.com/vsoch/singularity-testing
      cd singularity-testing
-
+```
 
 ### Goals for this work
 
-1. We want the different tools to be as modular as possible. This means separating different software into different containers. From development standpoint, a group of experts that maintain a (smaller) software base for which they have expertise is a better strategy than trying to accomodate a larger one.
-2. Harness existing containers and solutions. For example, it's unlikely that a researcher would want to develop a new Singularity container for every kind of genetic or new analysis, but it seems reasonable to use the (already existing) library of Docker containers to achieve the same. Developing a Docker container should (and does) correspond directly with having the same versioned software to run in Singularity.
-3. Reliable, transparent inputs and outputs. Each software container, regardless of dependencies, operating system, etc., in that it takes and produces data structures and formats in a reliable way, can fit into a workflow that expects or needs those products.
-4. Scalable. The analysis should be possible to run optimally on a cluster (HPC).
-5. Environment agnostic. It should work equivalently on a local computer, a computer cluster, Google Cloud, AWS, Azure, or other.
-6. Customizable. Hopefully the modular nature, and that each container takes input arguments, makes this possible.
+1. **Modular** We want the different tools to be as modular as possible. This means separating different software into different containers. From development standpoint, a group of experts that maintain a (smaller) software base for which they have expertise is a better strategy than trying to accomodate a larger one.
+2. **Moveable** An entire workflow should fit into a Github repo, and be easily cloned and run. Most big data things should be obtained from a container or data repository or built by the user. 
+3. **Inclusive** Harness existing containers and solutions. For example, it's unlikely that a researcher would want to develop a new Singularity container for every kind of genetic or new analysis, but it seems reasonable to use the (already existing) library of Docker containers to achieve the same. Developing a Docker container should (and does) correspond directly with having the same versioned software to run in Singularity.
+4. **Transparent** inputs and outputs. Each software container, regardless of dependencies, operating system, etc., in that it takes and produces data structures and formats in a reliable way, can fit into a workflow that expects or needs those products.
+5. **Scalable.** The analysis should be possible to run optimally on a cluster (HPC).
+6. **Environment Agnostic**. It should work equivalently on a local computer, a computer cluster, Google Cloud, AWS, Azure, or other.
+7. **Customizable**. Hopefully the modular nature, and that each container takes input arguments, makes this possible.
+
+
+#### 2. Moveable
+A workflow specification should be enough to fully reproduce an analysis, which doesn't necessarily mean storing every single data with it. For the purposes of reproducing a particular analysis, this breaks reproducibility because we don't keep the inputs. For the purposes of distributing a workflow that works on any general input, this makes a lot of sense. The general idea would be that a researcher publishes a workflow that has this moveable quality, and then provides with it (in the publication, notes, etc.) the publicly available links / script to download / other method to obtain his or her particular data inputs.
+
+
+#### 3. Inclusive
+There is [a Bioinformatics with Docker](https://github.com/BioContainers/containers) effort that is providing substantial analysis tools via containers. I think we probably want to bootstrap resources like this.
 
 
 ### Steps in workflow
@@ -67,6 +77,8 @@ Most workflow data structures (cwl, etc) have something that looks like json, an
    
 ```
 
+Integration with (some) job scheduler or workflow manager is one step above this thinking, but the assumption is that given a workflow that can be run for one thing, that can have plugins / additional tools to easily plug it into many different places.
+
 ### The command specification
 
 #### WORKDIR 
@@ -80,3 +92,6 @@ should be with a container in mind, assuming it has some understood executable, 
 
 #### VIEW
 The idea of view is to visualize or summarize. There should be a core set of data structures (or other) that the function understands (eg, csv, or brain image) and then it can parse an entire folder and produce a navigatable output (static html thing, or summary report) for the researcher.
+
+### What does a repo look like?
+A repo has a `WORKFLOW` file (the thing above), and for custom containers (e.g., bootstraps or builds) there is a folder for each, with required dependency files and/or scripts included. For example, it might be something [akin to this](https://github.com/BioContainers/containers) but with the main executor of all folders and things in the repo being the `WORKFLOW` file. I'm not yet sure what will do the running, but given that this is for Singularity (and it's a depedency) it likely will be something like a Singularity container that just works wherever.
