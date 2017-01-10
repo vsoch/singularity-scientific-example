@@ -1,10 +1,10 @@
 BootStrap: docker
-From: ubuntu:14.04
+From: busybox:latest
 
 %runscript
 
-exec echo "Testing 123..."
+exec echo "Testing 456..."
 
 %post
 
-echo "Running post install pancakes"
+echo "Running post install fishsticks"
