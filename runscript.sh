@@ -22,7 +22,7 @@ fi
 
 # This will be our output/data directory
 export WORKDIR=/scratch
-export DATADIR=/scratch/data
+export OUTDIR=/scratch/data
 
 # Let's export the working directory to return to later
 export RUNDIR=$HOME/singularity-scientific-example
@@ -30,13 +30,15 @@ export RUNDIR=$HOME/singularity-scientific-example
 # Let's also make a logs directory to keep
 mkdir $RUNDIR/logs
 
+#TODO: print everything to logs
+
 # 1. Install Singularity and dependencies
 # If user has sudo, we assume on cloud instance and install. If not,
 # we must be on cluster with it.
 timeout 2 sudo id && hassudo="true" || hassudo="no"
 if [[ $hassudo == "true" ]]; then
    echo "User has sudo, running install/update of Singularity"
-   ./scripts/install.sh
+   bash $RUNDIR/scripts/install.sh
 fi
 
 # Pull our analysis image
@@ -50,14 +52,14 @@ chmod u+x analysis.img
 #########################################################################################
 
 # Bind $DATADIR to /scratch in the image
-singularity run analysis.img -B $DATADIR:/scratch 1.download_data.sh /scratch
+singularity exec analysis.img -B $OUTDIR:/scratch bash scripts/1.download_data.sh /scratch
 
 
 #########################################################################################
 # Analysis
 #########################################################################################
 
-singularity run -B $DATADIR:/scratch analysis.img bash 2.simulate_reads.sh /scratch
+singularity exec -B $OUTDIR:/scratch analysis.img bash $RUNDIR/scripts/2.simulate_reads.sh /scratch
 singularity run -B $DATADIR:/scratch analysis.img bash 3.generate_transcriptome_index.sh /scratch
 singularity run -B $DATADIR:/scratch analysis.img bash 4.quantify_transcripts.sh /scratch
 singularity run -B $DATADIR:/scratch analysis.img bash 5.bwa_index.sh /scratch
