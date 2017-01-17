@@ -21,16 +21,14 @@ if [[ ! -d "/scratch/data" ]]; then
 fi
 
 # This will be our output/data directory
-export WORKDIR=/scratch
-export OUTDIR=/scratch/data
+export WORKDIR=/scratch/data
 
 # Let's export the working directory to return to later
 export RUNDIR=$HOME/singularity-scientific-example
 
 # Let's also make a logs directory to keep
 mkdir $RUNDIR/logs
-
-#TODO: print everything to logs
+export MAIN_LOG=$RUNDIR/logs/main.log
 
 # Setup of time and recording of other analysis data (see TIME.md)
 export TIME_LOG=$RUNDIR/logs/stats.log
@@ -64,11 +62,11 @@ singularity exec analysis.img -B $OUTDIR:/scratch/data bash scripts/1.download_d
 # Analysis
 #########################################################################################
 
-/usr/bin/time -a -o $TIMELOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/2.simulate_reads.sh /scratch/data
-/usr/bin/time -a -o $TIMELOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/3.generate_transcriptome_index.sh /scratch/data
-/usr/bin/time -a -o $TIMELOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/4.quantify_transcripts.sh /scratch/data
-/usr/bin/time -a -o $TIMELOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/5.bwa_index.sh /scratch/data
-/usr/bin/time -a -o $TIMELOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/6.bwa_align.sh /scratch/data
-/usr/bin/time -a -o $TIMELOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/7.prepare_rtg_run.sh /scratch/data
-/usr/bin/time -a -o $TIMELOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/8.map_trio.sh /scratch/data
-/usr/bin/time -a -o $TIMELOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/9.family_call_variants.sh /scratch/data
+/usr/bin/time -a -o $TIME_LOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/2.simulate_reads.sh /scratch/data
+/usr/bin/time -a -o $TIME_LOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/3.generate_transcriptome_index.sh /scratch/data
+/usr/bin/time -a -o $TIME_LOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/4.quantify_transcripts.sh /scratch/data
+/usr/bin/time -a -o $TIME_LOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/5.bwa_index.sh /scratch/data
+/usr/bin/time -a -o $TIME_LOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/6.bwa_align.sh /scratch/data
+/usr/bin/time -a -o $TIME_LOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/7.prepare_rtg_run.sh /scratch/data
+/usr/bin/time -a -o $TIME_LOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/8.map_trio.sh /scratch/data
+/usr/bin/time -a -o $TIME_LOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/9.family_call_variants.sh /scratch/data
