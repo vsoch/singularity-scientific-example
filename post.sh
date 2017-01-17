@@ -6,7 +6,9 @@ dpkg-reconfigure locales
 export LANGUAGE="en_US.UTF-8"
 echo 'LANGUAGE="en_US.UTF-8"' >> /etc/default/locale
 echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
-mkdir /scratch /share /local-scratch /Software
+mkdir /share /local-scratch /Software
+mkdir -p /scratch/data
+chmod -R 777 /scratch
 chmod 777 /tmp
 chmod +t /tmp
 chmod 777 /Software

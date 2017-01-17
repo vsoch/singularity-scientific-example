@@ -32,6 +32,11 @@ mkdir $RUNDIR/logs
 
 #TODO: print everything to logs
 
+# Setup of time and recording of other analysis data (see TIME.md)
+export TIME_LOG=$RUNDIR/logs/stats.log
+export TIME="%C\t%E\t%I\t%K\t%M\t%O\t%P\t%U\t%W\t%X\t%e\tk\t%p\t%r\t%s\t%t\t%w\n"
+echo "COMMAND\tELAPSED_TIME_HMS\tFS_INPUTS\tAVG_MEMORY_KB\tFS_OUTPUTS\tPERC_CPU_ALLOCATED\tCPU_SECONDS_USED\tW_TIMES_SWAPPED\tSHARED_TEXT_KB\tELAPSED_TIME_SECONDS\tNUMBER_SIGNALS_DELIVERED\tAVG_UNSHARED_STACK_SIZE SOCKET_MSG_RECEIVED\tSOCKET_MSG_SENT\tAVG_RESIDENT_SET_SIZE\tCONTEXT_SWITCHES" > $TIME_LOG
+
 # 1. Install Singularity and dependencies
 # If user has sudo, we assume on cloud instance and install. If not,
 # we must be on cluster with it.
@@ -52,21 +57,18 @@ chmod u+x analysis.img
 #########################################################################################
 
 # Bind $DATADIR to /scratch in the image
-singularity exec analysis.img -B $OUTDIR:/scratch bash scripts/1.download_data.sh /scratch
+singularity exec analysis.img -B $OUTDIR:/scratch/data bash scripts/1.download_data.sh /scratch/data
 
 
 #########################################################################################
 # Analysis
 #########################################################################################
 
-singularity exec -B $OUTDIR:/scratch analysis.img bash $RUNDIR/scripts/2.simulate_reads.sh /scratch
-singularity run -B $DATADIR:/scratch analysis.img bash 3.generate_transcriptome_index.sh /scratch
-singularity run -B $DATADIR:/scratch analysis.img bash 4.quantify_transcripts.sh /scratch
-singularity run -B $DATADIR:/scratch analysis.img bash 5.bwa_index.sh /scratch
-singularity run -B $DATADIR:/scratch analysis.img bash 6.bwa_align.sh /scratch
-singularity run -B $DATADIR:/scratch analysis.img bash 7.prepare_rtg_run.sh /scratch
-singularity run -B $DATADIR:/scratch analysis.img bash 8.map_trio.sh /scratch
-singularity run -B $DATADIR:/scratch analysis.img bash 9.family_call_variants.sh /scratch
-singularity run -B $DATADIR:/scratch analysis.img bash
-
-
+/usr/bin/time -a -o $TIMELOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/2.simulate_reads.sh /scratch/data
+/usr/bin/time -a -o $TIMELOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/3.generate_transcriptome_index.sh /scratch/data
+/usr/bin/time -a -o $TIMELOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/4.quantify_transcripts.sh /scratch/data
+/usr/bin/time -a -o $TIMELOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/5.bwa_index.sh /scratch/data
+/usr/bin/time -a -o $TIMELOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/6.bwa_align.sh /scratch/data
+/usr/bin/time -a -o $TIMELOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/7.prepare_rtg_run.sh /scratch/data
+/usr/bin/time -a -o $TIMELOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/8.map_trio.sh /scratch/data
+/usr/bin/time -a -o $TIMELOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/9.family_call_variants.sh /scratch/data
