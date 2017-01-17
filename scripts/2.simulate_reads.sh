@@ -2,7 +2,7 @@ if [ $# -eq 0 ]; then
     echo "\nUsage:"
     echo "./2.simulate_reads.sh [DATADIR]"
     exit
-else
+fi
 
 DATADIR=$1
 
