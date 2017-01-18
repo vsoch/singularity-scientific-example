@@ -50,6 +50,8 @@ image=$(ls *.img)
 mv $image analysis.img
 chmod u+x analysis.img
 
+export NUMCORES=$(nproc)
+
 #########################################################################################
 # Data download
 #########################################################################################
@@ -62,6 +64,7 @@ singularity exec analysis.img -B $OUTDIR:/scratch/data bash scripts/1.download_d
 # Analysis
 #########################################################################################
 
+
 /usr/bin/time -a -o $TIME_LOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/2.simulate_reads.sh /scratch/data
 /usr/bin/time -a -o $TIME_LOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/3.generate_transcriptome_index.sh /scratch/data
 /usr/bin/time -a -o $TIME_LOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/4.quantify_transcripts.sh /scratch/data
@@ -70,3 +73,9 @@ singularity exec analysis.img -B $OUTDIR:/scratch/data bash scripts/1.download_d
 /usr/bin/time -a -o $TIME_LOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/7.prepare_rtg_run.sh /scratch/data
 /usr/bin/time -a -o $TIME_LOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/8.map_trio.sh /scratch/data
 /usr/bin/time -a -o $TIME_LOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/9.family_call_variants.sh /scratch/data
+
+#########################################################################################
+# Data Upload
+#########################################################################################
+
+

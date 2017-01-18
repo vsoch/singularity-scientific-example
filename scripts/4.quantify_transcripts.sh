@@ -1,3 +1,5 @@
+# Note that NUMCORES should be set as environment variable
+
 if [ $# -eq 0 ]; then
     echo "\nUsage:"
     echo "./4.quantify_transcripts.sh [DATADIR]"
@@ -21,4 +23,4 @@ if [ ! -d $OUT_DIR ]; then
     mkdir $OUT_DIR
 fi
 
-kallisto quant -b 100 --seed=1 --plaintext -t 4 -i $DATADIR/Reference/kallisto_index $DATADIR/Fastq/rna_1.fq.gz $DATADIR/Fastq/rna_2.fq.gz -o $OUT_DIR
+kallisto quant -b 100 --seed=1 --plaintext -t $NUMCORES -i $DATADIR/Reference/kallisto_index $DATADIR/Fastq/rna_1.fq.gz $DATADIR/Fastq/rna_2.fq.gz -o $OUT_DIR
