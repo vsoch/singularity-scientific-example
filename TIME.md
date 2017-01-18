@@ -8,7 +8,8 @@ We will define a format string, and output to a common file.
 The following format string will be used
 
 
-	export TIMEFMT="%C\t%E\t%I\t%K\t%M\t%O\t%P\t%U\t%W\t%X\t%e\tk\t%p\t%r\t%s\t%t\t%w\n"
+	export TIME='%C\t%E\t%I\t%K\t%M\t%O\t%P\t%U\t%W\t%X\t%e\t%k\t%p\t%r\t%s\t%t\t%w\n'
+
 
 ## Metrics Collected
 
@@ -22,8 +23,11 @@ With the following header, each command appended to the same file. The following
  - MSG: message
 
  
-	COMMAND  ELAPSED_TIME_HMS  FS_INPUTS  AVG_MEMORY_KB  FS_OUTPUTS  PERC_CPU_ALLOCATED  CPU_SECONDS_USED  W_TIMES_SWAPPED  SHARED_TEXT_KB  ELAPSED_TIME_SECONDS  NUMBER_SIGNALS_DELIVERED  AVG_UNSHARED_STACK_SIZE SOCKET_MSG_RECEIVED  SOCKET_MSG_SENT  AVG_RESIDENT_SET_SIZE  CONTEXT_SWITCHES
+	COMMAND  ELAPSED_TIME_HMS  FS_INPUTS  AVG_MEMORY_KB  MAX_RES_SIZE_KB	FS_OUTPUTS  PERC_CPU_ALLOCATED  CPU_SECONDS_USED  W_TIMES_SWAPPED  SHARED_TEXT_KB  ELAPSED_TIME_SECONDS  NUMBER_SIGNALS_DELIVERED  AVG_UNSHARED_STACK_SIZE SOCKET_MSG_RECEIVED  SOCKET_MSG_SENT  AVG_RESIDENT_SET_SIZE  CONTEXT_SWITCHES
 
+produces:
+
+     singularity exec -B :/scratch/data analysis.img bash /home/vanessa/singularity-scientific-example/scripts/2.simulate_reads.sh /scratch/data     1:52:43	63166866	0	2064888	73398872	98%	5822.12	0	0	6763.06	ELAPSED_TIME	0	0	0	0	12088
 
 A complete description of each argument is provided below, from `man time`
 
