@@ -2,7 +2,7 @@ if [ $# -eq 0 ]; then
     echo "\nUsage:"
     echo "./4.quantify_transcripts.sh [DATADIR]"
     exit
-else
+fi
 
 DATADIR=$1
 

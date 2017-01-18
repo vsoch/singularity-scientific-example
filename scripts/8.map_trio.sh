@@ -2,7 +2,7 @@ if [ $# -eq 0 ]; then
     echo "\nUsage:"
     echo "./8.map_trio.sh [DATADIR]"
     exit
-else
+fi
 
 DATADIR=$1
 

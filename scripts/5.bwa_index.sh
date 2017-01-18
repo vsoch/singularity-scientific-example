@@ -2,7 +2,7 @@ if [ $# -eq 0 ]; then
     echo "\nUsage:"
     echo "./5.bwa_index.sh [DATADIR]"
     exit
-else
+fi
 
 DATADIR=$1
 

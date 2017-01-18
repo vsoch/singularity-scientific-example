@@ -2,7 +2,7 @@ if [ $# -eq 0 ]; then
     echo "\nUsage:"
     echo "./6.bwa_align.sh [DATADIR]"
     exit
-else
+fi
 
 DATADIR=$1
 

@@ -2,7 +2,7 @@ if [ $# -eq 0 ]; then
     echo "\nUsage:"
     echo "./9.family_call_variants.sh [DATADIR]"
     exit
-else
+fi
 
 DATADIR=$1
 
