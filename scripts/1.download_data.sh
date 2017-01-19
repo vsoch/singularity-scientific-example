@@ -4,7 +4,7 @@ if [ $# -eq 0 ]; then
     echo "\nUsage:"
     echo "./1.download_data.sh [DATADIR]"
     exit
-else
+fi
 
 DATADIR=$1
 
@@ -39,6 +39,7 @@ gzip -d $REF_DIR/gencode.v25.transcripts.fa.gz
 wget -P $REF_DIR ftp://ftp.ensembl.org/pub/release-85/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
 gzip -d $REF_DIR/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
 
+wget -P $REF_DIR https://raw.githubusercontent.com/genome-in-a-bottle/giab_data_indexes/master/AshkenazimTrio/sequence.index.AJtrio_Illumina_2x250bps_06012016
 
 ## DOWNLOAD FASTQS FOR TRIO
 
@@ -48,22 +49,19 @@ gzip -d $REF_DIR/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
 FILE_LIST=$(sed '1d' $REF_DIR/sequence.index.AJtrio_Illumina_2x250bps_06012016 | awk '{print $1, $3}' | sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/ /g')
 
 for f in $FILE_LIST; do
-
-	OUT_DIR=../Data/$(basename $( dirname $( dirname $( dirname $f ) ) ) )
-	if [ ! -d $OUT_DIR ]; then
-		mkdir $OUT_DIR
-	fi
-
-	FILENAME=$OUT_DIR/$(basename $f)
-	if [ ! -f $FILENAME ]; then
-		wget -P $OUT_DIR $f
-	else
-		echo "$FILENAME exists, skipping"
-	fi
+    OUT_DIR=$DATADIR/$(basename $( dirname $( dirname $( dirname $f ) ) ) )
+    if [ ! -d $OUT_DIR ]; then
+        mkdir $OUT_DIR
+    fi
+    FILENAME=$OUT_DIR/$(basename $f)
+    if [ ! -f $FILENAME ]; then
+        wget -P $OUT_DIR $f
+    else
+        echo "$FILENAME exists, skipping"
+    fi
 done
 
 ## MERGE AND SUBSET FASTQS FOR TRIO
-
 RTG_DIR=$DATADIR/RTG
 if [ ! -d $RTG_DIR ]; then
     mkdir $RTG_DIR
