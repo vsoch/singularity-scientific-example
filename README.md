@@ -1,6 +1,6 @@
 # Singularity Example Scientific Workflow
 
-This repository provides a container and associated pipeline to do a direct comparison of Singularity vs. Docker, across multiple compute environments:
+This repository provides a container and associated pipeline to do comparison of running a Singularity workflow across several cloud providers:
 
 - Google Cloud
 - Amazon AWS
@@ -8,11 +8,13 @@ This repository provides a container and associated pipeline to do a direct comp
 - Stanford SCG4 Cluster
 - Microsoft Azure
 
-We will ideally look at metrics such as memory and cost, and aim to show how Singularity (which can be run without sudo priviledges) compares to Docker. The initial plan is generally the following:
+We will ideally look at metrics such as memory and cost, and assess the differences (or lack thereof) in running the analysis in multiple cloud environments.
  
 1. Start with a basic analysis, meaning an analysis packaged in a container.
 2. Build the container using Singularity Hub
 3. Use Singularity Hub and Packer builds (included in this repo) to run and compare. 
+
+The folder [cloud](cloud) contains runscript and other files necessary for running the pipeline on the cloud providers in the list above. The folder [hpc](hpc) contains the equivalent scripts necessary for running on local HPC.
 
 
 ### Install Singularity

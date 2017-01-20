@@ -51,9 +51,9 @@ if [ ! -d $RTG_DIR ]; then
 fi
 
 ## THESE FILES HAVE BEEN MADE AVAILABLE BY FTP DOWNLOAD
-wget -P $RTG_DIR https://stanfordmedicine.box.com/shared/static/beky9c9u05xmljtgj4kq9iuik33xqtbq.gz -O HG002.1.10M.fastq.gz
-wget -P $RTG_DIR https://stanfordmedicine.box.com/shared/static/isod88qhvfy11d3jlxy2hc1am3axhqg9.gz -O HG002.2.10M.fastq.gz
-wget -P $RTG_DIR https://stanfordmedicine.box.com/shared/static/wu7kn19y16org4sxvp5r7nw25x3kcc18.gz -O HG003.1.10M.fastq.gz
-wget -P $RTG_DIR https://stanfordmedicine.box.com/shared/static/o2cdwpn55nuw98kmoq5o0ci67ojz4647.gz -O HG003.2.10M.fastq.gz
-wget -P $RTG_DIR https://stanfordmedicine.box.com/shared/static/sdufnqkmspj4r8sd1h1cskx5sge7t6c4.gz -O HG004.1.10M.fastq.gz
-wget -P $RTG_DIR https://stanfordmedicine.box.com/shared/static/5h4t29utrxcg9hbyen4lf6v6qid251bk.gz -O HG004.2.10M.fastq.gz
+wget https://stanfordmedicine.box.com/shared/static/beky9c9u05xmljtgj4kq9iuik33xqtbq.gz -O $RTG_DIR/HG002.1.10M.fastq.gz
+wget https://stanfordmedicine.box.com/shared/static/isod88qhvfy11d3jlxy2hc1am3axhqg9.gz -O $RTG_DIR/HG002.2.10M.fastq.gz
+wget https://stanfordmedicine.box.com/shared/static/wu7kn19y16org4sxvp5r7nw25x3kcc18.gz -O $RTG_DIR/HG003.1.10M.fastq.gz
+wget https://stanfordmedicine.box.com/shared/static/o2cdwpn55nuw98kmoq5o0ci67ojz4647.gz -O $RTG_DIR/HG003.2.10M.fastq.gz
+wget https://stanfordmedicine.box.com/shared/static/sdufnqkmspj4r8sd1h1cskx5sge7t6c4.gz -O $RTG_DIR/HG004.1.10M.fastq.gz
+wget https://stanfordmedicine.box.com/shared/static/5h4t29utrxcg9hbyen4lf6v6qid251bk.gz -O $RTG_DIR/HG004.2.10M.fastq.gz

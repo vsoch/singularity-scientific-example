@@ -1,64 +1,53 @@
 #!/bin/bash
 
-# This is a very simple running script to execute a single container workflow.
-# It will install Singularity, pull a container, and use it to run a series of scripts. 
+# This is a very simple running script to execute a Docker container workflow.
+# It will install Docker, builder an image, and use it to run a series of scripts. 
 # It was developed to run on Ubuntu 16.04 LTS
 
+# Setup and installation for system stuffs is done by run.sh, including setting of:
 
-#########################################################################################
-# Setup and Installation
-#########################################################################################
-
-# This is the Github repo with analysis
-cd $HOME
-git clone https://www.github.com/vsoch/singularity-scientific-example
-cd singularity-scientific-example
-
-# We assume if we are on local cluster, scratch exists
-if [[ ! -d "/scratch/data" ]]; then
-    sudo mkdir -p /scratch/data
-    sudo chmod -R 777 /scratch/data
-fi
-
-# This will be our output/data directory
-export WORKDIR=/scratch/data
-
-# Let's export the working directory to return to later
-export RUNDIR=$HOME/singularity-scientific-example
+# WORKDIR to be /scratch/data
+# RUNDIR to be $HOME/singularity-scientific-example/cloud
+# TIME_LOG and TIME output to $RUNDIR/logs/stats.log
 
 # Let's also make a logs directory to keep
-mkdir $RUNDIR/logs
-export MAIN_LOG=$RUNDIR/logs/main.log
+export DOCKER_LOG=$RUNDIR/logs/docker.log
 
-# Setup of time and recording of other analysis data (see TIME.md)
-export TIME_LOG=$RUNDIR/logs/stats.log
-export TIME='%C\t%E\t%I\t%K\t%M\t%O\t%P\t%U\t%W\t%X\t%e\t%k\t%p\t%r\t%s\t%t\t%w\n'
-echo "COMMAND	ELAPSED_TIME_HMS	FS_INPUTS	AVG_MEMORY_KB	  MAX_RES_SIZE_KB	FS_OUTPUTS	PERC_CPU_ALLOCATED	CPU_SECONDS_USED	W_TIMES_SWAPPED	SHARED_TEXT_KB	ELAPSED_TIME_SECONDS	NUMBER_SIGNALS_DELIVERED	AVG_UNSHARED_STACK_SIZE	SOCKET_MSG_RECEIVED	SOCKET_MSG_SENT	AVG_RESIDENT_SET_SIZE	CONTEXT_SWITCHES" > $TIME_LOG
+#########################################################################################
+# Singularity Installation
+#########################################################################################
 
 # 1. Install Singularity and dependencies
 # If user has sudo, we assume on cloud instance and install. If not,
 # we must be on cluster with it.
 timeout 2 sudo id && hassudo="true" || hassudo="no"
 if [[ $hassudo == "true" ]]; then
-   echo "User has sudo, running install/update of Singularity"
-   bash $RUNDIR/scripts/install.sh
+   echo "User has sudo, running install/update of Docker"
+   bash $RUNDIR/scripts/install_docker.sh
 fi
 
-# Pull our analysis image
-singularity pull shub://vsoch/singularity-scientific-example
-image=$(ls *.img)
-mv $image analysis.img
-chmod u+x analysis.img
 
-export NUMCORES=$(nproc)
+#########################################################################################
+# Setup and Installation
+#########################################################################################
+
+# This will be our output/data directory
+export WORKDIR=/scratch/data
+
+# Build our docker image
+cd $BASE
+sudo docker build -t vanessa/analysis .
+cd $RUNDIR
 
 #########################################################################################
 # Data download
 #########################################################################################
 
+# We already have data downloaded, we are going to do it again.
+docker exec -v /scratch/data vanessa/analysis bash $RUNDIR/scripts/1.download_data.sh /scratch/data > $SINGULARITY_LOG
+
 # Bind $DATADIR to /scratch in the image
 singularity exec analysis.img -B $OUTDIR:/scratch/data bash scripts/1.download_data.sh /scratch/data
-
 
 #########################################################################################
 # Analysis
