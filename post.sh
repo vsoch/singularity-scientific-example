@@ -1,6 +1,5 @@
 #!/bin/bash
 
-sed -i 's/$/ universe/' /etc/apt/sources.list
 locale-gen "en_US.UTF-8"
 dpkg-reconfigure locales
 export LANGUAGE="en_US.UTF-8"
