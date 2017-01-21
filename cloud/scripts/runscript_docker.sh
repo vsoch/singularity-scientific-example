@@ -31,9 +31,6 @@ fi
 # Setup and Installation
 #########################################################################################
 
-# This will be our output/data directory
-export WORKDIR=/scratch/data
-
 # Build our docker image
 cd $BASE
 sudo docker build -t vanessa/analysis .
@@ -61,9 +58,3 @@ singularity exec analysis.img -B $OUTDIR:/scratch/data bash scripts/1.download_d
 /usr/bin/time -a -o $TIME_LOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/7.prepare_rtg_run.sh /scratch/data
 /usr/bin/time -a -o $TIME_LOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/8.map_trio.sh /scratch/data
 /usr/bin/time -a -o $TIME_LOG singularity exec -B $OUTDIR:/scratch/data analysis.img bash $RUNDIR/scripts/9.family_call_variants.sh /scratch/data
-
-#########################################################################################
-# Data Upload
-#########################################################################################
-
-

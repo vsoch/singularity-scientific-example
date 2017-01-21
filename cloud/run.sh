@@ -38,5 +38,16 @@ echo "COMMAND	ELAPSED_TIME_HMS	FS_INPUTS	AVG_MEMORY_KB	  MAX_RES_SIZE_KB	FS_OUTP
 # Run Singularity Analysis
 bash $RUNDIR/scripts/runscript_singularity.sh
 
+# Move data to different place, ready for Docker
+sudo mv /scratch/data /scratch/singularity
+sudo mkdir -p /scratch/data
+sudo chmod -R 777 /scratch/data
+
 # Run Docker Analysis 
 bash $RUNDIR/scripts/runscript_docker.sh
+
+# Get hashes for all files in each directory
+bash $RUNDIR/scripts/summarize_results.sh /scratch/data > $RUNDIR/logs/singularity-files.log # Dockerfiles
+bash $RUNDIR/scripts/summarize_results.sh /scratch/singularity > $RUNDIR/logs/docker-files.log # Singularity
+
+
