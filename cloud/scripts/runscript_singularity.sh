@@ -40,7 +40,7 @@ export NUMCORES=$(nproc)
 #########################################################################################
 
 # Bind $DATADIR to /scratch in the image
-singularity exec analysis.img -B /scratch/data bash $RUNDIR/scripts/1.download_data.sh /scratch/data > $SINGULARITY_LOG
+/usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/1.download_data.sh /scratch/data > $SINGULARITY_LOG
 
 
 #########################################################################################
