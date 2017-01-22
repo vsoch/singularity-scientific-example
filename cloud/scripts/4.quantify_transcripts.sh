@@ -18,6 +18,7 @@ if [ ! -d $DATADIR/Kallisto ]; then
     mkdir $DATADIR/Kallisto
 fi
 
+export NUMCORES=$(nproc)
 OUT_DIR=$DATADIR/Kallisto/rna
 if [ ! -d $OUT_DIR ]; then
     mkdir $OUT_DIR
