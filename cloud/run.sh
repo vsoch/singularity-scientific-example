@@ -40,6 +40,9 @@ bash $RUNDIR/scripts/runscript_singularity.sh
 
 # Move data to different place, ready for Docker
 sudo mv /scratch/data /scratch/singularity
+sudo rm -rf /scratch/singularity/Fastq
+sudo rm -rf /scratch/singularity/Reference
+
 sudo mkdir -p /scratch/data
 sudo chmod -R 777 /scratch/data
 

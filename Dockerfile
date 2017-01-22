@@ -54,5 +54,6 @@ ENV BASE /code
 
 ENV TIME_LOG $RUNDIR/logs/stats.log
 ENV TIME '%C\t%E\t%I\t%K\t%M\t%O\t%P\t%U\t%W\t%X\t%e\t%k\t%p\t%r\t%s\t%t\t%w\n'
+env PATH /Software/brew/bin:/Software/anaconda3/bin:/Software/rtg-core-non-commercial-3.6.2:$PATH
 
 CMD "/code/docker-start.sh"
