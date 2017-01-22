@@ -2,10 +2,7 @@
 
 # This is a very simple running script to execute a single container workflow.
 # It will install Singularity, pull a container, and use it to run a series of scripts. 
-# It was developed to run on Ubuntu 16.04 LTS, in a cloud environment, meaning we have
-# sudo permissions to install dependencies, and will use Docker and Singularity
-# For the HPC workflow, see the run.sh in the folder hpc
-
+# It was developed to run on an HPC SLURM cluster, sherlock.stanford.edu at Stanford
 
 #########################################################################################
 # Setup and Installation
@@ -27,7 +24,7 @@ fi
 export WORKDIR=/scratch/data
 
 # Let's export the working directory to return to later
-export RUNDIR=$BASE
+export RUNDIR=$HOME/singularity-scientific-example/cloud
 
 # Let's also make a logs directory to keep
 mkdir $RUNDIR/logs
