@@ -42,6 +42,8 @@ bash $RUNDIR/scripts/runscript_singularity.sh
 sudo mv /scratch/data /scratch/singularity
 sudo rm -rf /scratch/singularity/Fastq
 sudo rm -rf /scratch/singularity/Reference
+sudo rm -rf /scratch/singularity/Bam
+rm /scratch/singularity/RTG/HG*
 
 sudo mkdir -p /scratch/data
 sudo chmod -R 777 /scratch/data
@@ -52,5 +54,3 @@ bash $RUNDIR/scripts/runscript_docker.sh
 # Get hashes for all files in each directory
 bash $RUNDIR/scripts/summarize_results.sh /scratch/data > $RUNDIR/logs/singularity-files.log # Dockerfiles
 bash $RUNDIR/scripts/summarize_results.sh /scratch/singularity > $RUNDIR/logs/docker-files.log # Singularity
-
-
