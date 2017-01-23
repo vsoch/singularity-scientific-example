@@ -23,7 +23,7 @@ export DOCKER_LOG=$RUNDIR/logs/docker.log
 timeout 2 sudo id && hassudo="true" || hassudo="no"
 if [[ $hassudo == "true" ]]; then
    echo "User has sudo, running install/update of Docker"
-   bash /code/cloud/scripts/install_docker.sh
+   bash /code/scripts/install_docker.sh
 fi
 
 
@@ -41,17 +41,17 @@ cd $RUNDIR
 #########################################################################################
 
 # We already have data downloaded, we are going to do it again.
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/analysis bash /code/cloud/scripts/1.download_data.sh /scratch/data
+/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/analysis bash /code/scripts/1.download_data.sh /scratch/data
 
 #########################################################################################
 # Analysis
 #########################################################################################
 
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/analysis bash /code/cloud/scripts/2.simulate_reads.sh /scratch/data
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/analysis bash /code/cloud/scripts/3.generate_transcriptome_index.sh /scratch/data
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/analysis bash /code/cloud/scripts/4.quantify_transcripts.sh /scratch/data
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/analysis bash /code/cloud/scripts/5.bwa_index.sh /scratch/data
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/analysis bash /code/cloud/scripts/6.bwa_align.sh /scratch/data
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/analysis bash /code/cloud/scripts/7.prepare_rtg_run.sh /scratch/data
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/analysis bash /code/cloud/scripts/8.map_trio.sh /scratch/data
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/analysis bash /code/cloud/scripts/9.family_call_variants.sh /scratch/data
+/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/analysis bash /code/scripts/2.simulate_reads.sh /scratch/data
+/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/analysis bash /code/scripts/3.generate_transcriptome_index.sh /scratch/data
+/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/analysis bash /code/scripts/4.quantify_transcripts.sh /scratch/data
+/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/analysis bash /code/scripts/5.bwa_index.sh /scratch/data
+/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/analysis bash /code/scripts/6.bwa_align.sh /scratch/data
+/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/analysis bash /code/scripts/7.prepare_rtg_run.sh /scratch/data
+/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/analysis bash /code/scripts/8.map_trio.sh /scratch/data
+/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/analysis bash /code/scripts/9.family_call_variants.sh /scratch/data
