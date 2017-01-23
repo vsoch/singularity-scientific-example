@@ -16,7 +16,7 @@ OUT_DIR=$DATADIR/RTG
 
 # Memory,try doing max minus 8 padding, change if necessary
 MEM=$(echo "scale=2; $(free | grep 'Mem' | perl -p -e 's/^Mem: +(\d+) .+$/$1/') / 1024^2" | bc)
-MEM=$(echo "$(($MEMORY-8))")
+MEM=$(echo "$(($MEM-8))")
 MEMORY=$(echo ${MEM%.*})
 MEM="$MEMORY"g
 
