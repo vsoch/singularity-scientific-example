@@ -32,6 +32,9 @@ export RUNDIR=$BASE
 # Let's also make a logs directory to keep
 mkdir $RUNDIR/logs
 
+# Set max memory to use
+export MEM=54g
+
 # Setup of time and recording of other analysis data (see TIME.md)
 export TIME_LOG=$RUNDIR/logs/stats.log
 export TIME='%C\t%E\t%I\t%K\t%M\t%O\t%P\t%U\t%W\t%X\t%e\t%k\t%p\t%r\t%s\t%t\t%w\n'

@@ -34,6 +34,7 @@ mv $image analysis.img
 chmod u+x analysis.img
 
 export NUMCORES=$(nproc)
+export MEM=54g
 
 #########################################################################################
 # Data download
@@ -53,7 +54,7 @@ export NUMCORES=$(nproc)
 /usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/5.bwa_index.sh /scratch/data >> $SINGULARITY_LOG
 /usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/6.bwa_align.sh /scratch/data >> $SINGULARITY_LOG
 /usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/7.prepare_rtg_run.sh /scratch/data >> $SINGULARITY_LOG
-/usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/8.map_trio.sh /scratch/data >> $SINGULARITY_LOG
+/usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/8.map_trio.sh /scratch/data $MEM >> $SINGULARITY_LOG
 /usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/9.family_call_variants.sh /scratch/data >> $SINGULARITY_LOG
 
 # Remove the analysis image

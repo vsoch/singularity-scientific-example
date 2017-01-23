@@ -60,7 +60,7 @@ echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/d
 echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/5.bwa_index.sh $SCRATCH/data" >> $RUNDIR/run.job
 echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/6.bwa_align.sh $SCRATCH/data" >> $RUNDIR/run.job
 echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/7.prepare_rtg_run.sh $SCRATCH/data" >> $RUNDIR/run.job
-echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/8.map_trio.sh $SCRATCH/data" >> $RUNDIR/run.job
+echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/8.map_trio.sh $SCRATCH/data $MEM" >> $RUNDIR/run.job
 echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/9.family_call_variants.sh $SCRATCH/data" >> $RUNDIR/run.job
 echo "bash $RUNDIR/scripts/summarize_results.sh $SCRATCH/data > $RUNDIR/logs/singularity-files.log" >> $RUNDIR/run.job
 
