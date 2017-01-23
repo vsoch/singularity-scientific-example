@@ -12,19 +12,14 @@
 cd $HOME
 git clone https://www.github.com/vsoch/singularity-scientific-example
 cd singularity-scientific-example
-export BASE=$HOME/singularity-scientific-example
+export BASE=$PWD
+export RUNDIR=$BASE/hpc
 
-# We assume if we are on local cluster, scratch exists
-if [[ ! -d "/scratch/data" ]]; then
-    sudo mkdir -p /scratch/data
-    sudo chmod -R 777 /scratch/data
-fi
+# We have to specify out output directory on scratch
+mkdir $SCRATCH/data
 
 # This will be our output/data directory
-export WORKDIR=/scratch/data
-
-# Let's export the working directory to return to later
-export RUNDIR=$HOME/singularity-scientific-example/cloud
+export WORKDIR=$SCRATCH/data
 
 # Let's also make a logs directory to keep
 mkdir $RUNDIR/logs
@@ -34,22 +29,38 @@ export TIME_LOG=$RUNDIR/logs/stats.log
 export TIME='%C\t%E\t%I\t%K\t%M\t%O\t%P\t%U\t%W\t%X\t%e\t%k\t%p\t%r\t%s\t%t\t%w\n'
 echo "COMMAND	ELAPSED_TIME_HMS	FS_INPUTS	AVG_MEMORY_KB	  MAX_RES_SIZE_KB	FS_OUTPUTS	PERC_CPU_ALLOCATED	CPU_SECONDS_USED	W_TIMES_SWAPPED	SHARED_TEXT_KB	ELAPSED_TIME_SECONDS	NUMBER_SIGNALS_DELIVERED	AVG_UNSHARED_STACK_SIZE	SOCKET_MSG_RECEIVED	SOCKET_MSG_SENT	AVG_RESIDENT_SET_SIZE	CONTEXT_SWITCHES" > $TIME_LOG
 
-# Run Singularity Analysis
-bash $RUNDIR/scripts/runscript_singularity.sh
+# Download the container to rundir
+cd $SCRATCH/data
+singularity pull shub://vsoch/singularity-scientific-example
+image=$(ls *.img)
+mv $image analysis.img
+chmod u+x analysis.img
 
-# Move data to different place, ready for Docker
-sudo mv /scratch/data /scratch/singularity
-sudo rm -rf /scratch/singularity/Fastq
-sudo rm -rf /scratch/singularity/Reference
-sudo rm -rf /scratch/singularity/Bam
-rm /scratch/singularity/RTG/HG*
+# Write jobfile. This could be separated into different runs, but we will do it at once.
 
-sudo mkdir -p /scratch/data
-sudo chmod -R 777 /scratch/data
+cat << EOF > $RUNDIR/run.job
+#!/bin/bash
+#SBATCH --partition ibiis,owners
+#SBATCH --mem 64G
+#SBATCH --time 2-00:00:00
+#SBATCH --export ALL
+#SBATCH --mail-type BEGIN,END,FAIL
+#SBATCH --mail-user vsochat@stanford.edu
+#SBATCH --output singularity-hpc.out
+#SBATCH --error singularity-hpc.err
+module load singularity
+export NUMCORES=$(nproc)
+EOF
 
-# Run Docker Analysis 
-bash $RUNDIR/scripts/runscript_docker.sh
+echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/1.download_data.sh $SCRATCH/data" >> $RUNDIR/run.job
+echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/2.simulate_reads.sh $SCRATCH/data" >> $RUNDIR/run.job
+echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/3.generate_transcriptome_index.sh $SCRATCH/data" >> $RUNDIR/run.job
+echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/4.quantify_transcripts.sh $SCRATCH/data" >> $RUNDIR/run.job
+echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/5.bwa_index.sh $SCRATCH/data" >> $RUNDIR/run.job
+echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/6.bwa_align.sh $SCRATCH/data" >> $RUNDIR/run.job
+echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/7.prepare_rtg_run.sh $SCRATCH/data" >> $RUNDIR/run.job
+echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/8.map_trio.sh $SCRATCH/data" >> $RUNDIR/run.job
+echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/9.family_call_variants.sh $SCRATCH/data" >> $RUNDIR/run.job
+echo "bash $RUNDIR/scripts/summarize_results.sh $SCRATCH/data > $RUNDIR/logs/singularity-files.log" >> $RUNDIR/run.job
 
-# Get hashes for all files in each directory
-bash $RUNDIR/scripts/summarize_results.sh /scratch/data > $RUNDIR/logs/singularity-files.log # Dockerfiles
-bash $RUNDIR/scripts/summarize_results.sh /scratch/singularity > $RUNDIR/logs/docker-files.log # Singularity
+qsub $RUNDIR/run.job
