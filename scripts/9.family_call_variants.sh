@@ -5,6 +5,7 @@ if [ $# -eq 0 ]; then
 fi
 
 DATADIR=$1
+MEM=$2
 
 if [ ! -d $DATADIR ]; then
     echo "$DATADIR does not exist! Exiting."
@@ -13,9 +14,7 @@ fi
 
 REFERENCE=$DATADIR/Reference/Homo_sapiens.GRCh38.dna.primary_assembly.fa
 RTG_DIR=$DATADIR/RTG
-MEM=$(echo "scale=2; $(free | grep 'Mem' | perl -p -e 's/^Mem: +(\d+) .+$/$1/') / 1024^2" | bc)
-MEMORY=$(echo ${MEM%.*})
-MEM="$MEMORY"g
+
 
 # Threads
 THREADS=$(echo "$((2 * $NUMCORES))")

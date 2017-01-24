@@ -55,7 +55,7 @@ export MEM=54g
 /usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/6.bwa_align.sh /scratch/data >> $SINGULARITY_LOG
 /usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/7.prepare_rtg_run.sh /scratch/data >> $SINGULARITY_LOG
 /usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/8.map_trio.sh /scratch/data $MEM >> $SINGULARITY_LOG
-/usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/9.family_call_variants.sh /scratch/data >> $SINGULARITY_LOG
+/usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/9.family_call_variants.sh /scratch/data $MEM >> $SINGULARITY_LOG
 
 # Remove the analysis image
 rm analysis.img
