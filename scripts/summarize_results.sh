@@ -16,5 +16,10 @@ if [ ! -d $DATADIR ]; then
     exit
 fi
 
-md5sum $DATADIR/*   # generates a list of checksums for any file that matches *
-#md5sum -c checklist.chk   # runs through the list to check them
+# generates a list of checksums for any file that matches *
+files=$(find $DATADIR -name \* -print)
+for file in "${files[@]}"
+do
+   : 
+      md5sum $file
+done
