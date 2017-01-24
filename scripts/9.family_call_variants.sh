@@ -17,6 +17,7 @@ RTG_DIR=$DATADIR/RTG
 
 
 # Threads
+NUMCORES=$(nproc)
 THREADS=$(echo "$((2 * $NUMCORES))")
 
 rtg RTG_MEM=$MEM family \
