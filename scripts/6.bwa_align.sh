@@ -17,4 +17,6 @@ if [ ! -d $DATADIR/Bam ]; then
     mkdir $DATADIR/Bam
 fi
 
+NUMCORES=$(nproc)
+
 bwa mem -t $NUMCORES $DATADIR/Reference/Homo_sapiens.GRCh38.dna.primary_assembly.fa $DATADIR/Fastq/dna_1.fq.gz $DATADIR/Fastq/dna_2.fq.gz | samtools view -bhS - > $DATADIR/Bam/container.bam

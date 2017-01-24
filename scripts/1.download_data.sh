@@ -23,8 +23,8 @@ fi
 wget -P $FASTQ_DIR ftp://ngs.sanger.ac.uk/production/gencode/rgasp/RGASP1/inputdata/human_fastq/GM12878_2x75_split.tgz
 tar --directory $FASTQ_DIR -xzf $FASTQ_DIR/GM12878_2x75_split.tgz
 
-find $FASTQ_DIR/GM12878_2x75_split -name "GM12878_2x75_rep[1-2].lane[1-3]_1.fq" -exec cat {} \; > $FASTQ_DIR/rna_1.fq && gzip $FASTQ_DIR/rna_1.fq
-find $FASTQ_DIR/GM12878_2x75_split -name "GM12878_2x75_rep[1-2].lane[1-3]_2.fq" -exec cat {} \; > $FASTQ_DIR/rna_2.fq && gzip $FASTQ_DIR/rna_2.fq
+find $FASTQ_DIR/GM12878_2x75_split -name "GM12878_2x75_rep[1-2].lane[1-3]_1.fq" -exec cat {} \; > $FASTQ_DIR/rna_1.fq gzip $FASTQ_DIR/rna_1.fq
+find $FASTQ_DIR/GM12878_2x75_split -name "GM12878_2x75_rep[1-2].lane[1-3]_2.fq" -exec cat {} \; > $FASTQ_DIR/rna_2.fq gzip $FASTQ_DIR/rna_2.fq
 
 rm -r $FASTQ_DIR/GM12878_2x75_split
 
