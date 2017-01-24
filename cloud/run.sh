@@ -37,14 +37,15 @@ export MEM=54g
 
 # Setup of time and recording of other analysis data (see TIME.md)
 export TIME_LOG=$BASE/logs/stats.log
-export TIME='%C\t%E\t%I\t%K\t%M\t%O\t%P\t%U\t%W\t%X\t%e\t%k\t%p\t%r\t%s\t%t\t%w\n'
-echo -e 'COMMAND\tELAPSED_TIME_HMS\tFS_INPUTS\tAVG_MEMORY_KB\tMAX_RES_SIZE_KB\tFS_OUTPUTS\tPERC_CPU_ALLOCATED\tCPU_SECONDS_USED\tW_TIMES_SWAPPED\tSHARED_TEXT_KB\tELAPSED_TIME_SECONDS\tNUMBER_SIGNALS_DELIVERED\tAVG_UNSHARED_STACK_SIZE\tSOCKET_MSG_RECEIVED\tSOCKET_MSG_SENT\tAVG_RESIDENT_SET_SIZE\tCONTEXT_SWITCHES' > $TIME_LOG
+export TIME='%C\t%E\t%I\t%M\t%O\t%P\t%U\t%W\t%X\t%e\t%k\t%p\t%r\t%s\t%t\t%w\n'
+echo -e 'COMMAND\tELAPSED_TIME_HMS\tFS_INPUTS\tMAX_RES_SIZE_KB\tFS_OUTPUTS\tPERC_CPU_ALLOCATED\tCPU_SECONDS_USED\tW_TIMES_SWAPPED\tSHARED_TEXT_KB\tELAPSED_TIME_SECONDS\tNUMBER_SIGNALS_DELIVERED\tAVG_UNSHARED_STACK_SIZE\tSOCKET_MSG_RECEIVED\tSOCKET_MSG_SENT\tAVG_RESIDENT_SET_SIZE\tCONTEXT_SWITCHES' > $TIME_LOG
 
 # Run Singularity Analysis
 bash $RUNDIR/scripts/runscript_singularity.sh
 
 # Summarize Singularity results
 bash $RUNDIR/scripts/summarize_results.sh /scratch/data > $RUNDIR/logs/singularity-files.log # Singularity
+sed -i '/^$/d' $RUNDIR/logs/singularity-files.log
 
 # Move data to different place, ready for Docker
 sudo mv /scratch/data /scratch/singularity
@@ -61,3 +62,4 @@ bash $RUNDIR/scripts/runscript_docker.sh
 
 # Get hashes for all files in each directory
 bash $RUNDIR/scripts/summarize_results.sh /scratch/data > $RUNDIR/logs/docker-files.log # Dockerfiles
+sed -i '/^$/d' $RUNDIR/logs/docker-files.log

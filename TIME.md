@@ -8,7 +8,7 @@ We will define a format string, and output to a common file.
 The following format string will be used
 
 
-	export TIME='%C\t%E\t%I\t%K\t%M\t%O\t%P\t%U\t%W\t%X\t%e\t%k\t%p\t%r\t%s\t%t\t%w\n'
+	export TIME='%C\t%E\t%I\t%M\t%O\t%P\t%U\t%W\t%X\t%e\t%k\t%p\t%r\t%s\t%t\t%w\n'
 
 
 ## Metrics Collected
@@ -37,8 +37,6 @@ A complete description of each argument is provided below, from `man time`
               E      Elapsed real (wall clock) time used by the process, in
                      [hours:]minutes:seconds.
               I      Number of file system inputs by the process.
-              K      Average total (data+stack+text) memory use of the
-                     process, in Kilobytes.
               M      Maximum resident set size of the process during its
                      lifetime, in Kilobytes.
               O      Number of file system outputs by the process.
