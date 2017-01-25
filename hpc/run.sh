@@ -50,6 +50,7 @@ cat << EOF > $RUNDIR/run.job
 #SBATCH --error singularity-hpc.err
 module load singularity
 export NUMCORES=$(nproc)
+export MEM=32g
 export TIME='%C\t%E\t%I\t%K\t%M\t%O\t%P\t%U\t%W\t%X\t%e\t%k\t%p\t%r\t%s\t%t\t%w\n'
 EOF
 

@@ -29,6 +29,6 @@ rtg RTG_MEM=$MEM family \
 	--son NA24385 \
 	--father NA24149 \
 	--mother NA24143 \
-	$RTG_DIR/.HG002/alignments.bam \
-	$RTG_DIR/.HG003/alignments.bam \
-	$RTG_DIR/.HG004/alignments.bam
+	$RTG_DIR/container.HG002/alignments.bam \
+	$RTG_DIR/container.HG003/alignments.bam \
+	$RTG_DIR/container.HG004/alignments.bam

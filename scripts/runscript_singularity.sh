@@ -34,7 +34,7 @@ mv $image analysis.img
 chmod u+x analysis.img
 
 export NUMCORES=$(nproc)
-export MEM=54g
+export MEM=32g
 
 #########################################################################################
 # Data download
