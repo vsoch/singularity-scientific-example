@@ -51,7 +51,7 @@ export THREADS=8
 
 /usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/2.simulate_reads.sh /scratch/data >> $SINGULARITY_LOG
 /usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/3.generate_transcriptome_index.sh /scratch/data >> $SINGULARITY_LOG
-/usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/4.quantify_transcripts.sh /scratch/data >> $SINGULARITY_LOG
+/usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/4.quantify_transcripts.sh /scratch/data $NUMCORES >> $SINGULARITY_LOG
 /usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/5.bwa_index.sh /scratch/data >> $SINGULARITY_LOG
 /usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/6.bwa_align.sh /scratch/data >> $SINGULARITY_LOG
 /usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/7.prepare_rtg_run.sh /scratch/data >> $SINGULARITY_LOG

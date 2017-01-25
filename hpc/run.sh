@@ -62,7 +62,7 @@ EOF
 echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/1.download_data.sh $SCRATCH/data" >> $RUNDIR/run.job
 echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/2.simulate_reads.sh $SCRATCH/data" >> $RUNDIR/run.job
 echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/3.generate_transcriptome_index.sh $SCRATCH/data" >> $RUNDIR/run.job
-echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/4.quantify_transcripts.sh $SCRATCH/data" >> $RUNDIR/run.job
+echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/4.quantify_transcripts.sh $SCRATCH/data $NUMCORES" >> $RUNDIR/run.job
 echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/5.bwa_index.sh $SCRATCH/data" >> $RUNDIR/run.job
 echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/6.bwa_align.sh $SCRATCH/data" >> $RUNDIR/run.job
 echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/7.prepare_rtg_run.sh $SCRATCH/data" >> $RUNDIR/run.job

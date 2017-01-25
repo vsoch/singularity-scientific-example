@@ -49,7 +49,7 @@ cd $RUNDIR
 
 /usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/2.simulate_reads.sh /scratch/data
 /usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/3.generate_transcriptome_index.sh /scratch/data
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/4.quantify_transcripts.sh /scratch/data
+/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/4.quantify_transcripts.sh /scratch/data $NUMCORES
 /usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/5.bwa_index.sh /scratch/data
 /usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/6.bwa_align.sh /scratch/data
 /usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/7.prepare_rtg_run.sh /scratch/data

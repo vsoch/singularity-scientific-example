@@ -34,6 +34,7 @@ mkdir $RUNDIR/logs
 
 # Set max memory to use
 export MEM=32g
+export NUMCORES=4
 
 # Setup of time and recording of other analysis data (see TIME.md)
 export TIME_LOG=$BASE/logs/stats.log

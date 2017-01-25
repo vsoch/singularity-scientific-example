@@ -7,6 +7,7 @@ if [ $# -eq 0 ]; then
 fi
 
 DATADIR=$1
+NUMCORES=$2
 
 if [ ! -d $DATADIR ]; then
     echo "$DATADIR does not exist! Exiting."
@@ -18,7 +19,6 @@ if [ ! -d $DATADIR/Kallisto ]; then
     mkdir $DATADIR/Kallisto
 fi
 
-NUMCORES=$(nproc)
 OUT_DIR=$DATADIR/Kallisto/rna
 if [ ! -d $OUT_DIR ]; then
     mkdir $OUT_DIR
