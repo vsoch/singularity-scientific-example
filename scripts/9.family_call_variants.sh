@@ -6,6 +6,7 @@ fi
 
 DATADIR=$1
 MEM=$2
+THREADS=$3
 
 if [ ! -d $DATADIR ]; then
     echo "$DATADIR does not exist! Exiting."
@@ -14,11 +15,6 @@ fi
 
 REFERENCE=$DATADIR/Reference/Homo_sapiens.GRCh38.dna.primary_assembly.fa
 RTG_DIR=$DATADIR/RTG
-
-
-# Threads
-NUMCORES=$(nproc)
-THREADS=$(echo "$((2 * $NUMCORES))")
 
 rtg RTG_MEM=$MEM family \
 	--output $RTG_DIR/container.trio \

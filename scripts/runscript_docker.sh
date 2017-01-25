@@ -53,5 +53,5 @@ cd $RUNDIR
 /usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/5.bwa_index.sh /scratch/data
 /usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/6.bwa_align.sh /scratch/data
 /usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/7.prepare_rtg_run.sh /scratch/data
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/8.map_trio.sh /scratch/data $MEM
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/9.family_call_variants.sh /scratch/data $MEM
+/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/8.map_trio.sh /scratch/data $MEM $THREADS
+/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/9.family_call_variants.sh /scratch/data $MEM $THREADS
