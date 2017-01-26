@@ -10,11 +10,8 @@
 # RUNDIR to be $HOME/singularity-scientific-example/cloud
 # TIME_LOG and TIME output to $RUNDIR/logs/stats.log
 
-# Let's also make a logs directory to keep
-export DOCKER_LOG=$RUNDIR/logs/docker.log
-
 #########################################################################################
-# Singularity Installation
+# Docker Installation
 #########################################################################################
 
 # 1. Install Singularity and dependencies
