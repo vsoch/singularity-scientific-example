@@ -20,7 +20,7 @@
 timeout 2 sudo id && hassudo="true" || hassudo="no"
 if [[ $hassudo == "true" ]]; then
    echo "User has sudo, running install/update of Docker"
-   bash /code/scripts/install_docker.sh
+   bash $RUNDIR/scripts/install_docker.sh
 fi
 
 
@@ -30,7 +30,7 @@ fi
 
 # Build our docker image
 cd $BASE
-sudo docker build -t vanessa/analysis .
+docker build -t vanessa/singularity-scientific-example .
 cd $RUNDIR
 
 #########################################################################################
@@ -38,7 +38,7 @@ cd $RUNDIR
 #########################################################################################
 
 # We already have data downloaded, we are going to do it again.
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/analysis bash /code/scripts/1.download_data.sh /scratch/data
+/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/1.download_data.sh /scratch/data
 
 #########################################################################################
 # Analysis

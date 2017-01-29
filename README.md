@@ -17,9 +17,27 @@ We will ideally look at metrics such as memory and cost, and assess the differen
 The folder [cloud](cloud) contains runscript and other files necessary for running the pipeline on the cloud providers in the list above. The folder [hpc](hpc) contains the equivalent scripts necessary for running on local HPC.
 
 
-### Install Singularity
+## Moving Data off of the Cloud
 
-Instructions can be found on the [singularity site](https://singularityware.github.io).
+You have a few options. If this were a pipeline intended to run in parallel, you would want an endpoint waiting to receive a `POST` with data, or even a simple function to upload to Dropbox. For the purposes of testing, an easy solution is to do one of the following:
+
+ - add the logs to a Github repo
+ - transfer the files using scp (or a command, detailed below)
+
+
+### Google Cloud
+Google cloud has easy [transfer of files](https://cloud.google.com/compute/docs/instances/transfer-files) using the `gcloud` command line utility. Eg:
+
+      # Copy from instance to present working directory
+      gcloud compute copy-files singularity-scientific:/home/vanessa/singularity-scientific-example/logs/* $PWD
+
+
+### HPC Cluster
+For HPC clusters Sherlock and scg4, I used [gftp](https://www.gftp.org/) from my Ubuntu 16.04 machine.
+
+
+
+## Local Usage
 
 ### Get the code
 
@@ -28,6 +46,11 @@ Instructions can be found on the [singularity site](https://singularityware.gith
      cd singularity-testing
 ```
 
+Then you can follow the [run.sh](hpc) script in the cloud folder, given that you have sudo access on your endpoint. Running on a cloud provider (with sudo) is equivalent to this.
+
+As an alternative to building the Docker image from the [Dockerfile](Dockerfile) provided, you can also use the one on [docker hub](https://hub.docker.com/r/vanessa/singularity-scientific-example/).
+
+
 ### Goals for this work
 
 1. **Moveable** We have included the entire analysis in Github repo that can be easily cloned and run, given the user provides credentials to the various environments. The container is served by Singularity Hub.
@@ -35,13 +58,3 @@ Instructions can be found on the [singularity site](https://singularityware.gith
 3. **Scalable.** The analysis should be possible to run optimally on a cluster (HPC).
 4. **Environment Agnostic**. It should work equivalently on a local computer, a computer cluster, Google Cloud, AWS, Azure, or other.
 5. **Customizable**. Hopefully the modular nature, and that each container takes input arguments, makes this possible.
-
-
-### Development Thinking
-- Identify steps we want to do, and create container for each. 
-- What kind of additions would need to go to each container bootstrap? E.g., depending on analysis location, we would want to map drives
-- Think about how would we download data? Where would we put it?
-- Think about inputs and outputs, how do we specify, and make sure that things connect?
-- How do we create a dependency structure so that things run when their inputs are available?
-- How do different data outputs plug seamlessly into ways to understand them (visualization, final statistical tests, etc.)
-- How do we summarize the entire thing (the workflow, and the result, and the metadata/parameters?)

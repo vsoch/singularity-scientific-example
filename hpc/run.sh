@@ -50,25 +50,25 @@ cat << EOF > $RUNDIR/run.job
 #SBATCH --export ALL
 #SBATCH --mail-type BEGIN,END,FAIL
 #SBATCH --mail-user vsochat@stanford.edu
-#SBATCH --output singularity-hpc.out
-#SBATCH --error singularity-hpc.err
-module load singularity
+#SBATCH --output=$HOME/singularity-hpc.out
+#SBATCH --error=$HOME/singularity-hpc.err
+module load singularity/jan2017master
 export NUMCORES=$(nproc)
 export MEM="$MEM"
 export THREADS="$THREADS"
 export TIME='%C\t%E\t%I\t%K\t%M\t%O\t%P\t%U\t%W\t%X\t%e\t%k\t%p\t%r\t%s\t%t\t%w\n'
 EOF
 
-echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/1.download_data.sh $SCRATCH/data" >> $RUNDIR/run.job
-echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/2.simulate_reads.sh $SCRATCH/data" >> $RUNDIR/run.job
-echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/3.generate_transcriptome_index.sh $SCRATCH/data" >> $RUNDIR/run.job
-echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/4.quantify_transcripts.sh $SCRATCH/data $NUMCORES" >> $RUNDIR/run.job
-echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/5.bwa_index.sh $SCRATCH/data" >> $RUNDIR/run.job
-echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/6.bwa_align.sh $SCRATCH/data" >> $RUNDIR/run.job
-echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/7.prepare_rtg_run.sh $SCRATCH/data" >> $RUNDIR/run.job
-echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/8.map_trio.sh $SCRATCH/data $MEM $THREADS" >> $RUNDIR/run.job
-echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/9.family_call_variants.sh $SCRATCH/data $MEM $THREADS" >> $RUNDIR/run.job
-echo "bash $RUNDIR/scripts/summarize_results.sh $SCRATCH/data > $RUNDIR/logs/singularity-files.log" >> $RUNDIR/run.job
+echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/1.download_data.sh /scratch/data" >> $RUNDIR/run.job
+echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/2.simulate_reads.sh /scratch/data" >> $RUNDIR/run.job
+echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/3.generate_transcriptome_index.sh /scratch/data" >> $RUNDIR/run.job
+echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/4.quantify_transcripts.sh /scratch/data $NUMCORES" >> $RUNDIR/run.job
+echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/5.bwa_index.sh /scratch/data" >> $RUNDIR/run.job
+echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/6.bwa_align.sh /scratch/data" >> $RUNDIR/run.job
+echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/7.prepare_rtg_run.sh /scratch/data" >> $RUNDIR/run.job
+echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/8.map_trio.sh /scratch/data $MEM $THREADS" >> $RUNDIR/run.job
+echo "/usr/bin/time -a -o $TIME_LOG singularity exec -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img bash $BASE/scripts/9.family_call_variants.sh /scratch/data $MEM $THREADS" >> $RUNDIR/run.job
+echo "bash $RUNDIR/scripts/summarize_results.sh /scratch/data > $RUNDIR/logs/singularity-files.log" >> $RUNDIR/run.job
 echo "sed -i '/^$/d' $RUNDIR/logs/singularity-files.log" >> $RUNDIR/run.job
 
 qsub $RUNDIR/run.job

@@ -18,9 +18,14 @@ cd singularity-scientific-example
 export BASE=$HOME/singularity-scientific-example
 
 # We assume if we are on local cluster, scratch exists
-if [[ ! -d "/scratch/data" ]]; then
-    sudo mkdir -p /scratch/data
-    sudo chmod -R 777 /scratch/data
+if [ -z "$SCRATCH" ]
+then
+    export SCRATCH=/scratch
+fi
+
+if [[ ! -d "$SCRATCH/data" ]]; then
+    sudo mkdir -p $SCRATCH/data
+    sudo chmod -R 777 $SCRATCH/data
 fi
 
 # This will be our output/data directory
@@ -35,6 +40,7 @@ mkdir $RUNDIR/logs
 # Set max memory to use
 export MEM=32g
 export NUMCORES=4
+export THREADS=8
 
 # Setup of time and recording of other analysis data (see TIME.md)
 export TIME_LOG=$BASE/logs/stats.log

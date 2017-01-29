@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>HPC vs. Cloud</title>
+</head>
+<body>
+    <h1>HPC vs. Cloud</h1>
+
+    <h2 id="the_title"></h2>
+
+    <select name="inputdata" id="inputdata">
+        <option value="ELAPSED_TIME_SECONDS">Elapsed time (seconds)</option>
+        <option value="CPU_SECONDS_USED">CPU Seconds Used</option>
+        <option value="CONTEXT_SWITCHES">Context Switches</option>
+        <option value="FS_INPUTS">File System Inputs</option>
+        <option value="FS_OUTPUTS">File System Outputs</option>
+        <option value="PERC_CPU_ALLOCATED">Percent CPU Allocated</option>
+    </select>
+
+    <div id="plot"></div>
+
+    <!-- Empty 
+        <option value="AVG_RESIDENT_SET_SIZE">Average resident set size</option>
+        <option value="NUMBER_SIGNALS_DELIVERED">Number of Signals Delivered</option>
+        <option value="SHARED_TEXT_KB">Shared KB Text</option>
+        <option value="SOCKET_MSG_RECEIVED"></option>
+        <option value="SOCKET_MSG_SENT"></option>
+        <option value="W_TIMES_SWAPPED"></option>
+    -->
+
+</body>
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src='js/plotly.min.js'></script>
+<script>
+
+function load_data(dataname) {
+
+  var filename = "data/" + dataname + ".json"
+
+  $.getJSON( filename, function( data ) {
+
+     // Replace page title with data name
+     $("#the_title").text(dataname)     
+     console.log('HALLO MOTO!')
+     console.log(data);
+     var layout = {barmode: 'group'};
+     Plotly.newPlot('plot', data, layout);
+  });
+}
+
+
+$(document).ready(function(){
+   load_data('ELAPSED_TIME_SECONDS');
+
+   // Load the new data when the user selects it
+   $("#inputdata").change(function(){
+      var filename = $(this).val();
+      load_data(filename);
+   })
+})
+
+</script>
+</html>
