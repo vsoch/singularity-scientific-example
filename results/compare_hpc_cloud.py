@@ -94,3 +94,8 @@ for var in variables:
         # Save to file
         with open('%s/%s.json' %(data_dir,var),'w') as filey:
             json.dump(traces,filey)
+
+# Save final data file for (non empty) metrics
+keepers = ['COMMAND', 'FS_INPUTS', 'FS_OUTPUTS', 'PERC_CPU_ALLOCATED', 'CPU_SECONDS_USED',
+           'ELAPSED_TIME_SECONDS', 'CONTEXT_SWITCHES', 'LABEL', 'SOFTWARE', 'ENV']
+data[keepers].to_csv('compiled_result.tsv',sep='\t')
