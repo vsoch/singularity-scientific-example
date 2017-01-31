@@ -18,6 +18,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
 RUN echo "deb https://cloud.r-project.org/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get install -y r-base-dev gdebi-core
+RUN apt-get install -y time
 RUN apt-get clean
 
 # Install homebrew science, can't use root

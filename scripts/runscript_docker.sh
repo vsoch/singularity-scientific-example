@@ -38,17 +38,17 @@ cd $RUNDIR
 #########################################################################################
 
 # We already have data downloaded, we are going to do it again.
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/1.download_data.sh /scratch/data
+docker run -v /scratch:/scratch vanessa/singularity-scientific-example /usr/bin/time -a -o $TIME_LOG bash /code/scripts/1.download_data.sh /scratch/data
 
 #########################################################################################
 # Analysis
 #########################################################################################
 
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/2.simulate_reads.sh /scratch/data
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/3.generate_transcriptome_index.sh /scratch/data
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/4.quantify_transcripts.sh /scratch/data $NUMCORES
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/5.bwa_index.sh /scratch/data
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/6.bwa_align.sh /scratch/data
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/7.prepare_rtg_run.sh /scratch/data
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/8.map_trio.sh /scratch/data $MEM $THREADS
-/usr/bin/time -a -o $TIME_LOG docker run -v /scratch/data:/scratch/data vanessa/singularity-scientific-example bash /code/scripts/9.family_call_variants.sh /scratch/data $MEM $THREADS
+docker run -v /scratch:/scratch vanessa/singularity-scientific-example /usr/bin/time -a -o $TIME_LOG bash /code/scripts/2.simulate_reads.sh /scratch/data
+docker run -v /scratch:/scratch vanessa/singularity-scientific-example /usr/bin/time -a -o $TIME_LOG bash /code/scripts/3.generate_transcriptome_index.sh /scratch/data
+docker run -v /scratch:/scratch vanessa/singularity-scientific-example /usr/bin/time -a -o $TIME_LOG bash /code/scripts/4.quantify_transcripts.sh /scratch/data $NUMCORES
+docker run -v /scratch:/scratch vanessa/singularity-scientific-example /usr/bin/time -a -o $TIME_LOG bash /code/scripts/5.bwa_index.sh /scratch/data
+docker run -v /scratch:/scratch vanessa/singularity-scientific-example /usr/bin/time -a -o $TIME_LOG bash /code/scripts/6.bwa_align.sh /scratch/data
+docker run -v /scratch:/scratch vanessa/singularity-scientific-example /usr/bin/time -a -o $TIME_LOG bash /code/scripts/7.prepare_rtg_run.sh /scratch/data
+docker run -v /scratch:/scratch vanessa/singularity-scientific-example /usr/bin/time -a -o $TIME_LOG bash /code/scripts/8.map_trio.sh /scratch/data $MEM $THREADS
+docker run -v /scratch:/scratch vanessa/singularity-scientific-example /usr/bin/time -a -o $TIME_LOG bash /code/scripts/9.family_call_variants.sh /scratch/data $MEM $THREADS

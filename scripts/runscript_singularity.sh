@@ -11,7 +11,7 @@
 # TIME_LOG and TIME output to $RUNDIR/logs/stats.log
 
 # Let's also make a logs directory to keep
-export SINGULARITY_LOG=$RUNDIR/logs/singularity.log
+export SINGULARITY_LOG=$SCRATCH/logs/singularity.log
 
 #########################################################################################
 # Singularity Installation
@@ -42,21 +42,21 @@ export THREADS=8
 #########################################################################################
 
 # Bind $DATADIR to /scratch in the image
-/usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/1.download_data.sh /scratch/data > $SINGULARITY_LOG
+singularity exec -B /scratch analysis.img /usr/bin/time -a -o $TIME_LOG bash $RUNDIR/scripts/1.download_data.sh /scratch/data > $SINGULARITY_LOG
 
 
 #########################################################################################
 # Analysis
 #########################################################################################
 
-/usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/2.simulate_reads.sh /scratch/data >> $SINGULARITY_LOG
-/usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/3.generate_transcriptome_index.sh /scratch/data >> $SINGULARITY_LOG
-/usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/4.quantify_transcripts.sh /scratch/data $NUMCORES >> $SINGULARITY_LOG
-/usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/5.bwa_index.sh /scratch/data >> $SINGULARITY_LOG
-/usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/6.bwa_align.sh /scratch/data >> $SINGULARITY_LOG
-/usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/7.prepare_rtg_run.sh /scratch/data >> $SINGULARITY_LOG
-/usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/8.map_trio.sh /scratch/data $MEM $THREADS >> $SINGULARITY_LOG
-/usr/bin/time -a -o $TIME_LOG singularity exec -B /scratch/data analysis.img bash $RUNDIR/scripts/9.family_call_variants.sh /scratch/data $MEM $THREADS >> $SINGULARITY_LOG
+singularity exec -B /scratch analysis.img /usr/bin/time -a -o $TIME_LOG bash $RUNDIR/scripts/2.simulate_reads.sh /scratch/data >> $SINGULARITY_LOG
+singularity exec -B /scratch analysis.img /usr/bin/time -a -o $TIME_LOG bash $RUNDIR/scripts/3.generate_transcriptome_index.sh /scratch/data >> $SINGULARITY_LOG
+singularity exec -B /scratch analysis.img /usr/bin/time -a -o $TIME_LOG bash $RUNDIR/scripts/4.quantify_transcripts.sh /scratch/data $NUMCORES >> $SINGULARITY_LOG
+singularity exec -B /scratch analysis.img /usr/bin/time -a -o $TIME_LOG bash $RUNDIR/scripts/5.bwa_index.sh /scratch/data >> $SINGULARITY_LOG
+singularity exec -B /scratch analysis.img /usr/bin/time -a -o $TIME_LOG bash $RUNDIR/scripts/6.bwa_align.sh /scratch/data >> $SINGULARITY_LOG
+singularity exec -B /scratch analysis.img /usr/bin/time -a -o $TIME_LOG bash $RUNDIR/scripts/7.prepare_rtg_run.sh /scratch/data >> $SINGULARITY_LOG
+singularity exec -B /scratch analysis.img /usr/bin/time -a -o $TIME_LOG bash $RUNDIR/scripts/8.map_trio.sh /scratch/data $MEM $THREADS >> $SINGULARITY_LOG
+singularity exec -B /scratch analysis.img /usr/bin/time -a -o $TIME_LOG bash $RUNDIR/scripts/9.family_call_variants.sh /scratch/data $MEM $THREADS >> $SINGULARITY_LOG
 
 # Remove the analysis image
 rm analysis.img

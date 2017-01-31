@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get update > $RUNDIR/logs/install.log
+sudo apt-get update > $SCRATCH/logs/install.log
 sudo apt-get -y install git \
                    build-essential \
                    libtool \
@@ -8,7 +8,7 @@ sudo apt-get -y install git \
                    autoconf \
                    debootstrap \
                    yum \
-                   python3-pip >> $RUNDIR/logs/install.log
+                   python3-pip >> $SCRATCH/logs/install.log
 
 # Install Singularity from Github
 cd /tmp && git clone http://www.github.com/singularityware/singularity 
