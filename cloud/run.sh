@@ -25,7 +25,6 @@ fi
 
 if [[ ! -d "$SCRATCH/data" ]]; then
     sudo mkdir -p $SCRATCH/data
-    sudo chmod -R 777 $SCRATCH/data
     sudo chown $USER -R $SCRATCH
 fi
 
@@ -62,8 +61,7 @@ sudo rm -rf /scratch/singularity/Reference
 sudo rm -rf /scratch/singularity/Bam
 rm /scratch/singularity/RTG/HG*
 
-sudo mkdir -p /scratch/data
-sudo chmod -R 777 /scratch/data
+mkdir -p /scratch/data
 
 # Run Docker Analysis 
 bash $RUNDIR/scripts/runscript_docker.sh
