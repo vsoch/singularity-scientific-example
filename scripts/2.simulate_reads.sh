@@ -1,5 +1,7 @@
+#!/bin/bash
+
 if [ $# -eq 0 ]; then
-    echo "\nUsage:"
+    echo "Usage:"
     echo "./2.simulate_reads.sh [DATADIR]"
     exit
 fi

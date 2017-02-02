@@ -1,7 +1,7 @@
-# Note that NUMCORES should be set as environment variable
+#!/bin/bash
 
 if [ $# -eq 0 ]; then
-    echo "\nUsage:"
+    echo "Usage:"
     echo "./4.quantify_transcripts.sh [DATADIR]"
     exit
 fi

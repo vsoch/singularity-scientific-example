@@ -1,7 +1,7 @@
-## DOWNLOAD HUMAN RNASEQ DATA
+#!/bin/bash
 
 if [ $# -eq 0 ]; then
-    echo "\nUsage:"
+    echo "Usage:"
     echo "./1.download_data.sh [DATADIR]"
     exit
 fi
