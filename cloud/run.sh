@@ -56,10 +56,11 @@ sed -i '/^$/d' $SCRATCH/logs/singularity-files.log
 
 # Move data to different place, ready for Docker
 sudo mv /scratch/data /scratch/singularity
-sudo rm -rf /scratch/singularity/Fastq
-sudo rm -rf /scratch/singularity/Reference
-sudo rm -rf /scratch/singularity/Bam
-rm /scratch/singularity/RTG/HG*
+# If more space is needed,we ran on 200GB drive
+#sudo rm -rf /scratch/singularity/Fastq
+#sudo rm -rf /scratch/singularity/Reference
+#sudo rm -rf /scratch/singularity/Bam
+#rm /scratch/singularity/RTG/HG*
 
 mkdir -p /scratch/data
 
@@ -69,3 +70,4 @@ bash $RUNDIR/scripts/runscript_docker.sh
 # Get hashes for all files in each directory
 bash $RUNDIR/scripts/summarize_results.sh /scratch/data > $SCRATCH/logs/docker-files.log # Dockerfiles
 sed -i '/^$/d' $SCRATCH/logs/docker-files.log
+sed -i '/^$/d' $SCRATCH/logs/stats.log

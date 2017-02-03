@@ -72,5 +72,6 @@ echo "singularity exec -B $SCRATCH:/scratch -B $SCRATCH/data:/scratch/data $SCRA
 echo "singularity exec -B $SCRATCH:/scratch -B $SCRATCH/data:/scratch/data $SCRATCH/data/analysis.img /usr/bin/time -a -o $TIME_LOG bash $BASE/scripts/9.family_call_variants.sh /scratch/data $MEM $THREADS" >> $RUNDIR/run.job
 echo "bash $BASE/scripts/summarize_results.sh $SCRATCH/data > $SCRATCH/logs/singularity-files.log" >> $RUNDIR/run.job
 echo "sed -i '/^$/d' $SCRATCH/logs/singularity-files.log" >> $RUNDIR/run.job
+echo "sed -i '/^$/d' $SCRATCH/logs/stats.log" >> $RUNDIR/run.job
 
 qsub $RUNDIR/run.job

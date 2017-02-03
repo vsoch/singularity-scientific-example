@@ -4,21 +4,33 @@ import json
 import re
 
 pwd = os.getcwd()
-gce = pandas.read_csv('%s/gce-cloud/stats.log' %pwd,sep='\t')
-sherlock = pandas.read_csv('%s/sherlock-hpc/stats.log' %pwd,sep='\t')
-data_dir = "%s/data" %(pwd)
-if not os.path.exists(data_dir):
-    os.mkdir(data_dir)
+
+# Results from gce are in "gce" and hpc in "hpc". Within each
+# folder is the cluster (or instance) name, and then within each
+# subfolder is the data. For HPC, since we had one running location,
+# the stats.log are compiled, and the files logs take the format 
+# singularity-files-1.log. For the cloud, each run is a separate folder
+# corresponding to a separate instance.
 
 
-def apply_command_labels(data,field=None):
+
+# Supporting functions
+
+def apply_command_labels(data,field=None, identifier=None):
     '''get command labels returns a list of labels and software
-    from a list of commands
+    from a list of commands. The docker containers, by default, will
+    have the path bash /code in them. This works for this example, and
+    should be checked if re-used in the rare case that the user cluster
+    also has this path
     :param data: the pandas data frame to add LABEL and SOFTWARE to
     :param field: the field to use for the command. default is COMMAND
+    :param identifier: should be a term or regular expression that indicates
+    the container is docker (and not singularity)
     '''
     if field == None:
         field = "COMMAND"
+    if identifier == None:
+        identifier = '/code/'
 
     commands = data[field].tolist()
     labels = []
@@ -27,7 +39,7 @@ def apply_command_labels(data,field=None):
         software = "singularity"
         label = [m for m in x.split('/') if re.search("[.]sh",m)][0]
         labels.append(label)
-        if re.search("docker",x):
+        if re.search(identifier,x):
             software = "docker"
         softwares.append(software)
 
@@ -35,17 +47,30 @@ def apply_command_labels(data,field=None):
     data['SOFTWARE'] = softwares
     return data
 
-# Give sherlock and hpc common labels
-sherlock = apply_command_labels(sherlock)
-gce = apply_command_labels(gce)
-sherlock['ENV'] = "hpc"
-gce['ENV'] = 'cloud'
 
-# Make the index named by environment-software 
-# (this will need to be tweaked when we have more than one cloud provider)
-gce.index = gce['ENV'] + "-" + gce['SOFTWARE']
-sherlock.index = sherlock['ENV'] + "-" + sherlock['SOFTWARE']
-data = gce.append(sherlock)
+# Running Main Section
+
+cloud_environments = os.listdir("%s/cloud" %pwd)
+
+# Let's save to a data directory
+data_dir = "%s/data" %(pwd)
+if not os.path.exists(data_dir):
+    os.mkdir(data_dir)
+
+df = pandas.DataFrame()
+
+for cloud_environment in cloud_environments:
+    instances = os.listdir("%s/cloud/%s" %(pwd,cloud_environment))
+    for instance in instances:
+        instance_log = '%s/cloud/%s/%s/stats.log' %(pwd,cloud_environment,instance)
+        if os.path.exists(instance_log):
+            log = pandas.read_csv(instance_log,sep='\t')
+            tmp = apply_command_labels(log)
+            tmp['ENV'] = cloud_environment
+            tmp['RUN'] = instance
+            tmp.index = tmp['ENV'] + "-" + tmp['SOFTWARE'] + '-' + tmp['RUN']
+            df = df.append(tmp)
+
 
 # Let's do simple bar charts, with analyses sorted by their command, to see timing, etc.
 
