@@ -1,5 +1,7 @@
+#!/bin/bash
+
 if [ $# -eq 0 ]; then
-    echo "\nUsage:"
+    echo "Usage:"
     echo "./3.generate_transcriptome_index.sh [DATADIR]"
     exit
 fi

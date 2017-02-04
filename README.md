@@ -29,7 +29,12 @@ You have a few options. If this were a pipeline intended to run in parallel, you
 Google cloud has easy [transfer of files](https://cloud.google.com/compute/docs/instances/transfer-files) using the `gcloud` command line utility. Eg:
 
       # Copy from instance to present working directory
-      gcloud compute copy-files singularity-scientific:/home/vanessa/singularity-scientific-example/logs/* $PWD
+      gcloud compute copy-files singularity-scientific:/scratch/logs/* $PWD
+
+### AWS EC2
+You can use the traditional tool scp to do this, giving your credential (`.pem`) file for the `-i` argument,
+
+      scp -i ~/.ssh/amazon.pem ubuntu@ec2-52-11-179-238.us-west-2.compute.amazonaws.com:/scratch/logs/* $PWD
 
 
 ### HPC Cluster

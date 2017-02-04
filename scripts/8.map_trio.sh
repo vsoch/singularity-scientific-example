@@ -1,5 +1,7 @@
+#!/bin/bash
+
 if [ $# -eq 0 ]; then
-    echo "\nUsage:"
+    echo "Usage:"
     echo "./8.map_trio.sh [DATADIR]"
     exit
 fi

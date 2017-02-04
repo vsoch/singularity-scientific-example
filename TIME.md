@@ -8,7 +8,7 @@ We will define a format string, and output to a common file.
 The following format string will be used
 
 
-	export TIME='%C\t%E\t%I\t%M\t%O\t%P\t%U\t%W\t%X\t%e\t%k\t%p\t%r\t%s\t%t\t%w\n'
+	export TIME='%C\t%E\t%K\t%I\t%M\t%O\t%P\t%U\t%W\t%X\t%e\t%k\t%p\t%r\t%s\t%t\t%w\n'
 
 
 ## Metrics Collected

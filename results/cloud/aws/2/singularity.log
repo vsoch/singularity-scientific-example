@@ -8,7 +8,7 @@ Data directory found at /scratch/data
 
                   Paired-end sequencing simulation
 
-Total CPU time used: 3160.71
+Total CPU time used: 2276.17
 
 The random seed for the run: 1
 
@@ -45,7 +45,7 @@ Minimum length     : 970
 Maximum length     : 248956422
 
 Output Data
-SDF-ID             : 00e33841-fc12-4457-bdd7-6b75e6a1ac06
+SDF-ID             : e9b51e61-486a-4545-905b-316d98e1368f
 Number of sequences: 194
 Total residues     : 3099750718
 Minimum length     : 970
@@ -67,8 +67,8 @@ ARM MAPPINGS
        0        0        0   0.0% unmapped with no matings and too many good hits (XC = E)
   245581   244359   489940   2.4% unmapped with no hits
 10000000 10000000 20000000 100.0% total
-Processing right arm "/scratch/data/RTG/HG003.2.10M.fastq.gz"
 Processing left arm "/scratch/data/RTG/HG003.1.10M.fastq.gz"
+Processing right arm "/scratch/data/RTG/HG003.2.10M.fastq.gz"
 
 ARM MAPPINGS
     left    right     both

@@ -5,8 +5,9 @@ dpkg-reconfigure locales
 export LANGUAGE="en_US.UTF-8"
 echo 'LANGUAGE="en_US.UTF-8"' >> /etc/default/locale
 echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
-mkdir /share /local-scratch /Software
+mkdir /share /local-scratch /Software /scratch
 mkdir -p /scratch/data
+mkdir -p /scratch/logs
 chmod -R 777 /scratch
 chmod 777 /tmp
 chmod +t /tmp
@@ -17,6 +18,7 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
 echo "deb https://cloud.r-project.org/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list
 apt-get update
 apt-get install -y r-base-dev gdebi-core
+apt-get install -y time
 apt-get clean
 
 # Install homebrew science, can't use root

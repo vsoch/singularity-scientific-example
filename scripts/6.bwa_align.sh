@@ -1,7 +1,7 @@
-# Note that NUMCORES needs to be set as environment variable
+#!/bin/bash
 
 if [ $# -eq 0 ]; then
-    echo "\nUsage:"
+    echo "Usage:"
     echo "./6.bwa_align.sh [DATADIR]"
     exit
 fi

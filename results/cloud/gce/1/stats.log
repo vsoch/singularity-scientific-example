@@ -1,0 +1,37 @@
+COMMAND	ELAPSED_TIME_HMS	AVERAGE_MEM	FS_INPUTS	MAX_RES_SIZE_KB	FS_OUTPUTS	PERC_CPU_ALLOCATED	CPU_SECONDS_USED	W_TIMES_SWAPPED	SHARED_TEXT_KB	ELAPSED_TIME_SECONDS	NUMBER_SIGNALS_DELIVERED	AVG_UNSHARED_STACK_SIZE	SOCKET_MSG_RECEIVED	SOCKET_MSG_SENT	AVG_RESIDENT_SET_SIZE	CONTEXT_SWITCHES
+bash /home/vanessa/singularity-scientific-example/scripts/1.download_data.sh /scratch/data	1:05:13	0	18936	5468	169899920	65%	2414.84	0	0	3913.39	0	0	0	0	0	1635069
+
+bash /home/vanessa/singularity-scientific-example/scripts/2.simulate_reads.sh /scratch/data	1:35:38	0	32232	2070732	73398488	99%	5060.60	0	0	5738.77	0	0	0	0	0	1354
+
+bash /home/vanessa/singularity-scientific-example/scripts/3.generate_transcriptome_index.sh /scratch/data	10:09.70	0	13384	5131188	5473864	99%	604.43	0	0	609.70	0	0	0	0	0	119
+
+bash /home/vanessa/singularity-scientific-example/scripts/4.quantify_transcripts.sh /scratch/data 12	19:52.88	0	8802872	5102796	5486088	1080%	12839.41	0	0	1192.88	0	0	0	0	0	273504
+
+bash /home/vanessa/singularity-scientific-example/scripts/5.bwa_index.sh /scratch/data	1:23:13	0	8816	4546184	16649240	98%	4916.92	0	0	4993.06	0	0	0	0	0	8349
+
+bash /home/vanessa/singularity-scientific-example/scripts/6.bwa_align.sh /scratch/data	2:06:17	0	13768	10715580	24286160	1190%	89924.49	0	0	7577.62	0	0	0	0	0	11179496
+
+bash /home/vanessa/singularity-scientific-example/scripts/7.prepare_rtg_run.sh /scratch/data	1:13.56	0	65320	838240	2270824	110%	70.37	0	0	73.56	0	0	0	0	0	9319
+
+bash /home/vanessa/singularity-scientific-example/scripts/8.map_trio.sh /scratch/data 32g 8	1:07:25	0	23573304	29978300	99063504	697%	27783.84	0	0	4045.36	0	0	0	0	0	26616127
+
+bash /home/vanessa/singularity-scientific-example/scripts/9.family_call_variants.sh /scratch/data 32g 8	1:11:21	0	77632	12265112	644776	651%	27591.28	0	0	4281.39	0	0	0	0	0	13741542
+
+bash /code/scripts/1.download_data.sh /scratch/data	2:30:41	16478176	0	5040	169901160	38%	3193.34	0	0	9041.44	0	0	0	0	0	1250589
+
+bash /code/scripts/2.simulate_reads.sh /scratch/data	2:12:27	1479712	0	2069356	73399384	99%	6815.52	0	0	7947.73	0	0	0	0	0	1646
+
+bash /code/scripts/3.generate_transcriptome_index.sh /scratch/data	17:03.08	2032	0	5130368	5473864	99%	1014.97	0	0	1023.08	0	0	0	0	0	29
+
+bash /code/scripts/4.quantify_transcripts.sh /scratch/data 4	57:17.14	56432	0	4239588	5486752	384%	13151.14	0	0	3437.14	0	0	0	0	0	25807
+
+bash /code/scripts/5.bwa_index.sh /scratch/data	2:08:23	512	0	4546156	16649232	99%	7615.04	0	0	7703.17	0	0	0	0	0	14100
+
+bash /code/scripts/6.bwa_align.sh /scratch/data	2:48:10	4313336	0	10707784	24286104	1189%	119536.81	0	0	10090.34	0	0	0	0	0	9898948
+
+bash /code/scripts/7.prepare_rtg_run.sh /scratch/data	2:22.53	667032	0	810544	2270880	72%	87.04	0	0	142.53	0	0	0	0	0	27606
+
+bash /code/scripts/8.map_trio.sh /scratch/data 32g 8	1:54:00	20224192	0	28655964	99133192	718%	48132.14	0	0	6840.19	0	0	0	0	0	26654428
+
+bash /code/scripts/9.family_call_variants.sh /scratch/data 32g 8	1:25:23	9609472	0	10630360	646160	649%	32773.11	0	0	5123.49	0	0	0	0	0	14051593
+

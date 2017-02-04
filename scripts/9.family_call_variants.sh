@@ -1,5 +1,7 @@
+#!/bin/bash
+
 if [ $# -eq 0 ]; then
-    echo "\nUsage:"
+    echo "Usage:"
     echo "./9.family_call_variants.sh [DATADIR]"
     exit
 fi
