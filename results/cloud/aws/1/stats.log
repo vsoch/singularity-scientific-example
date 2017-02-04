@@ -1,0 +1,19 @@
+COMMAND	ELAPSED_TIME_HMS	AVERAGE_MEM	FS_INPUTS	MAX_RES_SIZE_KB	FS_OUTPUTS	PERC_CPU_ALLOCATED	CPU_SECONDS_USED	W_TIMES_SWAPPED	SHARED_TEXT_KB	ELAPSED_TIME_SECONDS	NUMBER_SIGNALS_DELIVERED	AVG_UNSHARED_STACK_SIZE	SOCKET_MSG_RECEIVED	SOCKET_MSG_SENT	AVG_RESIDENT_SET_SIZE	CONTEXT_SWITCHES
+bash /code/scripts/1.download_data.sh /scratch/data	1:10:10	25424728	0	4992	169900200	62%	2434.76	0	0	4210.48	0	0	0	0	0	2700576
+bash /code/scripts/2.simulate_reads.sh /scratch/data	1:32:55	1245800	0	2070280	73399528	99%	4874.27	0	0	5575.58	0	0	0	0	0	1429
+bash /code/scripts/3.generate_transcriptome_index.sh /scratch/data	7:50.48	3744	0	5130516	5473864	99%	466.50	0	0	470.48	0	0	0	0	0	68
+bash /code/scripts/4.quantify_transcripts.sh /scratch/data 4	30:36.86	9470800	0	4224680	5482376	381%	6983.62	0	0	1836.86	0	0	0	0	0	61941
+bash /code/scripts/5.bwa_index.sh /scratch/data	1:06:31	512	0	4546240	16649232	99%	3944.03	0	0	3991.13	0	0	0	0	0	15005
+bash /code/scripts/6.bwa_align.sh /scratch/data	1:21:29	2485528	0	12478080	24285600	1575%	76829.25	0	0	4889.79	0	0	0	0	0	4172553
+bash /code/scripts/7.prepare_rtg_run.sh /scratch/data	1:00.34	1232	0	828740	2270784	103%	60.48	0	0	60.34	0	0	0	0	0	12094
+bash /code/scripts/8.map_trio.sh /scratch/data 32g 8	47:49.23	20161752	0	29609388	99035400	712%	19997.02	0	0	2869.23	0	0	0	0	0	26470906
+bash /code/scripts/9.family_call_variants.sh /scratch/data 32g 8	49:31.70	9561152	0	11378328	642880	651%	19198.62	0	0	2971.70	0	0	0	0	0	12994814
+bash /home/ubuntu/singularity-scientific-example/scripts/1.download_data.sh /scratch/data	2:15:57	0	26460424	5400	169900328	31%	2411.80	0	0	8157.79	0	0	0	0	0	3067575
+bash /home/ubuntu/singularity-scientific-example/scripts/2.simulate_reads.sh /scratch/data	1:32:11	0	32248	2069516	73399352	99%	4870.42	0	0	5531.83	0	0	0	0	0	1409
+bash /home/ubuntu/singularity-scientific-example/scripts/3.generate_transcriptome_index.sh /scratch/data	7:56.21	0	13384	5131420	5473864	99%	471.86	0	0	476.21	0	0	0	0	0	136
+bash /home/ubuntu/singularity-scientific-example/scripts/4.quantify_transcripts.sh /scratch/data 4	30:20.52	0	12984024	4223220	5482424	382%	6932.34	0	0	1820.52	0	0	0	0	0	7295
+bash /home/ubuntu/singularity-scientific-example/scripts/5.bwa_index.sh /scratch/data	1:03:51	0	8816	4546116	16649232	98%	3773.61	0	0	3831.52	0	0	0	0	0	13725
+bash /home/ubuntu/singularity-scientific-example/scripts/6.bwa_align.sh /scratch/data	1:22:09	0	13760	12476140	24285592	1570%	77220.25	0	0	4929.75	0	0	0	0	0	8711125
+bash /home/ubuntu/singularity-scientific-example/scripts/7.prepare_rtg_run.sh /scratch/data	1:00.75	0	65808	829608	2270784	102%	60.49	0	0	60.75	0	0	0	0	0	13126
+bash /home/ubuntu/singularity-scientific-example/scripts/8.map_trio.sh /scratch/data 32g 8	48:22.85	0	21408512	29214432	99035616	710%	20219.60	0	0	2902.85	0	0	0	0	0	26437519
+bash /home/ubuntu/singularity-scientific-example/scripts/9.family_call_variants.sh /scratch/data 32g 8	51:46.24	0	77648	11130608	643104	636%	19694.82	0	0	3106.24	0	0	0	0	0	13429518

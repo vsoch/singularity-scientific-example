@@ -1,0 +1,161 @@
+Data directory found at /scratch/data
+
+    ====================ART====================
+             ART_Illumina (2008-2016)          
+          Q Version 2.5.8 (June 6, 2016)       
+     Contact: Weichun Huang <whduke@gmail.com> 
+    -------------------------------------------
+
+                  Paired-end sequencing simulation
+
+Total CPU time used: 2276.17
+
+The random seed for the run: 1
+
+Parameters used during run
+	Read Length:	75
+	Genome masking 'N' cutoff frequency: 	1 in 75
+	Fold Coverage:            4.41176X
+	Mean Fragment Length:     500
+	Standard Deviation:       20
+	Profile Type:             Combined
+	ID Tag:                   
+
+Quality Profile(s)
+	First Read:   HiSeq 2500 Length 126 R1 (built-in profile) 
+	First Read:   HiSeq 2500 Length 126 R2 (built-in profile) 
+
+Output files
+
+  FASTQ Sequence Files:
+	 the 1st reads: /scratch/data/Fastq/dna_1.fq
+	 the 2nd reads: /scratch/data/Fastq/dna_2.fq
+
+[bwt_gen] Finished constructing BWT in 688 iterations.
+Formatting FASTA data
+Processing "/scratch/data/Reference/Homo_sapiens.GRCh38.dna.primary_assembly.fa"
+
+Input Data
+Files              : Homo_sapiens.GRCh38.dna.primary_assembly.fa
+Format             : FASTA
+Type               : DNA
+Number of sequences: 194
+Total residues     : 3099750718
+Minimum length     : 970
+Maximum length     : 248956422
+
+Output Data
+SDF-ID             : e9b51e61-486a-4545-905b-316d98e1368f
+Number of sequences: 194
+Total residues     : 3099750718
+Minimum length     : 970
+Maximum length     : 248956422
+Processing left arm "/scratch/data/RTG/HG002.1.10M.fastq.gz"
+Processing right arm "/scratch/data/RTG/HG002.2.10M.fastq.gz"
+
+ARM MAPPINGS
+    left    right     both
+     366      366      732   0.0% mated uniquely (NH = 1)
+      49       49       98   0.0% mated ambiguously (NH > 1)
+ 9085148  8932254 18017402  90.1% unmated uniquely (NH = 1)
+  184478   176245   360723   1.8% unmated ambiguously (NH > 1)
+       0        0        0   0.0% unmapped due to read frequency (XC = B)
+  304181   382628   686809   3.4% unmapped with no matings but too many hits (XC = C)
+    1470     2114     3584   0.0% unmapped with poor matings (XC = d)
+       1        2        3   0.0% unmapped with too many matings (XC = e)
+  178726   261983   440709   2.2% unmapped with no matings and poor hits (XC = D)
+       0        0        0   0.0% unmapped with no matings and too many good hits (XC = E)
+  245581   244359   489940   2.4% unmapped with no hits
+10000000 10000000 20000000 100.0% total
+Processing left arm "/scratch/data/RTG/HG003.1.10M.fastq.gz"
+Processing right arm "/scratch/data/RTG/HG003.2.10M.fastq.gz"
+
+ARM MAPPINGS
+    left    right     both
+     369      369      738   0.0% mated uniquely (NH = 1)
+      44       44       88   0.0% mated ambiguously (NH > 1)
+ 9087801  8893394 17981195  89.9% unmated uniquely (NH = 1)
+  183221   173456   356677   1.8% unmated ambiguously (NH > 1)
+       0        0        0   0.0% unmapped due to read frequency (XC = B)
+  298791   372351   671142   3.4% unmapped with no matings but too many hits (XC = C)
+    1288     2000     3288   0.0% unmapped with poor matings (XC = d)
+       5        5       10   0.0% unmapped with too many matings (XC = e)
+  168592   273300   441892   2.2% unmapped with no matings and poor hits (XC = D)
+       0        0        0   0.0% unmapped with no matings and too many good hits (XC = E)
+  259889   285081   544970   2.7% unmapped with no hits
+10000000 10000000 20000000 100.0% total
+Processing right arm "/scratch/data/RTG/HG004.2.10M.fastq.gz"
+Processing left arm "/scratch/data/RTG/HG004.1.10M.fastq.gz"
+
+ARM MAPPINGS
+    left    right     both
+     353      353      706   0.0% mated uniquely (NH = 1)
+      34       34       68   0.0% mated ambiguously (NH > 1)
+ 9120831  8987903 18108734  90.5% unmated uniquely (NH = 1)
+  172437   166156   338593   1.7% unmated ambiguously (NH > 1)
+       0        0        0   0.0% unmapped due to read frequency (XC = B)
+  292570   350251   642821   3.2% unmapped with no matings but too many hits (XC = C)
+    1154     1677     2831   0.0% unmapped with poor matings (XC = d)
+       4        4        8   0.0% unmapped with too many matings (XC = e)
+  174072   241845   415917   2.1% unmapped with no matings and poor hits (XC = D)
+       0        0        0   0.0% unmapped with no matings and too many good hits (XC = E)
+  238545   251777   490322   2.5% unmapped with no hits
+10000000 10000000 20000000 100.0% total
+Failed Filters               : 65
+Excessive Coverage           : 873
+No Hypotheses                : 400
+Passed Filters               : 3922885
+Complex Called               : 653563
+
+Sample Name: NA24149
+SNPs                         : 2998123
+MNPs                         : 56957
+Insertions                   : 102253
+Deletions                    : 122150
+Indels                       : 36513
+Same as reference            : 606889
+SNP Transitions/Transversions: 1.90 (2682176/1411762)
+Total Het/Hom ratio          : 1.72 (2096616/1219380)
+SNP Het/Hom ratio            : 1.74 (1904223/1093900)
+MNP Het/Hom ratio            : 3.40 (44015/12942)
+Insertion Het/Hom ratio      : 1.16 (54953/47300)
+Deletion Het/Hom ratio       : 1.30 (68995/53155)
+Indel Het/Hom ratio          : 2.02 (24430/12083)
+Insertion/Deletion ratio     : 0.84 (102253/122150)
+Indel/SNP+MNP ratio          : 0.09 (260916/3055080)
+
+Sample Name: NA24143
+SNPs                         : 3003299
+MNPs                         : 57345
+Insertions                   : 102543
+Deletions                    : 122347
+Indels                       : 36431
+Same as reference            : 600920
+SNP Transitions/Transversions: 1.90 (2687330/1414876)
+Total Het/Hom ratio          : 1.71 (2098255/1223710)
+SNP Het/Hom ratio            : 1.74 (1906223/1097076)
+MNP Het/Hom ratio            : 3.29 (43983/13362)
+Insertion Het/Hom ratio      : 1.16 (55087/47456)
+Deletion Het/Hom ratio       : 1.27 (68547/53800)
+Indel Het/Hom ratio          : 2.03 (24415/12016)
+Insertion/Deletion ratio     : 0.84 (102543/122347)
+Indel/SNP+MNP ratio          : 0.09 (261321/3060644)
+
+Sample Name: NA24385
+SNPs                         : 3226267
+MNPs                         : 58907
+Insertions                   : 106323
+Deletions                    : 128053
+Indels                       : 39276
+Same as reference            : 364059
+De Novo Genotypes            : 144
+Phased Genotypes             : 79.0% (3098004/3922885)
+SNP Transitions/Transversions: 1.90 (3003464/1579140)
+Total Het/Hom ratio          : 1.35 (2047559/1511267)
+SNP Het/Hom ratio            : 1.38 (1872455/1353812)
+MNP Het/Hom ratio            : 2.44 (41768/17139)
+Insertion Het/Hom ratio      : 0.79 (46883/59440)
+Deletion Het/Hom ratio       : 0.96 (62565/65488)
+Indel Het/Hom ratio          : 1.55 (23888/15388)
+Insertion/Deletion ratio     : 0.83 (106323/128053)
+Indel/SNP+MNP ratio          : 0.08 (273652/3285174)

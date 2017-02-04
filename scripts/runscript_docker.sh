@@ -28,9 +28,9 @@ fi
 # Setup and Installation
 #########################################################################################
 
-# Build our docker image
-cd $BASE
-docker build -t vanessa/singularity-scientific-example .
+# Build our docker image (not necessary)
+# cd $BASE
+# docker build -t vanessa/singularity-scientific-example .
 cd $RUNDIR
 
 #########################################################################################

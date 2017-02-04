@@ -37,7 +37,6 @@ You can use the traditional tool scp to do this, giving your credential (`.pem`)
       scp -i ~/.ssh/amazon.pem ubuntu@ec2-52-11-179-238.us-west-2.compute.amazonaws.com:/scratch/logs/* $PWD
 
 
-
 ### HPC Cluster
 For HPC clusters Sherlock and scg4, I used [gftp](https://www.gftp.org/) from my Ubuntu 16.04 machine.
 

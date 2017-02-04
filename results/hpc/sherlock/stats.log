@@ -1,0 +1,28 @@
+COMMAND	ELAPSED_TIME_HMS	AVERAGE_MEM	FS_INPUTS	MAX_RES_SIZE_KB	FS_OUTPUTS	PERC_CPU_ALLOCATED	CPU_SECONDS_USED	W_TIMES_SWAPPED	SHARED_TEXT_KB	ELAPSED_TIME_SECONDS	NUMBER_SIGNALS_DELIVERED	AVG_UNSHARED_STACK_SIZE	SOCKET_MSG_RECEIVED	SOCKET_MSG_SENT	AVG_RESIDENT_SET_SIZE	CONTEXT_SWITCHES
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/1.download_data.sh /scratch/data	22:23.85	0	14280	3268	100135872	29%	215.85	0	0	1343.85	0	0	0	0	0	2094571
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/2.simulate_reads.sh /scratch/data	3:05:48	0	26712	2067320	73619864	96%	4360.94	0	0	11148.17	0	0	0	0	0	30971
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/3.generate_transcriptome_index.sh /scratch/data	12:05.98	0	11312	5129028	5473904	99%	715.09	0	0	725.98	0	0	0	0	0	166
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/4.quantify_transcripts.sh /scratch/data	34:23.73	0	13024	4224412	5504888	385%	7749.44	0	0	2063.73	0	0	0	0	0	44510
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/5.bwa_index.sh /scratch/data	1:11:28	0	6712	4553224	16649784	99%	4258.26	0	0	4288.16	0	0	0	0	0	1563
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/6.bwa_align.sh /scratch/data	3:40:23	0	14328	7282832	24287016	398%	52553.60	0	0	13223.90	0	0	0	0	0	15167363
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/7.prepare_rtg_run.sh /scratch/data	0:56.45	0	63384	987692	2270840	102%	55.56	0	0	56.45	0	0	0	0	0	12808
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/8.map_trio.sh /scratch/data 32g 8	1:16:35	0	85176	28741260	99079576	371%	16880.65	0	0	4595.47	0	0	0	0	0	27437837
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/9.family_call_variants.sh /scratch/data 32g 8	1:14:28	0	75400	16645532	644584	349%	15466.38	0	0	4468.55	0	0	0	0	0	34683471
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/1.download_data.sh /scratch/data	23:19.10	0	14288	3272	100137096	28%	227.05	0	0	1399.10	0	0	0	0	0	2281980
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/2.simulate_reads.sh /scratch/data	3:06:45	0	26712	2067316	73619952	98%	4465.24	0	0	11205.87	0	0	0	0	0	30074
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/3.generate_transcriptome_index.sh /scratch/data	8:38.41	0	11312	5129024	5473880	99%	508.17	0	0	518.41	0	0	0	0	0	166
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/4.quantify_transcripts.sh /scratch/data	21:20.21	0	11376	4205376	5451704	379%	4617.02	0	0	1280.21	0	0	0	0	0	63743
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/5.bwa_index.sh /scratch/data	1:04:29	0	6088	4553228	16649784	99%	3844.74	0	0	3869.28	0	0	0	0	0	1218
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/6.bwa_align.sh /scratch/data	3:50:28	0	10688	7208708	24287168	398%	54893.05	0	0	13828.89	0	0	0	0	0	8823778
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/7.prepare_rtg_run.sh /scratch/data	0:54.96	0	63592	988876	2270840	106%	56.38	0	0	54.96	0	0	0	0	0	13106
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/8.map_trio.sh /scratch/data 32g 8	1:14:11	0	85320	29597460	99075968	371%	16351.24	0	0	4451.07	0	0	0	0	0	27412358
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/9.family_call_variants.sh /scratch/data 32g 8	1:09:25	0	75400	16232324	644648	351%	14488.92	0	0	4165.21	0	0	0	0	0	34948677
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/1.download_data.sh /scratch/data	57:14.12	0	14560	4724	170004976	64%	1968.80	0	0	3434.12	0	0	0	0	0	2142131
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/2.simulate_reads.sh /scratch/data	2:50:05	0	26704	2067316	73619904	98%	4217.51	0	0	10205.46	0	0	0	0	0	32029
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/3.generate_transcriptome_index.sh /scratch/data	8:28.10	0	11304	5129024	5473880	99%	498.25	0	0	508.10	0	0	0	0	0	157
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/4.quantify_transcripts.sh /scratch/data	0:00.07	0	12160	2140	16	3%	0.00	0	0	0.07	0	0	0	0	0	157
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/5.bwa_index.sh /scratch/data	1:01:37	0	6080	4553224	16649776	99%	3665.82	0	0	3697.46	0	0	0	0	0	1959
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/6.bwa_align.sh /scratch/data	3:23:25	0	10680	7196488	24286832	398%	48482.14	0	0	12205.15	0	0	0	0	0	8882925
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/7.prepare_rtg_run.sh /scratch/data	0:50.09	0	63584	988612	2270840	107%	51.47	0	0	50.09	0	0	0	0	0	12698
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/8.map_trio.sh /scratch/data 32g 8	1:14:00	0	85280	29617204	99075632	371%	16306.84	0	0	4440.26	0	0	0	0	0	27408634
+bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/9.family_call_variants.sh /scratch/data 32g 8	1:10:24	0	75392	17257188	644112	349%	14638.19	0	0	4224.15	0	0	0	0	0	34919890
