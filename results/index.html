@@ -1,20 +1,26 @@
 <html>
 <head>
     <title>HPC vs. Cloud</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/milligram.min.css">
 </head>
 <body>
+
+<div class="container" style="padding-top:20px">
     <h1>HPC vs. Cloud</h1>
 
-    <h2 id="the_title"></h2>
-
-    <select name="inputdata" id="inputdata">
-        <option value="ELAPSED_TIME_SECONDS">Elapsed time (seconds)</option>
-        <option value="MAX_RES_SIZE_KB">Max Res Size (Memory) in KB</option>
-        <option value="CPU_SECONDS_USED">CPU Seconds Used</option>
-        <option value="CONTEXT_SWITCHES">Context Switches</option>
-        <option value="FS_OUTPUTS">File System Outputs</option>
-        <option value="PERC_CPU_ALLOCATED">Percent CPU Allocated</option>
-    </select>
+    <fieldset>
+        <label for="inputdata">Metric</label>
+        <select name="inputdata" id="inputdata">
+            <option value="ELAPSED_TIME_SECONDS">Elapsed time (seconds)</option>
+            <option value="MAX_RES_SIZE_KB">Max Res Size (Memory) in KB</option>
+            <option value="CPU_SECONDS_USED">CPU Seconds Used</option>
+            <option value="CONTEXT_SWITCHES">Context Switches</option>
+            <option value="FS_OUTPUTS">File System Outputs</option>
+            <option value="PERC_CPU_ALLOCATED">Percent CPU Allocated</option>
+        </select>
+    </fieldset>
 
     <div id="plot"></div>
 
@@ -26,7 +32,7 @@
         <option value="SOCKET_MSG_SENT"></option>
         <option value="W_TIMES_SWAPPED"></option>
     -->
-
+</div>
 </body>
 
 <script src="js/jquery-3.1.1.min.js"></script>
