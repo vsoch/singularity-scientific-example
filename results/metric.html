@@ -120,16 +120,16 @@ $(document).ready(function(){
    var metric = getUrlParameter('metric')
 
    if (typeof step == 'undefined') {
-       step = "1.download_data.sh"
+       var step = "1.download_data.sh"
    }
 
    if (typeof metric == 'undefined') {
-       metric = "AVERAGE_MEM"
+       var metric = "CONTEXT_SWITCHES"
    }
 
    // Make sure drop downs set correctly
-   $("#step select").val(step);
-   $("#metric select").val(metric);
+   $("#step").val(step);
+   $("#metric").val(metric);
 
    load_data();
 
