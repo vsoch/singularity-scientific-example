@@ -49,6 +49,7 @@
 
         </div>
     </div>
+    <h2 id="the_title"></h2>
     <div id="plot"></div>
     <div class="row" style="padding-top:50px">
         <a id="toggleme" class="button vanessa_icon">?</a>
@@ -83,12 +84,14 @@ function load_data(dataname) {
 
   var step = $("#step").val();
   var metric = $("#metric").val();
+
   var filename = "data/" + metric + "_" + step + ".json"
+
+  // Replace page title with data name
+  $("#the_title").text(metric + ": " + step)     
 
   $.getJSON( filename, function( data ) {
 
-     // Replace page title with data name
-     $("#the_title").text(dataname)     
      console.log('HALLO MOTO!')
      var layout = {barmode: 'group'};
      Plotly.newPlot('plot', data, layout);
