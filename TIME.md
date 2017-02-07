@@ -37,6 +37,8 @@ A complete description of each argument is provided below, from `man time`
               E      Elapsed real (wall clock) time used by the process, in
                      [hours:]minutes:seconds.
               I      Number of file system inputs by the process.
+              K      Average total (data+stack+text) memory use of the
+                     process, in Kilobytes.
               M      Maximum resident set size of the process during its
                      lifetime, in Kilobytes.
               O      Number of file system outputs by the process.

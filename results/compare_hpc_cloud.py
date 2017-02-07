@@ -67,9 +67,8 @@ xlabels = df['LABEL'].unique().tolist()
 
 # Don't use variables that are zero across
 dont_includes =["NUMBER_SIGNALS_DELIVERED","SHARED_TEXT_KB","SOCKET_MSG_RECEIVED","SOCKET_MSG_SENT",
-                "W_TIMES_SWAPPED","AVG_RESIDENT_SET_SIZE","AVG_UNSHARED_STACK_SIZE"]
+                "W_TIMES_SWAPPED","AVG_RESIDENT_SET_SIZE","AVG_UNSHARED_STACK_SIZE","ELAPSED_TIME_HMS"]
 dont_includes = dont_includes + ['LABEL','COMMAND','SOFTWARE','ENV','RUN']
-variables = [x for x in df.columns if x not in dont_includes]
 
 # A function to convert string H:M:S to minutes
 def hms_to_minutes(time_string):
@@ -90,7 +89,11 @@ def hms_to_minutes(time_string):
 def perc_to_number(input_string):
     return [int(x.strip('%'))/100 for x in input_string]
     
+df = df.rename(index=str, columns={"ELAPSED_TIME_SECONDS": "ELAPSED_TIME_SEC"})
+variables = [x for x in df.columns if x not in dont_includes]
 import plotly.graph_objs as go
+
+# Produce data for option 1 - showing all scripts (as different colored bars) for each metric
 
 for var in variables:
     traces = []
@@ -124,6 +127,105 @@ for var in variables:
         if len(envs_group) > 0:
             with open('%s/%s.json' %(data_dir,var),'w') as filey:
                 json.dump(traces,filey)
+
+# Produce data for option 2 - showing all metrics (with normalized Y) for each script
+
+envs = df['ENV'].unique()
+
+for var in variables: # metric
+
+    for xlabel in xlabels: # script
+
+        # Each trace is one variable and script for each environment 
+        traces = []
+
+        # This will be a list of traces, one per command (xlabel)
+        subset = df[df['LABEL'] == xlabel]
+        softwares = subset.SOFTWARE.unique().tolist()
+
+        for software in softwares:
+            ydata_group = []
+            error_y_group = []
+            for e in envs:
+                envset = subset[subset.ENV == e]
+                ydata = envset[var][envset['SOFTWARE'] == software].tolist()
+                # Specific parsing for time (HMS)
+                if var == "ELAPSED_TIME_HMS":
+                    ydata = [hms_to_minutes(t) for t in ydata]
+                if var == "PERC_CPU_ALLOCATED":
+                    ydata = perc_to_number(ydata)
+                if sum(ydata) > 0:
+                    ydata_group.append(numpy.mean(ydata))
+                    error_y_group.append(numpy.std(ydata, axis=0))                
+                else:
+                    ydata_group.append(0)
+                    error_y_group.append(0)                 
+
+            trace = go.Bar(x=envs.tolist(),
+                           y=ydata_group,
+                           name=software,
+                           error_y=dict(type='data',
+                                        array=error_y_group,
+                                        visible=True))
+            traces.append(trace)
+
+        # Save to file
+        xlabel = xlabel.replace(' ','')
+        with open('%s/%s_%s.json' %(data_dir,var,xlabel),'w') as filey:
+            json.dump(traces,filey)
+
+
+# Finally, let's print an index.html file from the template!
+with open('template.html','r') as filey:
+    template = filey.read()
+
+
+# These are info / about blocks to add to each, depending on the variable
+varlookup = {'AVERAGE_MEM':'Maximum resident set size, or memory (RAM in KB)',
+             'CONTEXT_SWITCHES':'Number of voluntary context-switches (e.g., while waiting for an I/O)',
+             'CPU_SECONDS_USED':'Total number of CPU seconds used directly (in user mode, seconds)',
+             'MAX_RES_SIZE_KB':"Maximum resident set size of the process (in Kilobytes)",
+             'ELAPSED_TIME_SEC':'Elapsed real (wall clock) time used by the process (seconds)',
+             'FS_OUTPUTS':'number of file system outputs',
+             'FS_INPUTS':'number of file system inputs',
+             'PERC_CPU_ALLOCATED':'Percentage of CPU allocated for'}
+
+scriptlookup = {'1.download_data.sh':'downloading reference genomes and other required data',
+                '2.simulate_reads.sh':'simulating reads of the genomes',
+                '3.generate_transcriptome_index.sh':'generating the transcriptome index',
+                '4.quantify_transcripts.sh':'quantifying the transcripts',
+                '5.bwa_index.sh':'generating an index for the bwa aligner',
+                '6.bwa_align.sh':'performing the bwa alignment',
+                '7.prepare_rtg_run.sh':'preparing for the rtg run',
+                '8.map_trio.sh':'mapping the trio',
+                '9.family_call_variants.sh':'performing variant calling'}
+
+nodata = '<div class="heatmap-blank-metric"></div>'
+
+# This is a header row of script names
+data= ''
+for xlabel in xlabels:
+    xlabel_truncated = "%s..." %xlabel[0:20]
+    data = '''%s\n<div class="heatmap-blank-metric">%s</div>'''%(data,xlabel_truncated)
+
+for v in range(len(variables)): # metric
+    var = variables[v]
+
+    for xlabel in xlabels: # script
+        xlabel = xlabel.replace(' ','')
+        data_path = 'data/%s_%s.json' %(var,xlabel)
+        title = "%s for %s" %(varlookup[var],scriptlookup[xlabel])
+        if os.path.exists(data_path): # must be in results as pwd
+            newpath = '''<div class="heatmap-metric heatmap-level-%s" data-metric="%s" data-step="%s" data-title="%s">
+                             <div class="heatmap-actual">%s</div>
+                         </div>''' %(v+1,var,xlabel,title,var)
+        else:
+            newpath = nodata
+        data = "%s\n%s" %(data,newpath)
+
+template = template.replace('[[DATA]]',data)
+with open('index.html','w') as filey:
+    filey.writelines(template)
 
 
 # Save final data file for (non empty) metrics

@@ -164,6 +164,35 @@ len(all_different) # 125
 
 # Looking at all_different, these tend to be the result files. Damn.
 
+##########################################################################################
+# QUESTION 3: Subset of interest: files that should be similar, but aren't
+##########################################################################################
+
+for unique_file in some_different:
+    subset = df[df['FILE'] == unique_file]
+
+#                                                      HASH  
+#cloud-aws-docker          2a90b856d59703bfd55789ed54d85960 
+#cloud-gce-docker          42e314864926e5f36f284566bcffac81   
+#cloud-gce-singularity     5d35fd65297c522a4f90de1abe44c950   
+
+#cloud-aws-docker          fa2439303fc7c16c7c3e9d9b54301815   
+#cloud-gce-docker          fa2439303fc7c16c7c3e9d9b54301815   
+
+#cloud-aws-singularity     af50efbb4a3c79a899f7f02958ed9dd2   
+#cloud-gce-singularity     af50efbb4a3c79a899f7f02958ed9dd2   
+
+#cloud-aws-singularity     00278ae7c0590bae04fc2b28dbd36b52   
+#cloud-aws-docker          00278ae7c0590bae04fc2b28dbd36b52 
+#cloud-gce-singularity     00278ae7c0590bae04fc2b28dbd36b52   
+  
+#hpc-sherlock-singularity  e1cf6e04bab3189a9350653d5b303067   
+#hpc-sherlock-singularity  e1cf6e04bab3189a9350653d5b303067   
+#hpc-sherlock-singularity  e1cf6e04bab3189a9350653d5b303067 
+#cloud-gce-docker          e1cf6e04bab3189a9350653d5b303067   
+#cloud-aws-singularity     e1cf6e04bab3189a9350653d5b303067   
+
+
 # Let's pickle and export some data for Cameron to look at.
 df.to_csv("file_outputs.tsv",sep="\t")
 

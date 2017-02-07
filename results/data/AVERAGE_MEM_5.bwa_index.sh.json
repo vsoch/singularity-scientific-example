@@ -1,0 +1,1 @@
+[{"type": "bar", "error_y": {"visible": true, "type": "data", "array": [0, 0, 0]}, "name": "singularity", "x": ["cloud-gce", "cloud-aws", "hpc-sherlock"], "y": [0, 0, 0]}, {"type": "bar", "error_y": {"visible": true, "type": "data", "array": [3.7712361663282534, 0.0, 0]}, "name": "docker", "x": ["cloud-gce", "cloud-aws", "hpc-sherlock"], "y": [514.6666666666666, 512.0, 0]}]
