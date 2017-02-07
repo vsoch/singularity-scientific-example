@@ -66,8 +66,9 @@ envs =  df.index.unique().tolist()
 xlabels = df['LABEL'].unique().tolist()
 
 # Don't use variables that are zero across
-dont_includes =["NUMBER_SIGNALS_DELIVERED","SHARED_TEXT_KB","SOCKET_MSG_RECEIVED","SOCKET_MSG_SENT",
-                "W_TIMES_SWAPPED","AVG_RESIDENT_SET_SIZE","AVG_UNSHARED_STACK_SIZE","ELAPSED_TIME_HMS"]
+dont_includes =["NUMBER_SIGNALS_DELIVERED","FS_INPUTS","AVERAGE_MEM","SHARED_TEXT_KB","SOCKET_MSG_RECEIVED",
+                "SOCKET_MSG_SENT","W_TIMES_SWAPPED","AVG_RESIDENT_SET_SIZE","AVG_UNSHARED_STACK_SIZE",
+                "ELAPSED_TIME_HMS"]
 dont_includes = dont_includes + ['LABEL','COMMAND','SOFTWARE','ENV','RUN']
 
 # A function to convert string H:M:S to minutes
@@ -191,14 +192,14 @@ varlookup = {'AVERAGE_MEM':'Maximum resident set size, or memory (RAM in KB)',
              'PERC_CPU_ALLOCATED':'Percentage of CPU allocated for'}
 
 scriptlookup = {'1.download_data.sh':'downloading reference genomes and other required data',
-                '2.simulate_reads.sh':'simulating reads of the genomes',
-                '3.generate_transcriptome_index.sh':'generating the transcriptome index',
-                '4.quantify_transcripts.sh':'quantifying the transcripts',
-                '5.bwa_index.sh':'generating an index for the bwa aligner',
-                '6.bwa_align.sh':'performing the bwa alignment',
-                '7.prepare_rtg_run.sh':'preparing for the rtg run',
-                '8.map_trio.sh':'mapping the trio',
-                '9.family_call_variants.sh':'performing variant calling'}
+                '2.simulate_reads.sh':'simulating short (Illumina) reads from the human reference genome (build 38 for step 6)',
+                '3.generate_transcriptome_index.sh':'preparing a lookup of the reference human transcriptome for pseudo-mapping RNA transcripts (used in step 4.)',
+                '4.quantify_transcripts.sh':'quantifying transcript abundances in an RNA seq dataset from human cell line GM12878',
+                '5.bwa_index.sh':'preparing a lookup of the reference human genome for mapping simulated reads, used in step 6.',
+                '6.bwa_align.sh':'mapping the simulated reads from step 2 to the human reference genome',
+                '7.prepare_rtg_run.sh':'preparing a lookup of the reference human genome for mapping the reads from the Ashkenazi Jew trio provided by Genome In a Bottle',
+                '8.map_trio.sh':'mapping the reads from the trio to the human reference genome, build 38',
+                '9.family_call_variants.sh':'locating loci in the genomes of the trio that differ from the reference genome, in a pedigree-aware manner'}
 
 nodata = '<div class="heatmap-blank-metric"></div>'
 

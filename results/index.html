@@ -39,220 +39,166 @@
 <div class="heatmap-blank-metric">7.prepare_rtg_run.sh...</div>
 <div class="heatmap-blank-metric">8.map_trio.sh ...</div>
 <div class="heatmap-blank-metric">9.family_call_varian...</div>
-<div class="heatmap-metric heatmap-level-1" data-metric="AVERAGE_MEM" data-step="1.download_data.sh" data-title="Maximum resident set size, or memory (RAM in KB) for downloading reference genomes and other required data">
-                             <div class="heatmap-actual">AVERAGE_MEM</div>
-                         </div>
-<div class="heatmap-metric heatmap-level-1" data-metric="AVERAGE_MEM" data-step="2.simulate_reads.sh" data-title="Maximum resident set size, or memory (RAM in KB) for simulating reads of the genomes">
-                             <div class="heatmap-actual">AVERAGE_MEM</div>
-                         </div>
-<div class="heatmap-metric heatmap-level-1" data-metric="AVERAGE_MEM" data-step="3.generate_transcriptome_index.sh" data-title="Maximum resident set size, or memory (RAM in KB) for generating the transcriptome index">
-                             <div class="heatmap-actual">AVERAGE_MEM</div>
-                         </div>
-<div class="heatmap-metric heatmap-level-1" data-metric="AVERAGE_MEM" data-step="4.quantify_transcripts.sh" data-title="Maximum resident set size, or memory (RAM in KB) for quantifying the transcripts">
-                             <div class="heatmap-actual">AVERAGE_MEM</div>
-                         </div>
-<div class="heatmap-metric heatmap-level-1" data-metric="AVERAGE_MEM" data-step="5.bwa_index.sh" data-title="Maximum resident set size, or memory (RAM in KB) for generating an index for the bwa aligner">
-                             <div class="heatmap-actual">AVERAGE_MEM</div>
-                         </div>
-<div class="heatmap-metric heatmap-level-1" data-metric="AVERAGE_MEM" data-step="6.bwa_align.sh" data-title="Maximum resident set size, or memory (RAM in KB) for performing the bwa alignment">
-                             <div class="heatmap-actual">AVERAGE_MEM</div>
-                         </div>
-<div class="heatmap-metric heatmap-level-1" data-metric="AVERAGE_MEM" data-step="7.prepare_rtg_run.sh" data-title="Maximum resident set size, or memory (RAM in KB) for preparing for the rtg run">
-                             <div class="heatmap-actual">AVERAGE_MEM</div>
-                         </div>
-<div class="heatmap-metric heatmap-level-1" data-metric="AVERAGE_MEM" data-step="8.map_trio.sh" data-title="Maximum resident set size, or memory (RAM in KB) for mapping the trio">
-                             <div class="heatmap-actual">AVERAGE_MEM</div>
-                         </div>
-<div class="heatmap-metric heatmap-level-1" data-metric="AVERAGE_MEM" data-step="9.family_call_variants.sh" data-title="Maximum resident set size, or memory (RAM in KB) for performing variant calling">
-                             <div class="heatmap-actual">AVERAGE_MEM</div>
-                         </div>
-<div class="heatmap-metric heatmap-level-2" data-metric="CONTEXT_SWITCHES" data-step="1.download_data.sh" data-title="Number of voluntary context-switches (e.g., while waiting for an I/O) for downloading reference genomes and other required data">
+<div class="heatmap-metric heatmap-level-1" data-metric="CONTEXT_SWITCHES" data-step="1.download_data.sh" data-title="Number of voluntary context-switches (e.g., while waiting for an I/O) for downloading reference genomes and other required data">
                              <div class="heatmap-actual">CONTEXT_SWITCHES</div>
                          </div>
-<div class="heatmap-metric heatmap-level-2" data-metric="CONTEXT_SWITCHES" data-step="2.simulate_reads.sh" data-title="Number of voluntary context-switches (e.g., while waiting for an I/O) for simulating reads of the genomes">
+<div class="heatmap-metric heatmap-level-1" data-metric="CONTEXT_SWITCHES" data-step="2.simulate_reads.sh" data-title="Number of voluntary context-switches (e.g., while waiting for an I/O) for simulating short (Illumina) reads from the human reference genome (build 38 for step 6)">
                              <div class="heatmap-actual">CONTEXT_SWITCHES</div>
                          </div>
-<div class="heatmap-metric heatmap-level-2" data-metric="CONTEXT_SWITCHES" data-step="3.generate_transcriptome_index.sh" data-title="Number of voluntary context-switches (e.g., while waiting for an I/O) for generating the transcriptome index">
+<div class="heatmap-metric heatmap-level-1" data-metric="CONTEXT_SWITCHES" data-step="3.generate_transcriptome_index.sh" data-title="Number of voluntary context-switches (e.g., while waiting for an I/O) for preparing a lookup of the reference human transcriptome for pseudo-mapping RNA transcripts (used in step 4.)">
                              <div class="heatmap-actual">CONTEXT_SWITCHES</div>
                          </div>
-<div class="heatmap-metric heatmap-level-2" data-metric="CONTEXT_SWITCHES" data-step="4.quantify_transcripts.sh" data-title="Number of voluntary context-switches (e.g., while waiting for an I/O) for quantifying the transcripts">
+<div class="heatmap-metric heatmap-level-1" data-metric="CONTEXT_SWITCHES" data-step="4.quantify_transcripts.sh" data-title="Number of voluntary context-switches (e.g., while waiting for an I/O) for quantifying transcript abundances in an RNA seq dataset from human cell line GM12878">
                              <div class="heatmap-actual">CONTEXT_SWITCHES</div>
                          </div>
-<div class="heatmap-metric heatmap-level-2" data-metric="CONTEXT_SWITCHES" data-step="5.bwa_index.sh" data-title="Number of voluntary context-switches (e.g., while waiting for an I/O) for generating an index for the bwa aligner">
+<div class="heatmap-metric heatmap-level-1" data-metric="CONTEXT_SWITCHES" data-step="5.bwa_index.sh" data-title="Number of voluntary context-switches (e.g., while waiting for an I/O) for preparing a lookup of the reference human genome for mapping simulated reads, used in step 6.">
                              <div class="heatmap-actual">CONTEXT_SWITCHES</div>
                          </div>
-<div class="heatmap-metric heatmap-level-2" data-metric="CONTEXT_SWITCHES" data-step="6.bwa_align.sh" data-title="Number of voluntary context-switches (e.g., while waiting for an I/O) for performing the bwa alignment">
+<div class="heatmap-metric heatmap-level-1" data-metric="CONTEXT_SWITCHES" data-step="6.bwa_align.sh" data-title="Number of voluntary context-switches (e.g., while waiting for an I/O) for mapping the simulated reads from step 2 to the human reference genome">
                              <div class="heatmap-actual">CONTEXT_SWITCHES</div>
                          </div>
-<div class="heatmap-metric heatmap-level-2" data-metric="CONTEXT_SWITCHES" data-step="7.prepare_rtg_run.sh" data-title="Number of voluntary context-switches (e.g., while waiting for an I/O) for preparing for the rtg run">
+<div class="heatmap-metric heatmap-level-1" data-metric="CONTEXT_SWITCHES" data-step="7.prepare_rtg_run.sh" data-title="Number of voluntary context-switches (e.g., while waiting for an I/O) for preparing a lookup of the reference human genome for mapping the reads from the Ashkenazi Jew trio provided by Genome In a Bottle">
                              <div class="heatmap-actual">CONTEXT_SWITCHES</div>
                          </div>
-<div class="heatmap-metric heatmap-level-2" data-metric="CONTEXT_SWITCHES" data-step="8.map_trio.sh" data-title="Number of voluntary context-switches (e.g., while waiting for an I/O) for mapping the trio">
+<div class="heatmap-metric heatmap-level-1" data-metric="CONTEXT_SWITCHES" data-step="8.map_trio.sh" data-title="Number of voluntary context-switches (e.g., while waiting for an I/O) for mapping the reads from the trio to the human reference genome, build 38">
                              <div class="heatmap-actual">CONTEXT_SWITCHES</div>
                          </div>
-<div class="heatmap-metric heatmap-level-2" data-metric="CONTEXT_SWITCHES" data-step="9.family_call_variants.sh" data-title="Number of voluntary context-switches (e.g., while waiting for an I/O) for performing variant calling">
+<div class="heatmap-metric heatmap-level-1" data-metric="CONTEXT_SWITCHES" data-step="9.family_call_variants.sh" data-title="Number of voluntary context-switches (e.g., while waiting for an I/O) for locating loci in the genomes of the trio that differ from the reference genome, in a pedigree-aware manner">
                              <div class="heatmap-actual">CONTEXT_SWITCHES</div>
                          </div>
-<div class="heatmap-metric heatmap-level-3" data-metric="CPU_SECONDS_USED" data-step="1.download_data.sh" data-title="Total number of CPU seconds used directly (in user mode, seconds) for downloading reference genomes and other required data">
+<div class="heatmap-metric heatmap-level-2" data-metric="CPU_SECONDS_USED" data-step="1.download_data.sh" data-title="Total number of CPU seconds used directly (in user mode, seconds) for downloading reference genomes and other required data">
                              <div class="heatmap-actual">CPU_SECONDS_USED</div>
                          </div>
-<div class="heatmap-metric heatmap-level-3" data-metric="CPU_SECONDS_USED" data-step="2.simulate_reads.sh" data-title="Total number of CPU seconds used directly (in user mode, seconds) for simulating reads of the genomes">
+<div class="heatmap-metric heatmap-level-2" data-metric="CPU_SECONDS_USED" data-step="2.simulate_reads.sh" data-title="Total number of CPU seconds used directly (in user mode, seconds) for simulating short (Illumina) reads from the human reference genome (build 38 for step 6)">
                              <div class="heatmap-actual">CPU_SECONDS_USED</div>
                          </div>
-<div class="heatmap-metric heatmap-level-3" data-metric="CPU_SECONDS_USED" data-step="3.generate_transcriptome_index.sh" data-title="Total number of CPU seconds used directly (in user mode, seconds) for generating the transcriptome index">
+<div class="heatmap-metric heatmap-level-2" data-metric="CPU_SECONDS_USED" data-step="3.generate_transcriptome_index.sh" data-title="Total number of CPU seconds used directly (in user mode, seconds) for preparing a lookup of the reference human transcriptome for pseudo-mapping RNA transcripts (used in step 4.)">
                              <div class="heatmap-actual">CPU_SECONDS_USED</div>
                          </div>
-<div class="heatmap-metric heatmap-level-3" data-metric="CPU_SECONDS_USED" data-step="4.quantify_transcripts.sh" data-title="Total number of CPU seconds used directly (in user mode, seconds) for quantifying the transcripts">
+<div class="heatmap-metric heatmap-level-2" data-metric="CPU_SECONDS_USED" data-step="4.quantify_transcripts.sh" data-title="Total number of CPU seconds used directly (in user mode, seconds) for quantifying transcript abundances in an RNA seq dataset from human cell line GM12878">
                              <div class="heatmap-actual">CPU_SECONDS_USED</div>
                          </div>
-<div class="heatmap-metric heatmap-level-3" data-metric="CPU_SECONDS_USED" data-step="5.bwa_index.sh" data-title="Total number of CPU seconds used directly (in user mode, seconds) for generating an index for the bwa aligner">
+<div class="heatmap-metric heatmap-level-2" data-metric="CPU_SECONDS_USED" data-step="5.bwa_index.sh" data-title="Total number of CPU seconds used directly (in user mode, seconds) for preparing a lookup of the reference human genome for mapping simulated reads, used in step 6.">
                              <div class="heatmap-actual">CPU_SECONDS_USED</div>
                          </div>
-<div class="heatmap-metric heatmap-level-3" data-metric="CPU_SECONDS_USED" data-step="6.bwa_align.sh" data-title="Total number of CPU seconds used directly (in user mode, seconds) for performing the bwa alignment">
+<div class="heatmap-metric heatmap-level-2" data-metric="CPU_SECONDS_USED" data-step="6.bwa_align.sh" data-title="Total number of CPU seconds used directly (in user mode, seconds) for mapping the simulated reads from step 2 to the human reference genome">
                              <div class="heatmap-actual">CPU_SECONDS_USED</div>
                          </div>
-<div class="heatmap-metric heatmap-level-3" data-metric="CPU_SECONDS_USED" data-step="7.prepare_rtg_run.sh" data-title="Total number of CPU seconds used directly (in user mode, seconds) for preparing for the rtg run">
+<div class="heatmap-metric heatmap-level-2" data-metric="CPU_SECONDS_USED" data-step="7.prepare_rtg_run.sh" data-title="Total number of CPU seconds used directly (in user mode, seconds) for preparing a lookup of the reference human genome for mapping the reads from the Ashkenazi Jew trio provided by Genome In a Bottle">
                              <div class="heatmap-actual">CPU_SECONDS_USED</div>
                          </div>
-<div class="heatmap-metric heatmap-level-3" data-metric="CPU_SECONDS_USED" data-step="8.map_trio.sh" data-title="Total number of CPU seconds used directly (in user mode, seconds) for mapping the trio">
+<div class="heatmap-metric heatmap-level-2" data-metric="CPU_SECONDS_USED" data-step="8.map_trio.sh" data-title="Total number of CPU seconds used directly (in user mode, seconds) for mapping the reads from the trio to the human reference genome, build 38">
                              <div class="heatmap-actual">CPU_SECONDS_USED</div>
                          </div>
-<div class="heatmap-metric heatmap-level-3" data-metric="CPU_SECONDS_USED" data-step="9.family_call_variants.sh" data-title="Total number of CPU seconds used directly (in user mode, seconds) for performing variant calling">
+<div class="heatmap-metric heatmap-level-2" data-metric="CPU_SECONDS_USED" data-step="9.family_call_variants.sh" data-title="Total number of CPU seconds used directly (in user mode, seconds) for locating loci in the genomes of the trio that differ from the reference genome, in a pedigree-aware manner">
                              <div class="heatmap-actual">CPU_SECONDS_USED</div>
                          </div>
-<div class="heatmap-metric heatmap-level-4" data-metric="ELAPSED_TIME_SEC" data-step="1.download_data.sh" data-title="Elapsed real (wall clock) time used by the process (seconds) for downloading reference genomes and other required data">
+<div class="heatmap-metric heatmap-level-3" data-metric="ELAPSED_TIME_SEC" data-step="1.download_data.sh" data-title="Elapsed real (wall clock) time used by the process (seconds) for downloading reference genomes and other required data">
                              <div class="heatmap-actual">ELAPSED_TIME_SEC</div>
                          </div>
-<div class="heatmap-metric heatmap-level-4" data-metric="ELAPSED_TIME_SEC" data-step="2.simulate_reads.sh" data-title="Elapsed real (wall clock) time used by the process (seconds) for simulating reads of the genomes">
+<div class="heatmap-metric heatmap-level-3" data-metric="ELAPSED_TIME_SEC" data-step="2.simulate_reads.sh" data-title="Elapsed real (wall clock) time used by the process (seconds) for simulating short (Illumina) reads from the human reference genome (build 38 for step 6)">
                              <div class="heatmap-actual">ELAPSED_TIME_SEC</div>
                          </div>
-<div class="heatmap-metric heatmap-level-4" data-metric="ELAPSED_TIME_SEC" data-step="3.generate_transcriptome_index.sh" data-title="Elapsed real (wall clock) time used by the process (seconds) for generating the transcriptome index">
+<div class="heatmap-metric heatmap-level-3" data-metric="ELAPSED_TIME_SEC" data-step="3.generate_transcriptome_index.sh" data-title="Elapsed real (wall clock) time used by the process (seconds) for preparing a lookup of the reference human transcriptome for pseudo-mapping RNA transcripts (used in step 4.)">
                              <div class="heatmap-actual">ELAPSED_TIME_SEC</div>
                          </div>
-<div class="heatmap-metric heatmap-level-4" data-metric="ELAPSED_TIME_SEC" data-step="4.quantify_transcripts.sh" data-title="Elapsed real (wall clock) time used by the process (seconds) for quantifying the transcripts">
+<div class="heatmap-metric heatmap-level-3" data-metric="ELAPSED_TIME_SEC" data-step="4.quantify_transcripts.sh" data-title="Elapsed real (wall clock) time used by the process (seconds) for quantifying transcript abundances in an RNA seq dataset from human cell line GM12878">
                              <div class="heatmap-actual">ELAPSED_TIME_SEC</div>
                          </div>
-<div class="heatmap-metric heatmap-level-4" data-metric="ELAPSED_TIME_SEC" data-step="5.bwa_index.sh" data-title="Elapsed real (wall clock) time used by the process (seconds) for generating an index for the bwa aligner">
+<div class="heatmap-metric heatmap-level-3" data-metric="ELAPSED_TIME_SEC" data-step="5.bwa_index.sh" data-title="Elapsed real (wall clock) time used by the process (seconds) for preparing a lookup of the reference human genome for mapping simulated reads, used in step 6.">
                              <div class="heatmap-actual">ELAPSED_TIME_SEC</div>
                          </div>
-<div class="heatmap-metric heatmap-level-4" data-metric="ELAPSED_TIME_SEC" data-step="6.bwa_align.sh" data-title="Elapsed real (wall clock) time used by the process (seconds) for performing the bwa alignment">
+<div class="heatmap-metric heatmap-level-3" data-metric="ELAPSED_TIME_SEC" data-step="6.bwa_align.sh" data-title="Elapsed real (wall clock) time used by the process (seconds) for mapping the simulated reads from step 2 to the human reference genome">
                              <div class="heatmap-actual">ELAPSED_TIME_SEC</div>
                          </div>
-<div class="heatmap-metric heatmap-level-4" data-metric="ELAPSED_TIME_SEC" data-step="7.prepare_rtg_run.sh" data-title="Elapsed real (wall clock) time used by the process (seconds) for preparing for the rtg run">
+<div class="heatmap-metric heatmap-level-3" data-metric="ELAPSED_TIME_SEC" data-step="7.prepare_rtg_run.sh" data-title="Elapsed real (wall clock) time used by the process (seconds) for preparing a lookup of the reference human genome for mapping the reads from the Ashkenazi Jew trio provided by Genome In a Bottle">
                              <div class="heatmap-actual">ELAPSED_TIME_SEC</div>
                          </div>
-<div class="heatmap-metric heatmap-level-4" data-metric="ELAPSED_TIME_SEC" data-step="8.map_trio.sh" data-title="Elapsed real (wall clock) time used by the process (seconds) for mapping the trio">
+<div class="heatmap-metric heatmap-level-3" data-metric="ELAPSED_TIME_SEC" data-step="8.map_trio.sh" data-title="Elapsed real (wall clock) time used by the process (seconds) for mapping the reads from the trio to the human reference genome, build 38">
                              <div class="heatmap-actual">ELAPSED_TIME_SEC</div>
                          </div>
-<div class="heatmap-metric heatmap-level-4" data-metric="ELAPSED_TIME_SEC" data-step="9.family_call_variants.sh" data-title="Elapsed real (wall clock) time used by the process (seconds) for performing variant calling">
+<div class="heatmap-metric heatmap-level-3" data-metric="ELAPSED_TIME_SEC" data-step="9.family_call_variants.sh" data-title="Elapsed real (wall clock) time used by the process (seconds) for locating loci in the genomes of the trio that differ from the reference genome, in a pedigree-aware manner">
                              <div class="heatmap-actual">ELAPSED_TIME_SEC</div>
                          </div>
-<div class="heatmap-metric heatmap-level-5" data-metric="FS_INPUTS" data-step="1.download_data.sh" data-title="number of file system inputs for downloading reference genomes and other required data">
-                             <div class="heatmap-actual">FS_INPUTS</div>
-                         </div>
-<div class="heatmap-metric heatmap-level-5" data-metric="FS_INPUTS" data-step="2.simulate_reads.sh" data-title="number of file system inputs for simulating reads of the genomes">
-                             <div class="heatmap-actual">FS_INPUTS</div>
-                         </div>
-<div class="heatmap-metric heatmap-level-5" data-metric="FS_INPUTS" data-step="3.generate_transcriptome_index.sh" data-title="number of file system inputs for generating the transcriptome index">
-                             <div class="heatmap-actual">FS_INPUTS</div>
-                         </div>
-<div class="heatmap-metric heatmap-level-5" data-metric="FS_INPUTS" data-step="4.quantify_transcripts.sh" data-title="number of file system inputs for quantifying the transcripts">
-                             <div class="heatmap-actual">FS_INPUTS</div>
-                         </div>
-<div class="heatmap-metric heatmap-level-5" data-metric="FS_INPUTS" data-step="5.bwa_index.sh" data-title="number of file system inputs for generating an index for the bwa aligner">
-                             <div class="heatmap-actual">FS_INPUTS</div>
-                         </div>
-<div class="heatmap-metric heatmap-level-5" data-metric="FS_INPUTS" data-step="6.bwa_align.sh" data-title="number of file system inputs for performing the bwa alignment">
-                             <div class="heatmap-actual">FS_INPUTS</div>
-                         </div>
-<div class="heatmap-metric heatmap-level-5" data-metric="FS_INPUTS" data-step="7.prepare_rtg_run.sh" data-title="number of file system inputs for preparing for the rtg run">
-                             <div class="heatmap-actual">FS_INPUTS</div>
-                         </div>
-<div class="heatmap-metric heatmap-level-5" data-metric="FS_INPUTS" data-step="8.map_trio.sh" data-title="number of file system inputs for mapping the trio">
-                             <div class="heatmap-actual">FS_INPUTS</div>
-                         </div>
-<div class="heatmap-metric heatmap-level-5" data-metric="FS_INPUTS" data-step="9.family_call_variants.sh" data-title="number of file system inputs for performing variant calling">
-                             <div class="heatmap-actual">FS_INPUTS</div>
-                         </div>
-<div class="heatmap-metric heatmap-level-6" data-metric="FS_OUTPUTS" data-step="1.download_data.sh" data-title="number of file system outputs for downloading reference genomes and other required data">
+<div class="heatmap-metric heatmap-level-4" data-metric="FS_OUTPUTS" data-step="1.download_data.sh" data-title="number of file system outputs for downloading reference genomes and other required data">
                              <div class="heatmap-actual">FS_OUTPUTS</div>
                          </div>
-<div class="heatmap-metric heatmap-level-6" data-metric="FS_OUTPUTS" data-step="2.simulate_reads.sh" data-title="number of file system outputs for simulating reads of the genomes">
+<div class="heatmap-metric heatmap-level-4" data-metric="FS_OUTPUTS" data-step="2.simulate_reads.sh" data-title="number of file system outputs for simulating short (Illumina) reads from the human reference genome (build 38 for step 6)">
                              <div class="heatmap-actual">FS_OUTPUTS</div>
                          </div>
-<div class="heatmap-metric heatmap-level-6" data-metric="FS_OUTPUTS" data-step="3.generate_transcriptome_index.sh" data-title="number of file system outputs for generating the transcriptome index">
+<div class="heatmap-metric heatmap-level-4" data-metric="FS_OUTPUTS" data-step="3.generate_transcriptome_index.sh" data-title="number of file system outputs for preparing a lookup of the reference human transcriptome for pseudo-mapping RNA transcripts (used in step 4.)">
                              <div class="heatmap-actual">FS_OUTPUTS</div>
                          </div>
-<div class="heatmap-metric heatmap-level-6" data-metric="FS_OUTPUTS" data-step="4.quantify_transcripts.sh" data-title="number of file system outputs for quantifying the transcripts">
+<div class="heatmap-metric heatmap-level-4" data-metric="FS_OUTPUTS" data-step="4.quantify_transcripts.sh" data-title="number of file system outputs for quantifying transcript abundances in an RNA seq dataset from human cell line GM12878">
                              <div class="heatmap-actual">FS_OUTPUTS</div>
                          </div>
-<div class="heatmap-metric heatmap-level-6" data-metric="FS_OUTPUTS" data-step="5.bwa_index.sh" data-title="number of file system outputs for generating an index for the bwa aligner">
+<div class="heatmap-metric heatmap-level-4" data-metric="FS_OUTPUTS" data-step="5.bwa_index.sh" data-title="number of file system outputs for preparing a lookup of the reference human genome for mapping simulated reads, used in step 6.">
                              <div class="heatmap-actual">FS_OUTPUTS</div>
                          </div>
-<div class="heatmap-metric heatmap-level-6" data-metric="FS_OUTPUTS" data-step="6.bwa_align.sh" data-title="number of file system outputs for performing the bwa alignment">
+<div class="heatmap-metric heatmap-level-4" data-metric="FS_OUTPUTS" data-step="6.bwa_align.sh" data-title="number of file system outputs for mapping the simulated reads from step 2 to the human reference genome">
                              <div class="heatmap-actual">FS_OUTPUTS</div>
                          </div>
-<div class="heatmap-metric heatmap-level-6" data-metric="FS_OUTPUTS" data-step="7.prepare_rtg_run.sh" data-title="number of file system outputs for preparing for the rtg run">
+<div class="heatmap-metric heatmap-level-4" data-metric="FS_OUTPUTS" data-step="7.prepare_rtg_run.sh" data-title="number of file system outputs for preparing a lookup of the reference human genome for mapping the reads from the Ashkenazi Jew trio provided by Genome In a Bottle">
                              <div class="heatmap-actual">FS_OUTPUTS</div>
                          </div>
-<div class="heatmap-metric heatmap-level-6" data-metric="FS_OUTPUTS" data-step="8.map_trio.sh" data-title="number of file system outputs for mapping the trio">
+<div class="heatmap-metric heatmap-level-4" data-metric="FS_OUTPUTS" data-step="8.map_trio.sh" data-title="number of file system outputs for mapping the reads from the trio to the human reference genome, build 38">
                              <div class="heatmap-actual">FS_OUTPUTS</div>
                          </div>
-<div class="heatmap-metric heatmap-level-6" data-metric="FS_OUTPUTS" data-step="9.family_call_variants.sh" data-title="number of file system outputs for performing variant calling">
+<div class="heatmap-metric heatmap-level-4" data-metric="FS_OUTPUTS" data-step="9.family_call_variants.sh" data-title="number of file system outputs for locating loci in the genomes of the trio that differ from the reference genome, in a pedigree-aware manner">
                              <div class="heatmap-actual">FS_OUTPUTS</div>
                          </div>
-<div class="heatmap-metric heatmap-level-7" data-metric="MAX_RES_SIZE_KB" data-step="1.download_data.sh" data-title="Maximum resident set size of the process (in Kilobytes) for downloading reference genomes and other required data">
+<div class="heatmap-metric heatmap-level-5" data-metric="MAX_RES_SIZE_KB" data-step="1.download_data.sh" data-title="Maximum resident set size of the process (in Kilobytes) for downloading reference genomes and other required data">
                              <div class="heatmap-actual">MAX_RES_SIZE_KB</div>
                          </div>
-<div class="heatmap-metric heatmap-level-7" data-metric="MAX_RES_SIZE_KB" data-step="2.simulate_reads.sh" data-title="Maximum resident set size of the process (in Kilobytes) for simulating reads of the genomes">
+<div class="heatmap-metric heatmap-level-5" data-metric="MAX_RES_SIZE_KB" data-step="2.simulate_reads.sh" data-title="Maximum resident set size of the process (in Kilobytes) for simulating short (Illumina) reads from the human reference genome (build 38 for step 6)">
                              <div class="heatmap-actual">MAX_RES_SIZE_KB</div>
                          </div>
-<div class="heatmap-metric heatmap-level-7" data-metric="MAX_RES_SIZE_KB" data-step="3.generate_transcriptome_index.sh" data-title="Maximum resident set size of the process (in Kilobytes) for generating the transcriptome index">
+<div class="heatmap-metric heatmap-level-5" data-metric="MAX_RES_SIZE_KB" data-step="3.generate_transcriptome_index.sh" data-title="Maximum resident set size of the process (in Kilobytes) for preparing a lookup of the reference human transcriptome for pseudo-mapping RNA transcripts (used in step 4.)">
                              <div class="heatmap-actual">MAX_RES_SIZE_KB</div>
                          </div>
-<div class="heatmap-metric heatmap-level-7" data-metric="MAX_RES_SIZE_KB" data-step="4.quantify_transcripts.sh" data-title="Maximum resident set size of the process (in Kilobytes) for quantifying the transcripts">
+<div class="heatmap-metric heatmap-level-5" data-metric="MAX_RES_SIZE_KB" data-step="4.quantify_transcripts.sh" data-title="Maximum resident set size of the process (in Kilobytes) for quantifying transcript abundances in an RNA seq dataset from human cell line GM12878">
                              <div class="heatmap-actual">MAX_RES_SIZE_KB</div>
                          </div>
-<div class="heatmap-metric heatmap-level-7" data-metric="MAX_RES_SIZE_KB" data-step="5.bwa_index.sh" data-title="Maximum resident set size of the process (in Kilobytes) for generating an index for the bwa aligner">
+<div class="heatmap-metric heatmap-level-5" data-metric="MAX_RES_SIZE_KB" data-step="5.bwa_index.sh" data-title="Maximum resident set size of the process (in Kilobytes) for preparing a lookup of the reference human genome for mapping simulated reads, used in step 6.">
                              <div class="heatmap-actual">MAX_RES_SIZE_KB</div>
                          </div>
-<div class="heatmap-metric heatmap-level-7" data-metric="MAX_RES_SIZE_KB" data-step="6.bwa_align.sh" data-title="Maximum resident set size of the process (in Kilobytes) for performing the bwa alignment">
+<div class="heatmap-metric heatmap-level-5" data-metric="MAX_RES_SIZE_KB" data-step="6.bwa_align.sh" data-title="Maximum resident set size of the process (in Kilobytes) for mapping the simulated reads from step 2 to the human reference genome">
                              <div class="heatmap-actual">MAX_RES_SIZE_KB</div>
                          </div>
-<div class="heatmap-metric heatmap-level-7" data-metric="MAX_RES_SIZE_KB" data-step="7.prepare_rtg_run.sh" data-title="Maximum resident set size of the process (in Kilobytes) for preparing for the rtg run">
+<div class="heatmap-metric heatmap-level-5" data-metric="MAX_RES_SIZE_KB" data-step="7.prepare_rtg_run.sh" data-title="Maximum resident set size of the process (in Kilobytes) for preparing a lookup of the reference human genome for mapping the reads from the Ashkenazi Jew trio provided by Genome In a Bottle">
                              <div class="heatmap-actual">MAX_RES_SIZE_KB</div>
                          </div>
-<div class="heatmap-metric heatmap-level-7" data-metric="MAX_RES_SIZE_KB" data-step="8.map_trio.sh" data-title="Maximum resident set size of the process (in Kilobytes) for mapping the trio">
+<div class="heatmap-metric heatmap-level-5" data-metric="MAX_RES_SIZE_KB" data-step="8.map_trio.sh" data-title="Maximum resident set size of the process (in Kilobytes) for mapping the reads from the trio to the human reference genome, build 38">
                              <div class="heatmap-actual">MAX_RES_SIZE_KB</div>
                          </div>
-<div class="heatmap-metric heatmap-level-7" data-metric="MAX_RES_SIZE_KB" data-step="9.family_call_variants.sh" data-title="Maximum resident set size of the process (in Kilobytes) for performing variant calling">
+<div class="heatmap-metric heatmap-level-5" data-metric="MAX_RES_SIZE_KB" data-step="9.family_call_variants.sh" data-title="Maximum resident set size of the process (in Kilobytes) for locating loci in the genomes of the trio that differ from the reference genome, in a pedigree-aware manner">
                              <div class="heatmap-actual">MAX_RES_SIZE_KB</div>
                          </div>
-<div class="heatmap-metric heatmap-level-8" data-metric="PERC_CPU_ALLOCATED" data-step="1.download_data.sh" data-title="Percentage of CPU allocated for for downloading reference genomes and other required data">
+<div class="heatmap-metric heatmap-level-6" data-metric="PERC_CPU_ALLOCATED" data-step="1.download_data.sh" data-title="Percentage of CPU allocated for for downloading reference genomes and other required data">
                              <div class="heatmap-actual">PERC_CPU_ALLOCATED</div>
                          </div>
-<div class="heatmap-metric heatmap-level-8" data-metric="PERC_CPU_ALLOCATED" data-step="2.simulate_reads.sh" data-title="Percentage of CPU allocated for for simulating reads of the genomes">
+<div class="heatmap-metric heatmap-level-6" data-metric="PERC_CPU_ALLOCATED" data-step="2.simulate_reads.sh" data-title="Percentage of CPU allocated for for simulating short (Illumina) reads from the human reference genome (build 38 for step 6)">
                              <div class="heatmap-actual">PERC_CPU_ALLOCATED</div>
                          </div>
-<div class="heatmap-metric heatmap-level-8" data-metric="PERC_CPU_ALLOCATED" data-step="3.generate_transcriptome_index.sh" data-title="Percentage of CPU allocated for for generating the transcriptome index">
+<div class="heatmap-metric heatmap-level-6" data-metric="PERC_CPU_ALLOCATED" data-step="3.generate_transcriptome_index.sh" data-title="Percentage of CPU allocated for for preparing a lookup of the reference human transcriptome for pseudo-mapping RNA transcripts (used in step 4.)">
                              <div class="heatmap-actual">PERC_CPU_ALLOCATED</div>
                          </div>
-<div class="heatmap-metric heatmap-level-8" data-metric="PERC_CPU_ALLOCATED" data-step="4.quantify_transcripts.sh" data-title="Percentage of CPU allocated for for quantifying the transcripts">
+<div class="heatmap-metric heatmap-level-6" data-metric="PERC_CPU_ALLOCATED" data-step="4.quantify_transcripts.sh" data-title="Percentage of CPU allocated for for quantifying transcript abundances in an RNA seq dataset from human cell line GM12878">
                              <div class="heatmap-actual">PERC_CPU_ALLOCATED</div>
                          </div>
-<div class="heatmap-metric heatmap-level-8" data-metric="PERC_CPU_ALLOCATED" data-step="5.bwa_index.sh" data-title="Percentage of CPU allocated for for generating an index for the bwa aligner">
+<div class="heatmap-metric heatmap-level-6" data-metric="PERC_CPU_ALLOCATED" data-step="5.bwa_index.sh" data-title="Percentage of CPU allocated for for preparing a lookup of the reference human genome for mapping simulated reads, used in step 6.">
                              <div class="heatmap-actual">PERC_CPU_ALLOCATED</div>
                          </div>
-<div class="heatmap-metric heatmap-level-8" data-metric="PERC_CPU_ALLOCATED" data-step="6.bwa_align.sh" data-title="Percentage of CPU allocated for for performing the bwa alignment">
+<div class="heatmap-metric heatmap-level-6" data-metric="PERC_CPU_ALLOCATED" data-step="6.bwa_align.sh" data-title="Percentage of CPU allocated for for mapping the simulated reads from step 2 to the human reference genome">
                              <div class="heatmap-actual">PERC_CPU_ALLOCATED</div>
                          </div>
-<div class="heatmap-metric heatmap-level-8" data-metric="PERC_CPU_ALLOCATED" data-step="7.prepare_rtg_run.sh" data-title="Percentage of CPU allocated for for preparing for the rtg run">
+<div class="heatmap-metric heatmap-level-6" data-metric="PERC_CPU_ALLOCATED" data-step="7.prepare_rtg_run.sh" data-title="Percentage of CPU allocated for for preparing a lookup of the reference human genome for mapping the reads from the Ashkenazi Jew trio provided by Genome In a Bottle">
                              <div class="heatmap-actual">PERC_CPU_ALLOCATED</div>
                          </div>
-<div class="heatmap-metric heatmap-level-8" data-metric="PERC_CPU_ALLOCATED" data-step="8.map_trio.sh" data-title="Percentage of CPU allocated for for mapping the trio">
+<div class="heatmap-metric heatmap-level-6" data-metric="PERC_CPU_ALLOCATED" data-step="8.map_trio.sh" data-title="Percentage of CPU allocated for for mapping the reads from the trio to the human reference genome, build 38">
                              <div class="heatmap-actual">PERC_CPU_ALLOCATED</div>
                          </div>
-<div class="heatmap-metric heatmap-level-8" data-metric="PERC_CPU_ALLOCATED" data-step="9.family_call_variants.sh" data-title="Percentage of CPU allocated for for performing variant calling">
+<div class="heatmap-metric heatmap-level-6" data-metric="PERC_CPU_ALLOCATED" data-step="9.family_call_variants.sh" data-title="Percentage of CPU allocated for for locating loci in the genomes of the trio that differ from the reference genome, in a pedigree-aware manner">
                              <div class="heatmap-actual">PERC_CPU_ALLOCATED</div>
                          </div>
                 </div>
