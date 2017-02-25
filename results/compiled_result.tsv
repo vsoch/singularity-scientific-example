@@ -1,58 +1,4 @@
 	COMMAND	LABEL	SOFTWARE	ENV	RUN	CONTEXT_SWITCHES	CPU_SECONDS_USED	ELAPSED_TIME_SEC	FS_OUTPUTS	MAX_RES_SIZE_KB	PERC_CPU_ALLOCATED
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	singularity	cloud-gce	1	1635069	2414.84	3913.39	169899920	5468	65%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	singularity	cloud-gce	1	1354	5060.6	5738.77	73398488	2070732	99%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	singularity	cloud-gce	1	119	604.43	609.7	5473864	5131188	99%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/4.quantify_transcripts.sh /scratch/data 12	4.quantify_transcripts.sh 	singularity	cloud-gce	1	273504	12839.41	1192.88	5486088	5102796	1080%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/5.bwa_index.sh /scratch/data	5.bwa_index.sh 	singularity	cloud-gce	1	8349	4916.92	4993.06	16649240	4546184	98%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/6.bwa_align.sh /scratch/data	6.bwa_align.sh 	singularity	cloud-gce	1	11179496	89924.49	7577.62	24286160	10715580	1190%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/7.prepare_rtg_run.sh /scratch/data	7.prepare_rtg_run.sh 	singularity	cloud-gce	1	9319	70.37	73.56	2270824	838240	110%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/8.map_trio.sh /scratch/data 32g 8	8.map_trio.sh 	singularity	cloud-gce	1	26616127	27783.84	4045.36	99063504	29978300	697%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/9.family_call_variants.sh /scratch/data 32g 8	9.family_call_variants.sh 	singularity	cloud-gce	1	13741542	27591.28	4281.39	644776	12265112	651%
-cloud-gce-docker	bash /code/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	docker	cloud-gce	1	1250589	3193.34	9041.44	169901160	5040	38%
-cloud-gce-docker	bash /code/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	docker	cloud-gce	1	1646	6815.52	7947.73	73399384	2069356	99%
-cloud-gce-docker	bash /code/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	docker	cloud-gce	1	29	1014.97	1023.08	5473864	5130368	99%
-cloud-gce-docker	bash /code/scripts/4.quantify_transcripts.sh /scratch/data 4	4.quantify_transcripts.sh 	docker	cloud-gce	1	25807	13151.14	3437.14	5486752	4239588	384%
-cloud-gce-docker	bash /code/scripts/5.bwa_index.sh /scratch/data	5.bwa_index.sh 	docker	cloud-gce	1	14100	7615.04	7703.17	16649232	4546156	99%
-cloud-gce-docker	bash /code/scripts/6.bwa_align.sh /scratch/data	6.bwa_align.sh 	docker	cloud-gce	1	9898948	119536.81	10090.34	24286104	10707784	1189%
-cloud-gce-docker	bash /code/scripts/7.prepare_rtg_run.sh /scratch/data	7.prepare_rtg_run.sh 	docker	cloud-gce	1	27606	87.04	142.53	2270880	810544	72%
-cloud-gce-docker	bash /code/scripts/8.map_trio.sh /scratch/data 32g 8	8.map_trio.sh 	docker	cloud-gce	1	26654428	48132.14	6840.19	99133192	28655964	718%
-cloud-gce-docker	bash /code/scripts/9.family_call_variants.sh /scratch/data 32g 8	9.family_call_variants.sh 	docker	cloud-gce	1	14051593	32773.11	5123.49	646160	10630360	649%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	singularity	cloud-gce	2	1567661	2472.83	3756.12	169899832	5484	70%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	singularity	cloud-gce	2	1367	5109.08	5816.67	73398560	2070612	99%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	singularity	cloud-gce	2	117	664.46	669.56	5473864	5131960	99%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/4.quantify_transcripts.sh /scratch/data 12	4.quantify_transcripts.sh 	singularity	cloud-gce	2	248561	19794.14	1787.68	5477832	5102472	1110%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/5.bwa_index.sh /scratch/data	5.bwa_index.sh 	singularity	cloud-gce	2	2694	4947.41	5021.01	16649240	4546204	98%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/6.bwa_align.sh /scratch/data	6.bwa_align.sh 	singularity	cloud-gce	2	10962148	88406.47	7451.76	24286024	10700916	1190%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/7.prepare_rtg_run.sh /scratch/data	7.prepare_rtg_run.sh 	singularity	cloud-gce	2	8231	72.23	75.16	2270824	721688	100%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/8.map_trio.sh /scratch/data 32g 8	8.map_trio.sh 	singularity	cloud-gce	2	26614837	31470.22	4531.28	99075736	28632748	706%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/9.family_call_variants.sh /scratch/data 32g 8	9.family_call_variants.sh 	singularity	cloud-gce	2	13773742	29772.2	4644.02	645296	12686644	647%
-cloud-gce-docker	bash /code/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	docker	cloud-gce	2	1056429	3417.82	9842.5	169901272	4936	37%
-cloud-gce-docker	bash /code/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	docker	cloud-gce	2	1731	7338.58	8532.73	73399528	2070772	99%
-cloud-gce-docker	bash /code/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	docker	cloud-gce	2	36	1005.35	1014.78	5473864	5131632	99%
-cloud-gce-docker	bash /code/scripts/4.quantify_transcripts.sh /scratch/data 4	4.quantify_transcripts.sh 	docker	cloud-gce	2	6812	14210.82	3703.7	5486352	4241232	385%
-cloud-gce-docker	bash /code/scripts/5.bwa_index.sh /scratch/data	5.bwa_index.sh 	docker	cloud-gce	2	956	7488.0	7574.85	16649232	4546108	99%
-cloud-gce-docker	bash /code/scripts/6.bwa_align.sh /scratch/data	6.bwa_align.sh 	docker	cloud-gce	2	9268564	119817.2	10125.99	24286088	10738256	1188%
-cloud-gce-docker	bash /code/scripts/7.prepare_rtg_run.sh /scratch/data	7.prepare_rtg_run.sh 	docker	cloud-gce	2	8654	92.18	92.77	2270816	1027364	116%
-cloud-gce-docker	bash /code/scripts/8.map_trio.sh /scratch/data 32g 8	8.map_trio.sh 	docker	cloud-gce	2	26648870	45356.27	6541.98	99125264	28808948	707%
-cloud-gce-docker	bash /code/scripts/9.family_call_variants.sh /scratch/data 32g 8	9.family_call_variants.sh 	docker	cloud-gce	2	13617773	35912.35	5569.58	647376	13462888	653%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	singularity	cloud-gce	3	1358908	2382.42	3906.47	169899896	5480	65%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	singularity	cloud-gce	3	1384	4951.02	5615.88	73398408	2069500	99%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	singularity	cloud-gce	3	125	590.2	595.13	5473864	5130928	99%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/4.quantify_transcripts.sh /scratch/data 12	4.quantify_transcripts.sh 	singularity	cloud-gce	3	244869	15784.42	1435.54	5486368	5098892	1103%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/5.bwa_index.sh /scratch/data	5.bwa_index.sh 	singularity	cloud-gce	3	6312	4785.22	4859.55	16649240	4546216	98%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/6.bwa_align.sh /scratch/data	6.bwa_align.sh 	singularity	cloud-gce	3	11160599	86996.59	7332.18	24285984	10723376	1190%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/7.prepare_rtg_run.sh /scratch/data	7.prepare_rtg_run.sh 	singularity	cloud-gce	3	9280	61.7	64.06	2270792	1038608	108%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/8.map_trio.sh /scratch/data 32g 8	8.map_trio.sh 	singularity	cloud-gce	3	26605219	29385.78	4258.38	99068864	29253060	700%
-cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/9.family_call_variants.sh /scratch/data 32g 8	9.family_call_variants.sh 	singularity	cloud-gce	3	13811961	25924.54	4034.56	644288	13263220	648%
-cloud-gce-docker	bash /code/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	docker	cloud-gce	3	1311429	3158.58	8968.29	169901160	5056	38%
-cloud-gce-docker	bash /code/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	docker	cloud-gce	3	1746	6694.92	7757.39	73399112	2070248	99%
-cloud-gce-docker	bash /code/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	docker	cloud-gce	3	55	912.15	920.52	5473864	5130792	99%
-cloud-gce-docker	bash /code/scripts/4.quantify_transcripts.sh /scratch/data 4	4.quantify_transcripts.sh 	docker	cloud-gce	3	6798	13365.61	3499.13	5476552	4240168	383%
-cloud-gce-docker	bash /code/scripts/5.bwa_index.sh /scratch/data	5.bwa_index.sh 	docker	cloud-gce	3	960	7444.16	7525.81	16649232	4546184	99%
-cloud-gce-docker	bash /code/scripts/6.bwa_align.sh /scratch/data	6.bwa_align.sh 	docker	cloud-gce	3	8358317	114530.0	9666.16	24286200	10714056	1189%
-cloud-gce-docker	bash /code/scripts/7.prepare_rtg_run.sh /scratch/data	7.prepare_rtg_run.sh 	docker	cloud-gce	3	7393	77.0	77.44	2270808	752116	111%
-cloud-gce-docker	bash /code/scripts/8.map_trio.sh /scratch/data 32g 8	8.map_trio.sh 	docker	cloud-gce	3	26623035	43356.29	6179.57	99116496	28601472	715%
-cloud-gce-docker	bash /code/scripts/9.family_call_variants.sh /scratch/data 32g 8	9.family_call_variants.sh 	docker	cloud-gce	3	13570272	33951.97	5302.03	646688	10628148	649%
 cloud-aws-docker	bash /code/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	docker	cloud-aws	1	2700576	2434.76	4210.48	169900200	4992	62%
 cloud-aws-docker	bash /code/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	docker	cloud-aws	1	1429	4874.27	5575.58	73399528	2070280	99%
 cloud-aws-docker	bash /code/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	docker	cloud-aws	1	68	466.5	470.48	5473864	5130516	99%
@@ -71,24 +17,6 @@ cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/6
 cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/7.prepare_rtg_run.sh /scratch/data	7.prepare_rtg_run.sh 	singularity	cloud-aws	1	13126	60.49	60.75	2270784	829608	102%
 cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/8.map_trio.sh /scratch/data 32g 8	8.map_trio.sh 	singularity	cloud-aws	1	26437519	20219.6	2902.85	99035616	29214432	710%
 cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/9.family_call_variants.sh /scratch/data 32g 8	9.family_call_variants.sh 	singularity	cloud-aws	1	13429518	19694.82	3106.24	643104	11130608	636%
-cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	singularity	cloud-aws	2	2059649	2422.13	3643.55	169900032	5508	69%
-cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	singularity	cloud-aws	2	1482	4898.12	5552.15	73399528	2070160	99%
-cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	singularity	cloud-aws	2	144	474.55	478.39	5473864	5130592	99%
-cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/4.quantify_transcripts.sh /scratch/data 16	4.quantify_transcripts.sh 	singularity	cloud-aws	2	384566	17396.06	1210.02	5482088	5479036	1441%
-cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/5.bwa_index.sh /scratch/data	5.bwa_index.sh 	singularity	cloud-aws	2	19536	3811.83	3864.9	16649240	4546056	98%
-cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/6.bwa_align.sh /scratch/data	6.bwa_align.sh 	singularity	cloud-aws	2	8215494	76989.67	4900.62	24285760	12477936	1574%
-cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/7.prepare_rtg_run.sh /scratch/data	7.prepare_rtg_run.sh 	singularity	cloud-aws	2	35412	61.72	63.03	2270800	1028652	99%
-cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/8.map_trio.sh /scratch/data 32g 8	8.map_trio.sh 	singularity	cloud-aws	2	26408322	17576.35	2542.53	99026640	29337272	697%
-cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/9.family_call_variants.sh /scratch/data 32g 8	9.family_call_variants.sh 	singularity	cloud-aws	2	13363625	19435.96	3058.9	643096	9070304	638%
-cloud-aws-docker	bash /code/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	docker	cloud-aws	2	2937302	2446.19	4444.68	169900320	5048	59%
-cloud-aws-docker	bash /code/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	docker	cloud-aws	2	1602	4873.64	5573.57	73399096	2069160	99%
-cloud-aws-docker	bash /code/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	docker	cloud-aws	2	49	510.69	514.82	5473864	5131604	99%
-cloud-aws-docker	bash /code/scripts/4.quantify_transcripts.sh /scratch/data 4	4.quantify_transcripts.sh 	docker	cloud-aws	2	22340	6937.1	1812.91	5483336	4225816	384%
-cloud-aws-docker	bash /code/scripts/5.bwa_index.sh /scratch/data	5.bwa_index.sh 	docker	cloud-aws	2	12310	3835.96	3883.31	16649232	4546212	99%
-cloud-aws-docker	bash /code/scripts/6.bwa_align.sh /scratch/data	6.bwa_align.sh 	docker	cloud-aws	2	4613229	76857.34	4891.57	24285520	12477440	1575%
-cloud-aws-docker	bash /code/scripts/7.prepare_rtg_run.sh /scratch/data	7.prepare_rtg_run.sh 	docker	cloud-aws	2	12294	60.95	60.85	2270784	827928	103%
-cloud-aws-docker	bash /code/scripts/8.map_trio.sh /scratch/data 32g 8	8.map_trio.sh 	docker	cloud-aws	2	26440856	20488.83	2945.23	99036960	29674856	710%
-cloud-aws-docker	bash /code/scripts/9.family_call_variants.sh /scratch/data 32g 8	9.family_call_variants.sh 	docker	cloud-aws	2	12834610	19309.01	3032.76	643128	14841356	641%
 cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	singularity	cloud-aws	3	2031927	2452.99	3774.37	169900088	5468	68%
 cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	singularity	cloud-aws	3	1478	5007.76	5690.19	73400000	2069316	99%
 cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	singularity	cloud-aws	3	147	448.02	451.79	5473864	5130532	99%
@@ -107,6 +35,78 @@ cloud-aws-docker	bash /code/scripts/6.bwa_align.sh /scratch/data	6.bwa_align.sh 
 cloud-aws-docker	bash /code/scripts/7.prepare_rtg_run.sh /scratch/data	7.prepare_rtg_run.sh 	docker	cloud-aws	3	12434	63.8	63.66	2270784	828260	102%
 cloud-aws-docker	bash /code/scripts/8.map_trio.sh /scratch/data 32g 8	8.map_trio.sh 	docker	cloud-aws	3	26431564	19272.1	2777.27	99032808	29504604	709%
 cloud-aws-docker	bash /code/scripts/9.family_call_variants.sh /scratch/data 32g 8	9.family_call_variants.sh 	docker	cloud-aws	3	12995379	19757.23	3115.41	643128	12193100	638%
+cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	singularity	cloud-aws	2	2059649	2422.13	3643.55	169900032	5508	69%
+cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	singularity	cloud-aws	2	1482	4898.12	5552.15	73399528	2070160	99%
+cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	singularity	cloud-aws	2	144	474.55	478.39	5473864	5130592	99%
+cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/4.quantify_transcripts.sh /scratch/data 16	4.quantify_transcripts.sh 	singularity	cloud-aws	2	384566	17396.06	1210.02	5482088	5479036	1441%
+cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/5.bwa_index.sh /scratch/data	5.bwa_index.sh 	singularity	cloud-aws	2	19536	3811.83	3864.9	16649240	4546056	98%
+cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/6.bwa_align.sh /scratch/data	6.bwa_align.sh 	singularity	cloud-aws	2	8215494	76989.67	4900.62	24285760	12477936	1574%
+cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/7.prepare_rtg_run.sh /scratch/data	7.prepare_rtg_run.sh 	singularity	cloud-aws	2	35412	61.72	63.03	2270800	1028652	99%
+cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/8.map_trio.sh /scratch/data 32g 8	8.map_trio.sh 	singularity	cloud-aws	2	26408322	17576.35	2542.53	99026640	29337272	697%
+cloud-aws-singularity	bash /home/ubuntu/singularity-scientific-example/scripts/9.family_call_variants.sh /scratch/data 32g 8	9.family_call_variants.sh 	singularity	cloud-aws	2	13363625	19435.96	3058.9	643096	9070304	638%
+cloud-aws-docker	bash /code/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	docker	cloud-aws	2	2937302	2446.19	4444.68	169900320	5048	59%
+cloud-aws-docker	bash /code/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	docker	cloud-aws	2	1602	4873.64	5573.57	73399096	2069160	99%
+cloud-aws-docker	bash /code/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	docker	cloud-aws	2	49	510.69	514.82	5473864	5131604	99%
+cloud-aws-docker	bash /code/scripts/4.quantify_transcripts.sh /scratch/data 4	4.quantify_transcripts.sh 	docker	cloud-aws	2	22340	6937.1	1812.91	5483336	4225816	384%
+cloud-aws-docker	bash /code/scripts/5.bwa_index.sh /scratch/data	5.bwa_index.sh 	docker	cloud-aws	2	12310	3835.96	3883.31	16649232	4546212	99%
+cloud-aws-docker	bash /code/scripts/6.bwa_align.sh /scratch/data	6.bwa_align.sh 	docker	cloud-aws	2	4613229	76857.34	4891.57	24285520	12477440	1575%
+cloud-aws-docker	bash /code/scripts/7.prepare_rtg_run.sh /scratch/data	7.prepare_rtg_run.sh 	docker	cloud-aws	2	12294	60.95	60.85	2270784	827928	103%
+cloud-aws-docker	bash /code/scripts/8.map_trio.sh /scratch/data 32g 8	8.map_trio.sh 	docker	cloud-aws	2	26440856	20488.83	2945.23	99036960	29674856	710%
+cloud-aws-docker	bash /code/scripts/9.family_call_variants.sh /scratch/data 32g 8	9.family_call_variants.sh 	docker	cloud-aws	2	12834610	19309.01	3032.76	643128	14841356	641%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	singularity	cloud-gce	1	1635069	2414.84	3913.39	169899920	5468	65%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	singularity	cloud-gce	1	1354	5060.6	5738.77	73398488	2070732	99%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	singularity	cloud-gce	1	119	604.43	609.7	5473864	5131188	99%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/4.quantify_transcripts.sh /scratch/data 12	4.quantify_transcripts.sh 	singularity	cloud-gce	1	273504	12839.41	1192.88	5486088	5102796	1080%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/5.bwa_index.sh /scratch/data	5.bwa_index.sh 	singularity	cloud-gce	1	8349	4916.92	4993.06	16649240	4546184	98%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/6.bwa_align.sh /scratch/data	6.bwa_align.sh 	singularity	cloud-gce	1	11179496	89924.49	7577.62	24286160	10715580	1190%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/7.prepare_rtg_run.sh /scratch/data	7.prepare_rtg_run.sh 	singularity	cloud-gce	1	9319	70.37	73.56	2270824	838240	110%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/8.map_trio.sh /scratch/data 32g 8	8.map_trio.sh 	singularity	cloud-gce	1	26616127	27783.84	4045.36	99063504	29978300	697%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/9.family_call_variants.sh /scratch/data 32g 8	9.family_call_variants.sh 	singularity	cloud-gce	1	13741542	27591.28	4281.39	644776	12265112	651%
+cloud-gce-docker	bash /code/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	docker	cloud-gce	1	1250589	3193.34	9041.44	169901160	5040	38%
+cloud-gce-docker	bash /code/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	docker	cloud-gce	1	1646	6815.52	7947.73	73399384	2069356	99%
+cloud-gce-docker	bash /code/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	docker	cloud-gce	1	29	1014.97	1023.08	5473864	5130368	99%
+cloud-gce-docker	bash /code/scripts/4.quantify_transcripts.sh /scratch/data 4	4.quantify_transcripts.sh 	docker	cloud-gce	1	25807	13151.14	3437.14	5486752	4239588	384%
+cloud-gce-docker	bash /code/scripts/5.bwa_index.sh /scratch/data	5.bwa_index.sh 	docker	cloud-gce	1	14100	7615.04	7703.17	16649232	4546156	99%
+cloud-gce-docker	bash /code/scripts/6.bwa_align.sh /scratch/data	6.bwa_align.sh 	docker	cloud-gce	1	9898948	119536.81	10090.34	24286104	10707784	1189%
+cloud-gce-docker	bash /code/scripts/7.prepare_rtg_run.sh /scratch/data	7.prepare_rtg_run.sh 	docker	cloud-gce	1	27606	87.04	142.53	2270880	810544	72%
+cloud-gce-docker	bash /code/scripts/8.map_trio.sh /scratch/data 32g 8	8.map_trio.sh 	docker	cloud-gce	1	26654428	48132.14	6840.19	99133192	28655964	718%
+cloud-gce-docker	bash /code/scripts/9.family_call_variants.sh /scratch/data 32g 8	9.family_call_variants.sh 	docker	cloud-gce	1	14051593	32773.11	5123.49	646160	10630360	649%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	singularity	cloud-gce	3	1358908	2382.42	3906.47	169899896	5480	65%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	singularity	cloud-gce	3	1384	4951.02	5615.88	73398408	2069500	99%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	singularity	cloud-gce	3	125	590.2	595.13	5473864	5130928	99%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/4.quantify_transcripts.sh /scratch/data 12	4.quantify_transcripts.sh 	singularity	cloud-gce	3	244869	15784.42	1435.54	5486368	5098892	1103%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/5.bwa_index.sh /scratch/data	5.bwa_index.sh 	singularity	cloud-gce	3	6312	4785.22	4859.55	16649240	4546216	98%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/6.bwa_align.sh /scratch/data	6.bwa_align.sh 	singularity	cloud-gce	3	11160599	86996.59	7332.18	24285984	10723376	1190%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/7.prepare_rtg_run.sh /scratch/data	7.prepare_rtg_run.sh 	singularity	cloud-gce	3	9280	61.7	64.06	2270792	1038608	108%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/8.map_trio.sh /scratch/data 32g 8	8.map_trio.sh 	singularity	cloud-gce	3	26605219	29385.78	4258.38	99068864	29253060	700%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/9.family_call_variants.sh /scratch/data 32g 8	9.family_call_variants.sh 	singularity	cloud-gce	3	13811961	25924.54	4034.56	644288	13263220	648%
+cloud-gce-docker	bash /code/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	docker	cloud-gce	3	1311429	3158.58	8968.29	169901160	5056	38%
+cloud-gce-docker	bash /code/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	docker	cloud-gce	3	1746	6694.92	7757.39	73399112	2070248	99%
+cloud-gce-docker	bash /code/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	docker	cloud-gce	3	55	912.15	920.52	5473864	5130792	99%
+cloud-gce-docker	bash /code/scripts/4.quantify_transcripts.sh /scratch/data 4	4.quantify_transcripts.sh 	docker	cloud-gce	3	6798	13365.61	3499.13	5476552	4240168	383%
+cloud-gce-docker	bash /code/scripts/5.bwa_index.sh /scratch/data	5.bwa_index.sh 	docker	cloud-gce	3	960	7444.16	7525.81	16649232	4546184	99%
+cloud-gce-docker	bash /code/scripts/6.bwa_align.sh /scratch/data	6.bwa_align.sh 	docker	cloud-gce	3	8358317	114530.0	9666.16	24286200	10714056	1189%
+cloud-gce-docker	bash /code/scripts/7.prepare_rtg_run.sh /scratch/data	7.prepare_rtg_run.sh 	docker	cloud-gce	3	7393	77.0	77.44	2270808	752116	111%
+cloud-gce-docker	bash /code/scripts/8.map_trio.sh /scratch/data 32g 8	8.map_trio.sh 	docker	cloud-gce	3	26623035	43356.29	6179.57	99116496	28601472	715%
+cloud-gce-docker	bash /code/scripts/9.family_call_variants.sh /scratch/data 32g 8	9.family_call_variants.sh 	docker	cloud-gce	3	13570272	33951.97	5302.03	646688	10628148	649%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	singularity	cloud-gce	2	1567661	2472.83	3756.12	169899832	5484	70%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	singularity	cloud-gce	2	1367	5109.08	5816.67	73398560	2070612	99%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	singularity	cloud-gce	2	117	664.46	669.56	5473864	5131960	99%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/4.quantify_transcripts.sh /scratch/data 12	4.quantify_transcripts.sh 	singularity	cloud-gce	2	248561	19794.14	1787.68	5477832	5102472	1110%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/5.bwa_index.sh /scratch/data	5.bwa_index.sh 	singularity	cloud-gce	2	2694	4947.41	5021.01	16649240	4546204	98%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/6.bwa_align.sh /scratch/data	6.bwa_align.sh 	singularity	cloud-gce	2	10962148	88406.47	7451.76	24286024	10700916	1190%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/7.prepare_rtg_run.sh /scratch/data	7.prepare_rtg_run.sh 	singularity	cloud-gce	2	8231	72.23	75.16	2270824	721688	100%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/8.map_trio.sh /scratch/data 32g 8	8.map_trio.sh 	singularity	cloud-gce	2	26614837	31470.22	4531.28	99075736	28632748	706%
+cloud-gce-singularity	bash /home/vanessa/singularity-scientific-example/scripts/9.family_call_variants.sh /scratch/data 32g 8	9.family_call_variants.sh 	singularity	cloud-gce	2	13773742	29772.2	4644.02	645296	12686644	647%
+cloud-gce-docker	bash /code/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	docker	cloud-gce	2	1056429	3417.82	9842.5	169901272	4936	37%
+cloud-gce-docker	bash /code/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	docker	cloud-gce	2	1731	7338.58	8532.73	73399528	2070772	99%
+cloud-gce-docker	bash /code/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	docker	cloud-gce	2	36	1005.35	1014.78	5473864	5131632	99%
+cloud-gce-docker	bash /code/scripts/4.quantify_transcripts.sh /scratch/data 4	4.quantify_transcripts.sh 	docker	cloud-gce	2	6812	14210.82	3703.7	5486352	4241232	385%
+cloud-gce-docker	bash /code/scripts/5.bwa_index.sh /scratch/data	5.bwa_index.sh 	docker	cloud-gce	2	956	7488.0	7574.85	16649232	4546108	99%
+cloud-gce-docker	bash /code/scripts/6.bwa_align.sh /scratch/data	6.bwa_align.sh 	docker	cloud-gce	2	9268564	119817.2	10125.99	24286088	10738256	1188%
+cloud-gce-docker	bash /code/scripts/7.prepare_rtg_run.sh /scratch/data	7.prepare_rtg_run.sh 	docker	cloud-gce	2	8654	92.18	92.77	2270816	1027364	116%
+cloud-gce-docker	bash /code/scripts/8.map_trio.sh /scratch/data 32g 8	8.map_trio.sh 	docker	cloud-gce	2	26648870	45356.27	6541.98	99125264	28808948	707%
+cloud-gce-docker	bash /code/scripts/9.family_call_variants.sh /scratch/data 32g 8	9.family_call_variants.sh 	docker	cloud-gce	2	13617773	35912.35	5569.58	647376	13462888	653%
 hpc-sherlock-singularity	bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	singularity	hpc-sherlock	1.0	2094571	215.85	1343.85	100135872	3268	29%
 hpc-sherlock-singularity	bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	singularity	hpc-sherlock	1.0	30971	4360.94	11148.17	73619864	2067320	96%
 hpc-sherlock-singularity	bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	singularity	hpc-sherlock	1.0	166	715.09	725.98	5473904	5129028	99%
@@ -134,3 +134,30 @@ hpc-sherlock-singularity	bash /home/vsochat/SCRIPT/python/singularity-scientific
 hpc-sherlock-singularity	bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/7.prepare_rtg_run.sh /scratch/data	7.prepare_rtg_run.sh 	singularity	hpc-sherlock	3.0	12698	51.47	50.09	2270840	988612	107%
 hpc-sherlock-singularity	bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/8.map_trio.sh /scratch/data 32g 8	8.map_trio.sh 	singularity	hpc-sherlock	3.0	27408634	16306.84	4440.26	99075632	29617204	371%
 hpc-sherlock-singularity	bash /home/vsochat/SCRIPT/python/singularity-scientific-example/scripts/9.family_call_variants.sh /scratch/data 32g 8	9.family_call_variants.sh 	singularity	hpc-sherlock	3.0	34919890	14638.19	4224.15	644112	17257188	349%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	singularity	hpc-scg4	1.0	2112736	2622.68	7338.89	0	3272	39%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	singularity	hpc-scg4	1.0	437037	6775.11	8680.66	0	2069952	98%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	singularity	hpc-scg4	1.0	18685	626.23	642.98	0	5130336	98%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/4.quantify_transcripts.sh /scratch/data 8	4.quantify_transcripts.sh 	singularity	hpc-scg4	1.0	627171	16834.11	2317.55	0	4618476	736%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/5.bwa_index.sh /scratch/data	5.bwa_index.sh 	singularity	hpc-scg4	1.0	54288	5274.02	5541.58	0	4545552	95%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/6.bwa_align.sh /scratch/data 8	6.bwa_align.sh 	singularity	hpc-scg4	1.0	18992772	84975.34	10325.62	0	9082808	827%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/7.prepare_rtg_run.sh /scratch/data 32G	7.prepare_rtg_run.sh 	singularity	hpc-scg4	1.0	22794	74.09	90.64	240	952956	86%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/8.map_trio.sh /scratch/data 32G 8	8.map_trio.sh 	singularity	hpc-scg4	1.0	26858201	36530.28	5234.64	130712	29711556	703%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/9.family_call_variants.sh /scratch/data 32G 8	9.family_call_variants.sh 	singularity	hpc-scg4	1.0	16038664	22546.43	3702.46	4968	19240888	613%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	singularity	hpc-scg4	2.0	1729510	2534.65	3977.51	0	3280	72%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	singularity	hpc-scg4	2.0	4132249	7220.04	12513.42	0	2069964	98%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	singularity	hpc-scg4	2.0	11071	3284.67	3311.53	0	5130328	99%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/4.quantify_transcripts.sh /scratch/data 8	4.quantify_transcripts.sh 	singularity	hpc-scg4	2.0	600312	28597.72	3893.5	0	4614248	742%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/5.bwa_index.sh /scratch/data	5.bwa_index.sh 	singularity	hpc-scg4	2.0	47306	6746.84	6969.48	0	4545552	97%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/6.bwa_align.sh /scratch/data 8	6.bwa_align.sh 	singularity	hpc-scg4	2.0	17512890	81146.86	14382.49	0	9526816	648%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/7.prepare_rtg_run.sh /scratch/data 32G	7.prepare_rtg_run.sh 	singularity	hpc-scg4	2.0	27381	107.81	137.71	304	898840	82%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/8.map_trio.sh /scratch/data 32G 8	8.map_trio.sh 	singularity	hpc-scg4	2.0	27010629	49373.01	7179.46	177976	30726084	692%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/9.family_call_variants.sh /scratch/data 32G 8	9.family_call_variants.sh 	singularity	hpc-scg4	2.0	22303899	35662.67	8553.46	10328	17050656	420%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/1.download_data.sh /scratch/data	1.download_data.sh 	singularity	hpc-scg4	3.0	1707086	2992.34	5658.84	0	3276	61%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/2.simulate_reads.sh /scratch/data	2.simulate_reads.sh 	singularity	hpc-scg4	3.0	162087	6504.73	8750.33	0	2067908	99%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/3.generate_transcriptome_index.sh /scratch/data	3.generate_transcriptome_index.sh 	singularity	hpc-scg4	3.0	25809	972.85	995.32	0	5129824	98%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/4.quantify_transcripts.sh /scratch/data 8	4.quantify_transcripts.sh 	singularity	hpc-scg4	3.0	588287	27325.84	3968.58	0	4618480	695%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/5.bwa_index.sh /scratch/data	5.bwa_index.sh 	singularity	hpc-scg4	3.0	69739	8433.79	8668.66	0	4545556	97%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/6.bwa_align.sh /scratch/data 8	6.bwa_align.sh 	singularity	hpc-scg4	3.0	18427475	83786.54	10475.88	0	9243212	804%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/7.prepare_rtg_run.sh /scratch/data 32G	7.prepare_rtg_run.sh 	singularity	hpc-scg4	3.0	21799	70.67	73.85	224	952396	99%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/8.map_trio.sh /scratch/data 32G 8	8.map_trio.sh 	singularity	hpc-scg4	3.0	26732997	22279.23	3237.73	82208	30757492	694%
+hpc-scg4-singularity	bash /home/cjprybol/singularity-testing/scripts/9.family_call_variants.sh /scratch/data 32G 8	9.family_call_variants.sh 	singularity	hpc-scg4	3.0	13642595	19099.66	3176.91	4576	19859776	604%
